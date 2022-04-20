@@ -1,28 +1,26 @@
-/*
-!favicon.ico
-!composer.json
-!composer.lock
-!README.md
-!.gitignore
+# Application
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+web/app/cache/*
 
-!wp-content/
-wp-content/*
-!wp-content/.gitkeep
+# WordPress
+web/wp
+web/.htaccess
 
-!wp-content/uploads/
-wp-content/uploads/*
-!wp-content/uploads/.gitkeep
+# Logs
+*.log
 
-!wp-content/plugins/
-wp-content/plugins/*
-!wp-content/plugins/.gitkeep
-
-!wp-content/languages/
-wp-content/languages/*
-!wp-content/languages/.gitkeep
-
-!wp-content/themes/
-wp-content/themes/*
-!wp-content/themes/foxili
-
+# Dotenv
 .env
+.env.*
+!.env.example
+
+# Composer
+/vendor
+
+# WP-CLI
+wp-cli.local.yml
