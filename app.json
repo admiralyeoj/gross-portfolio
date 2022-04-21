@@ -1,0 +1,82 @@
+{
+  "name": "Gross Portfolio",
+  "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
+  "keywords": [
+    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config", "portfolio"
+  ],
+  "website": "https://www.grossportfolio.com/",
+  "repository": "https://github.com/admiralyeoj/gross-portolio",
+  "success_url": "/wp/wp-admin",
+  "scripts": {
+    "postdeploy": [
+      "bin/scripts/postdeploy.sh"
+    ]
+  },
+  "stack": "heroku-20",
+  "env": {
+    "AUTH_KEY": {
+      "description": "A secret key to increase security of stored information.",
+      "generator": "secret"
+    },
+    "SECURE_AUTH_KEY": {
+      "description": "A secret key to increase security of stored information.",
+      "generator": "secret"
+    },
+    "LOGGED_IN_KEY": {
+      "description": "A secret key to increase security of stored information.",
+      "generator": "secret"
+    },
+    "NONCE_KEY": {
+      "description": "A secret key to increase security of stored information.",
+      "generator": "secret"
+    },
+    "AUTH_SALT": {
+      "description": "A secret key to increase security of stored information.",
+      "generator": "secret"
+    },
+    "SECURE_AUTH_SALT": {
+      "description": "A secret key to increase security of stored information.",
+      "generator": "secret"
+    },
+    "LOGGED_IN_SALT": {
+      "description": "A secret key to increase security of stored information.",
+      "generator": "secret"
+    },
+    "NONCE_SALT": {
+      "description": "A secret key to increase security of stored information.",
+      "generator": "secret"
+    },
+    "HEROKU_APP_NAME": {
+      "required": false,
+      "description": "Only for automated deploys, please don't enter anything!"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    {
+      "plan": "jawsdb-maria:kitefin"
+    },
+    {
+      "plan": "sendgrid:starter"
+    },
+    {
+      "plan": "heroku-redis:hobby-dev"
+    },
+    {
+      "plan": "papertrail:choklad"
+    },
+    {
+      "plan": "autobus:trip"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-php"
+    }
+  ]
+}
