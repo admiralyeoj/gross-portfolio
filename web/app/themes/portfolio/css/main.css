@@ -317,6 +317,10 @@ textarea, label {
   .page-home .overlay {
     background-color: rgba(255, 255, 255, 0.93); }
 
+.hexagon-menu {
+  max-width: 550px;
+  margin: auto; }
+
 /* End of container */
 .hexagon-item {
   cursor: pointer;
@@ -363,8 +367,7 @@ textarea, label {
       transform: scale(0.97); }
 
 .page-home .hexagon-item:nth-last-child(1),
-.page-home .hexagon-item:nth-last-child(2),
-.page-home .hexagon-item:nth-last-child(3) {
+.page-home .hexagon-item:nth-last-child(2) {
   -webkit-transform: rotate(30deg) translate(87px, -80px);
   -moz-transform: rotate(30deg) translate(87px, -80px);
   -ms-transform: rotate(30deg) translate(87px, -80px);
