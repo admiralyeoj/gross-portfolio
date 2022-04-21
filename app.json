@@ -22,35 +22,35 @@
     "WORDPRESS_ADMIN_PASSWORD": {
       "description": "WordPress Administrator Password"
     },
-    "WORDPRESS_AUTH_KEY": {
+    "AUTH_KEY": {
       "generator": "secret",
       "description": "security token generated for WordPress"
     },
-    "WORDPRESS_SECURE_AUTH_KEY": {
+    "SECURE_AUTH_KEY": {
       "generator": "secret",
       "description": "security token generated for WordPress"
     },
-    "WORDPRESS_LOGGED_IN_KEY": {
+    "LOGGED_IN_KEY": {
       "generator": "secret",
       "description": "security token generated for WordPress"
     },
-    "WORDPRESS_NONCE_KEY": {
+    "NONCE_KEY": {
       "generator": "secret",
       "description": "security token generated for WordPress"
     },
-    "WORDPRESS_AUTH_SALT": {
+    "AUTH_SALT": {
       "generator": "secret",
       "description": "security token generated for WordPress"
     },
-    "WORDPRESS_SECURE_AUTH_SALT": {
+    "SECURE_AUTH_SALT": {
       "generator": "secret",
       "description": "security token generated for WordPress"
     },
-    "WORDPRESS_LOGGED_IN_SALT": {
+    "LOGGED_IN_SALT": {
       "generator": "secret",
       "description": "security token generated for WordPress"
     },
-    "WORDPRESS_NONCE_SALT": {
+    "NONCE_SALT": {
       "generator": "secret",
       "description": "security token generated for WordPress"
     }
