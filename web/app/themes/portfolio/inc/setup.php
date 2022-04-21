@@ -1,8 +1,20 @@
 <?php
+  use function Env\env;
+
   add_filter('use_block_editor_for_post', '__return_false', 10);
   
   add_theme_support( 'align-wide' );
   add_theme_support( 'editor-styles' );
+
+  add_theme_support('soil', [
+    'clean-up',
+    'disable-trackbacks',
+    'google-analytics' => env('GOOGLE_ANALYTICS'),
+    'js-to-footer',
+    'nav-walker',
+    'nice-search',
+    'relative-urls'
+]);
   
   // remove_theme_support( 'core-block-patterns' );
   function remove_default_stylesheets() {

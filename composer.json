@@ -90,11 +90,11 @@
         "type:wordpress-muplugin",
         "roots/wp-password-bcrypt",
         "humanmade/s3-uploads",
-        "wpackagist-plugin/wp-mail-smtp",
-        "roots/soil"
+        "wpackagist-plugin/wp-mail-smtp"
       ],
       "web/app/plugins/{$name}/": [
         "type:wordpress-plugin",
+        "roots/soil",
         "wpackagist-plugin/autoptimize",
         "wpackagist-plugin/wordfence",
 				"wpackagist-plugin/wordpress-seo",
