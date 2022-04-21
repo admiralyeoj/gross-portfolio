@@ -1,21 +1,22 @@
 {
-  "name": "swift",
-  "version": "1.0.0",
-  "description": "",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-sass": "^3.2.1"
+  "name": "sage",
+  "private": true,
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "bud dev",
+    "build": "bud build",
+    "translate": "npm run translate:pot && npm run translate:js",
+    "translate:pot": "wp i18n make-pot . ./resources/lang/sage.pot --ignore-domain --include=\"app,resources\"",
+    "translate:js": "wp i18n make-json ./resources/lang --pretty-print"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://mehedi_sharif@bitbucket.org/themefishertemplate/swift.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/themefishertemplate/swift#readme"
+  "devDependencies": {
+    "@roots/bud": "5.7.6",
+    "@roots/bud-tailwindcss": "5.7.6",
+    "@roots/sage": "5.7.6"
+  }
 }
