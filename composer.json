@@ -30,8 +30,7 @@
           "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%ACF_PRO_KEY}&t={%version}"
         },
         "require": {
-          "composer/installers": "^2.1.1",
-          "ffraenz/private-composer-installer": "^5.0.1"
+          "ffraenz/private-composer-installer": "^5.0"
         }
       }
     }
@@ -54,8 +53,9 @@
     "wpackagist-plugin/wordpress-seo":"18.5.1",
 		"wpackagist-plugin/autoptimize":"3.0.2",
     "wpackagist-plugin/cloudflare":"4.8.3",
-		"wpackagist-plugin/post-smtp":"2.0.25",
     "wpackagist-plugin/wordfence": "7.5.9",
+    "wpackagist-plugin/wp-mail-smtp":"3.3.0",
+    
 		"advanced-custom-fields/advanced-custom-fields-pro": "^5.0.0"
   },
   "require-dev": {
@@ -63,17 +63,10 @@
     "squizlabs/php_codesniffer": "^3.6.2",
     "roave/security-advisories": "dev-latest"
   },
-  "config": {
-    "optimize-autoloader": true,
-    "preferred-install": "dist",
-    "allow-plugins": {
-      "composer/installers": true,
-      "roots/wordpress-core-installer": true
-    }
-  },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
+    "wordpress-install-dir": "web/wp",
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin"
@@ -86,20 +79,94 @@
 				"wpackagist-plugin/wordpress-seo",
 				"wpackagist-plugin/better-search-replace",
 				"wpackagist-plugin/cloudflare",
-				"wpackagist-plugin/post-smtp"
+        "wpackagist-plugin/wp-mail-smtp"
       ],
       "web/app/themes/{$name}/": [
         "type:wordpress-theme"
       ]
     },
-    "wordpress-install-dir": "web/wp"
+    "dropin-paths": {
+			"web/app": [
+			"package:wpackagist-plugin/redis-cache:includes/object-cache.php"
+			]
+		}
   },
   "scripts": {
-    "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\""
-    ],
-    "test": [
-      "phpcs"
-    ]
+    "scripts": {
+      "wordpress-setup-core-install-prompt": "wp core install --prompt",
+      "wordpress-setup-core-install": "wp core install --skip-email",
+      "wordpress-setup-clear-home": "wp option delete home || true",
+      "wordpress-setup-configure-s3": "echo '{\"domain\":\"path\",\"copy-to-s3\":\"1\",\"serve-from-s3\":\"1\",\"ssl\":\"request\"}' | wp option add tantan_wordpress_s3 --format=json",
+      "wordpress-setup-enable-plugins": "wp plugin activate amazon-web-services amazon-s3-and-cloudfront",
+      "wordpress-setup-permalink-structure": "wp rewrite structure '/%postname%/' || true",
+      "wordpress-setup": [
+        "@wordpress-setup-core-install-prompt",
+        "@wordpress-setup-finalize"
+      ],
+      "wordpress-setup-finalize": [
+        "@wordpress-setup-clear-home",
+        "@wordpress-setup-configure-s3",
+        "@wordpress-setup-enable-plugins",
+        "@wordpress-setup-permalink-structure"
+      ],
+      "wordpress-setup-demo-theme": "wp theme activate portfolio",
+      "wordpress-setup-welcome-post": [
+        "echo 'It works! | wp post update 1 - --post_title=\"Welcome to WordPress on Heroku\""
+      ]
+    }
+  },
+  "env": {
+    "WORDPRESS_ADMIN_EMAIL": {
+      "description": "WordPress Administrator E-Mail"
+    },
+    "WORDPRESS_ADMIN_USER": {
+      "description": "WordPress Administrator Username",
+      "value": "admin"
+    },
+    "WORDPRESS_ADMIN_PASSWORD": {
+      "description": "WordPress Administrator Password"
+    },
+    "WORDPRESS_AUTH_KEY": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
+    },
+    "WORDPRESS_SECURE_AUTH_KEY": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
+    },
+    "WORDPRESS_LOGGED_IN_KEY": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
+    },
+    "WORDPRESS_NONCE_KEY": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
+    },
+    "WORDPRESS_AUTH_SALT": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
+    },
+    "WORDPRESS_SECURE_AUTH_SALT": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
+    },
+    "WORDPRESS_LOGGED_IN_SALT": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
+    },
+    "WORDPRESS_NONCE_SALT": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "composer/installers": true,
+      "wp-cli/autoload-splitter": true,
+      "ffraenz/private-composer-installer": true,
+      "johnpbloch/wordpress-core-installer": true,
+      "roots/wordpress-core-installer": true
+    }
   }
 }
