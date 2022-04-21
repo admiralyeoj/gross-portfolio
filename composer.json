@@ -87,10 +87,8 @@
       "web/app/plugins/{$name}/": [
         "type:wordpress-plugin",
         "wpackagist-plugin/wordfence",
-				"wpackagist-plugin/nginx-helper",
 				"humanmade/s3-uploads",
 				"wpackagist-plugin/wordpress-seo",
-				"wpackagist-plugin/better-search-replace",
 				"wpackagist-plugin/cloudflare",
         "wpackagist-plugin/wp-mail-smtp"
       ],
@@ -105,8 +103,26 @@
 		}
   },
   "scripts": {
-    "test": [
-      "vendor/bin/phpcs"
-    ]
-  }
+		"wordpress-setup-core-install-prompt": "wp core install --prompt",
+		"wordpress-setup-core-install": "wp core install --skip-email",
+		"wordpress-setup-clear-home": "wp option delete home || true",
+    "wordpress-setup-clear-siteurl": "wp option delete siteurl || true",
+		"wordpress-setup-configure-s3": "echo '{\"domain\":\"path\",\"copy-to-s3\":\"1\",\"serve-from-s3\":\"1\",\"ssl\":\"request\"}' | wp option add tantan_wordpress_s3 --format=json",
+		"wordpress-setup-enable-plugins": "wp plugin activate s3-uploads wordpress-seo wp-mail-smtp",
+		"wordpress-setup-permalink-structure": "wp rewrite structure '/%postname%/' || true",
+		"wordpress-setup": [
+			"@wordpress-setup-core-install-prompt",
+			"@wordpress-setup-finalize"
+		],
+		"wordpress-setup-finalize": [
+			"@wordpress-setup-clear-home",
+			"@wordpress-setup-configure-s3",
+			"@wordpress-setup-enable-plugins",
+			"@wordpress-setup-permalink-structure"
+		],
+		"wordpress-setup-demo-theme": "wp theme activate ",
+		"wordpress-setup-welcome-post": [
+			"echo 'It works! Please see <a href=\"https://github.com/dzuelke/wordpress-12factor\">wordpress-12factor on GitHub</a> for info and post-install instructions.' | wp post update 1 - --post_title=\"Welcome to WordPress on Heroku\""
+		]
+	},
 }

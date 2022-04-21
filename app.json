@@ -1,54 +1,58 @@
 {
-  "name": "Gross Portfolio",
+  "name": "Heroku Base Setup",
   "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
   "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config", "portfolio"
+    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
   ],
   "website": "https://www.grossportfolio.com/",
   "repository": "https://github.com/admiralyeoj/gross-portolio",
   "success_url": "/wp/wp-admin",
-  "scripts": {
-    "postdeploy": [
-      "bin/scripts/postdeploy.sh"
-    ]
-  },
   "stack": "heroku-20",
+  "scripts": {
+    "postdeploy": "composer wordpress-setup-core-install -- --title='Heroku Base Setup' --admin_user=\"$WORDPRESS_ADMIN_USER\" --admin_password=\"$WORDPRESS_ADMIN_PASSWORD\" --admin_email=\"$WORDPRESS_ADMIN_EMAIL\" --url='http://example.herokuapp.com/' && composer wordpress-setup-finalize && composer wordpress-setup-demo-theme && composer wordpress-setup-welcome-post"
+  },
   "env": {
-    "AUTH_KEY": {
-      "description": "A secret key to increase security of stored information.",
-      "generator": "secret"
+    "WORDPRESS_ADMIN_EMAIL": {
+      "description": "WordPress Administrator E-Mail"
     },
-    "SECURE_AUTH_KEY": {
-      "description": "A secret key to increase security of stored information.",
-      "generator": "secret"
+    "WORDPRESS_ADMIN_USER": {
+      "description": "WordPress Administrator Username",
+      "value": "admin"
     },
-    "LOGGED_IN_KEY": {
-      "description": "A secret key to increase security of stored information.",
-      "generator": "secret"
+    "WORDPRESS_ADMIN_PASSWORD": {
+      "description": "WordPress Administrator Password"
     },
-    "NONCE_KEY": {
-      "description": "A secret key to increase security of stored information.",
-      "generator": "secret"
+    "WORDPRESS_AUTH_KEY": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
     },
-    "AUTH_SALT": {
-      "description": "A secret key to increase security of stored information.",
-      "generator": "secret"
+    "WORDPRESS_SECURE_AUTH_KEY": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
     },
-    "SECURE_AUTH_SALT": {
-      "description": "A secret key to increase security of stored information.",
-      "generator": "secret"
+    "WORDPRESS_LOGGED_IN_KEY": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
     },
-    "LOGGED_IN_SALT": {
-      "description": "A secret key to increase security of stored information.",
-      "generator": "secret"
+    "WORDPRESS_NONCE_KEY": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
     },
-    "NONCE_SALT": {
-      "description": "A secret key to increase security of stored information.",
-      "generator": "secret"
+    "WORDPRESS_AUTH_SALT": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
     },
-    "HEROKU_APP_NAME": {
-      "required": false,
-      "description": "Only for automated deploys, please don't enter anything!"
+    "WORDPRESS_SECURE_AUTH_SALT": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
+    },
+    "WORDPRESS_LOGGED_IN_SALT": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
+    },
+    "WORDPRESS_NONCE_SALT": {
+      "generator": "secret",
+      "description": "security token generated for WordPress"
     }
   },
   "formation": {
