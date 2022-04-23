@@ -77,6 +77,7 @@
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*",
+    "heroku/heroku-buildpack-nodejs": "*",
     "squizlabs/php_codesniffer": "^3.6.2",
     "roave/security-advisories": "dev-latest"
   },
@@ -133,7 +134,7 @@
 			"echo 'It works! Please see <a href=\"https://github.com/dzuelke/wordpress-12factor\">wordpress-12factor on GitHub</a> for info and post-install instructions.' | wp post update 1 - --post_title=\"Welcome to WordPress on Heroku\""
 		],
     "compile": [
-      "cd web/app/themes/portfolio && composer install && npm run build"
+      "cd web/app/themes/portfolio && composer install && yarn build"
     ]
 	}
 }
