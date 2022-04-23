@@ -1,4 +1,18 @@
 import {domReady} from '@roots/sage/client';
+import 'bootstrap';
+import 'jquery';
+
+let $ = jQuery;
+
+$(window).on("load", function() {
+  // isotopeMasonry();
+  
+  $(".preloader").addClass("active");
+  setTimeout(function () {
+    $(".preloader").addClass("done");
+  }, 1000);
+});
+
 
 /**
  * app.main
@@ -8,6 +22,7 @@ const main = async (err) => {
     // handle hmr errors
     console.error(err);
   }
+  
 
   // application code
 };

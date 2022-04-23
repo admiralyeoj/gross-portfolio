@@ -139,10 +139,12 @@ Config::define('WP_DEFAULT_THEME', 'portfolio');
 /**
  * Debugging Settings
  */
-Config::define('WP_DEBUG_DISPLAY', false);
-Config::define('WP_DEBUG_LOG', false);
-Config::define('SCRIPT_DEBUG', false);
-ini_set('display_errors', '0');
+if(WP_ENV != 'development') {
+    Config::define('WP_DEBUG_DISPLAY', false);
+    Config::define('WP_DEBUG_LOG', false);
+    Config::define('SCRIPT_DEBUG', false);
+    ini_set('display_errors', '0');
+}
 
 $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
 

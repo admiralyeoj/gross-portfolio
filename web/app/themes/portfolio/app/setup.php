@@ -36,8 +36,17 @@ add_action('after_setup_theme', function () {
      * Enable features from the Soil plugin if activated.
      * @link https://roots.io/plugins/soil/
      */
+    // add_theme_support('soil', [
+    //     'clean-up',
+    //     'nav-walker',
+    //     'nice-search',
+    //     'relative-urls'
+    // ]);
     add_theme_support('soil', [
         'clean-up',
+        'disable-trackbacks',
+        'google-analytics' => env('GOOGLE_ANALYTICS'),
+        'js-to-footer',
         'nav-walker',
         'nice-search',
         'relative-urls'
@@ -55,7 +64,8 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage')
+        'primary' => __('Primary Navigation', 'sage'),
+        'homepage' => __('Homepage Navigation', 'sage')
     ]);
 
     /**

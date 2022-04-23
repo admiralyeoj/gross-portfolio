@@ -3,6 +3,8 @@
  *
  * @param {bud} app
  */
+
+
 module.exports = async (app) => {
   app
     /**
@@ -32,7 +34,7 @@ module.exports = async (app) => {
      *
      * This should be the URL you use to visit your local development server.
      */
-    .proxy('http://example.test')
+    .proxy('http://localhost')
 
     /**
      * Development URL to be used in the browser.

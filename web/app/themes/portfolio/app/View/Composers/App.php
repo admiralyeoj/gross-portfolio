@@ -23,7 +23,8 @@ class App extends Composer
     public function with()
     {
         return [
-            'siteName' => $this->siteName(),
+            'siteName' => $this->site_name(),
+            'title' => get_the_title(),
         ];
     }
 
@@ -32,7 +33,7 @@ class App extends Composer
      *
      * @return string
      */
-    public function siteName()
+    public function site_name()
     {
         return get_bloginfo('name', 'display');
     }

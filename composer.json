@@ -62,7 +62,6 @@
     "roots/wordpress": "5.9.3",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
-    "roots/soil": "4.0.5",
 
     "humanmade/s3-uploads": "3.0.4",
 		"wpackagist-plugin/redis-cache": "1.3.5",
@@ -88,17 +87,16 @@
       ],
       "web/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
-        "roots/wp-password-bcrypt",
         "humanmade/s3-uploads",
-        "wpackagist-plugin/wp-mail-smtp"
+        "roots/wp-password-bcrypt"
       ],
       "web/app/plugins/{$name}/": [
         "type:wordpress-plugin",
-        "roots/soil",
         "wpackagist-plugin/autoptimize",
+        "wpackagist-plugin/cloudflare",
+        "wpackagist-plugin/wordpress-seo",
         "wpackagist-plugin/wordfence",
-				"wpackagist-plugin/wordpress-seo",
-				"wpackagist-plugin/cloudflare"
+        "wpackagist-plugin/wp-mail-smtp"
       ],
       "web/app/themes/{$name}/": [
         "type:wordpress-theme"
