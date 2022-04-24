@@ -4,9 +4,6 @@
   "license": "MIT",
   "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
   "homepage": "https://www.grossportfolio",
-  "engines": {
-    "node": "16.x"
-  },
   "authors": [
     {
       "name": "Joey Gross",
@@ -131,12 +128,12 @@
 			"@wordpress-setup-enable-plugins",
 			"@wordpress-setup-permalink-structure"
 		],
-		"wordpress-setup-demo-theme": "wp theme activate ",
+		"wordpress-setup-demo-theme": "wp theme activate portfolio",
 		"wordpress-setup-welcome-post": [
 			"echo 'It works! Please see <a href=\"https://github.com/dzuelke/wordpress-12factor\">wordpress-12factor on GitHub</a> for info and post-install instructions.' | wp post update 1 - --post_title=\"Welcome to WordPress on Heroku\""
 		],
     "heroku-postbuild": [
-      "cd web/app/themes/portfolio && composer install && yarn install"
+      "cd web/app/themes/portfolio && yarn install"
     ]
 	}
 }

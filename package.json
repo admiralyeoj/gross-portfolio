@@ -2,8 +2,9 @@
   "name": "gross-portfolio",
   "description": "",
   "version": "1.0.0",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "engines": {
+    "node": "16.x",
+    "yarn": "1.x"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/admiralyeoj/gross-portfolio/issues"
   },
-  "homepage": "https://github.com/admiralyeoj/gross-portfolio"
+  "homepage": "https://github.com/admiralyeoj/gross-portfolio",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "cd web/app/themes/portfolio && yarn install"
+  }
 }
