@@ -7,7 +7,6 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "postinstall": "cd web/app/themes/portfolio && yarn install",
-    "build": "yarn build"
+    "postinstall": "cd web/app/themes/portfolio && yarn install && yarn build"
   }
 }
