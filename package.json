@@ -9,6 +9,6 @@
   },
   "scripts": {
     "heroku-postbuild": "cd web/app/themes/portfolio && yarn install",
-    "heroku-cleanup": "ls && cd web/app/themes/portfolio && yarn build"
+    "heroku-cleanup": "ls && cd web/app/themes/portfolio && yarn run bud build"
   }
 }
