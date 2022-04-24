@@ -8,6 +8,7 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "heroku-postbuild": "cd web/app/themes/portfolio && yarn install && yarn build"
+    "heroku-postbuild": "cd web/app/themes/portfolio && yarn install",
+    "heroku-cleanup": "ls && cd web/app/themes/portfolio && yarn build"
   }
 }
