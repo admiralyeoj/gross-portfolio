@@ -19,6 +19,6 @@
   "homepage": "https://github.com/admiralyeoj/gross-portfolio",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "cd web/app/themes/portfolio && yarn install"
+    "compile": "cd web/app/themes/portfolio && yarn install"
   }
 }
