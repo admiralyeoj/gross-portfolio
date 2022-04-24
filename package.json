@@ -1,24 +1,13 @@
 {
   "name": "gross-portfolio",
-  "description": "",
   "version": "1.0.0",
+  "private": true,
   "engines": {
     "node": "16.x",
     "yarn": "1.x"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/admiralyeoj/gross-portfolio.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/admiralyeoj/gross-portfolio/issues"
-  },
-  "homepage": "https://github.com/admiralyeoj/gross-portfolio",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "cd web/app/themes/portfolio && yarn && yarn install"
+    "postinstall": "cd web/app/themes/portfolio && yarn",
+    "build": "yarn yarn install"
   }
 }
