@@ -8,6 +8,6 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "postinstall": "cd web/app/themes/portfolio && yarn install && ls && yarn build"
+    "postinstall": "cd web/app/themes/portfolio && yarn && yarn install && yarn build"
   }
 }
