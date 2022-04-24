@@ -9,6 +9,9 @@
 @import "mixins";
 @import "base";
 
+// Partials
+@import "partials/close-btn";
+
 
 #wpadminbar {
 	opacity: .3;

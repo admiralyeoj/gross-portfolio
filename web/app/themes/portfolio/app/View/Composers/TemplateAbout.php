@@ -4,7 +4,7 @@ namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
 
-class App extends Composer
+class TemplateAbout extends Composer
 {
     /**
      * List of views served by this composer.
@@ -12,7 +12,8 @@ class App extends Composer
      * @var array
      */
     protected static $views = [
-        '*',
+        'partials.page-header',
+        'partials.close-btn',
     ];
 
     /**
@@ -23,19 +24,7 @@ class App extends Composer
     public function with()
     {
         return [
-            'siteName' => $this->site_name(),
-            'siteURL' => get_home_url(),
-            'title' => get_the_title(),
+            'title' => get_the_title()
         ];
-    }
-
-    /**
-     * Returns the site name.
-     *
-     * @return string
-     */
-    public function site_name()
-    {
-        return get_bloginfo('name', 'display');
     }
 }

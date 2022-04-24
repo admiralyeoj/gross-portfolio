@@ -27,7 +27,7 @@
                       <div></div>
                       <div></div>
                     </div>
-                    <a href="#" class="hex-content">
+                    <a href="{{$item->url}}" class="hex-content">
                       <span class="hex-content-inner">
                         <span class="icon">
                           <span class="{{ $item->icon }}"></span>
