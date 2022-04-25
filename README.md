@@ -20,7 +20,7 @@ Use WordPress locally with Docker using [Docker compose](https://docs.docker.com
  <summary>Requirements</summary>
 
 + [Docker](https://www.docker.com/get-started)
-+ >= PHP 7.4
++ PHP 7.4 >=
   - [Mac](https://www.php.net/manual/en/install.macosx.php)
   - [Windows](https://www.php.net/manual/en/install.windows.php)
 + [Composer](https://getcomposer.org/download/)
