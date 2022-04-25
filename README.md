@@ -91,17 +91,6 @@ docker-compose up -d
 </details>
 
 <details>
- <summary>Install</summary>
-
-```shell
-docker-compose run composer create-project
-```
-
-</details>
-
-
-
-<details>
  <summary>Tools</summary>
 
 ### Update WordPress Core and Composer packages (plugins/themes)
