@@ -50,6 +50,13 @@ services:
         restart: 'no'
         volumes:
             - ./:/var/www/html/
+    node:
+        image: node:16.14-alpine3.15
+        container_name: ${APP_NAME}-nodejs
+        working_dir: /var/www/html/web/app/themes/portfolio
+        restart: 'no'
+        volumes:
+            - ./:/var/www/html
             
 volumes:
     db_data:

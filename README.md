@@ -1,5 +1,7 @@
-# WP Bedrock and Docker
-Simple and fast Wordpress Bedrock setup on docker. This setup has the advantage of using separate container for each service which is little bit slower on Windows devices. Faster version of this setup using official WordPress image is [here](https://github.com/trenccan777/wordpress-bedrock-docker-boilerplate/). 
+
+# Docker Compose and Bedrock
+
+Use WordPress locally with Docker using [Docker compose](https://docs.docker.com/compose/) and deploy to [Heroku](https://www.heroku.com/)
 
 ## Supported technologies
 - Apache 
@@ -7,95 +9,200 @@ Simple and fast Wordpress Bedrock setup on docker. This setup has the advantage 
 - MySQL 8
 - PhpMyAdmin
 - Composer
-- WP-CLI - command line interface for WordPress
+- [Bedrock](https://roots.io/bedrock/) - modern development tools, easier configuration, and an improved secured folder structure for WordPress
+- [WP-CLI](https://wp-cli.org/) - WP-CLI is the command-line interface for WordPress.
+- [PhpMyAdmin](https://www.phpmyadmin.net/) - free and open source administration tool for MySQL and MariaDB
+- CLI script to create a SSL certificate
 
-## Installation
+## Instructions
 
-1. Clone this repository to your PC
-2. `cd` into the folder and edit `.env` 
-3. `cd` into  `src` folder and edit `.env`
-4. Download bedrock with composer:
+<details>
+ <summary>Requirements</summary>
 
++ [Docker](https://www.docker.com/get-started)
++ PHP 7.4 >=
+  - [Mac](https://www.php.net/manual/en/install.macosx.php)
+  - [Windows](https://www.php.net/manual/en/install.windows.php)
++ [Composer](https://getcomposer.org/download/)
++ [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/)
++ [ACF Pro](https://www.advancedcustomfields.com/)
+
+</details>
+
+<details>
+ <summary>Setup</summary>
+
+ ### Setup Environment variables
+
+
+#### 1. Setting Up Dependencies (Required step)
+
+Copy `.env.example` in the project root to `.env` and edit to your preferences.<br />
+Note: Change `APP_NAME` to the desired name for the project.
+
+Example:
+
+```dotenv
+APP_NAME=project-name
+
+DB_NAME=wordpress
+DB_USER=admin
+DB_PASSWORD=admin
+DB_ROOT_PASSWORD=root
+
+# Optionally, you can use a data source name (DSN)
+# When using a DSN, you can remove the DB_NAME, DB_USER, DB_PASSWORD, and DB_HOST variables
+# DATABASE_URL='mysql://database_user:database_password@database_host:database_port/database_name'
+
+# Optional variables
+DB_HOST='db:3306'
+# DB_PREFIX='wp_'
+
+WP_ENV='development'
+WP_HOME='http://localhost'
+WP_SITEURL="${WP_HOME}/wp"
+
+#S3 Bucket URL Example: AWS_S3_URL=s3://ACCESS_ID:ACCESS_SECRET@s3-REGION.amazonaws.com/bucketName
+
+# Generate your keys here: https://roots.io/salts.html
+AUTH_KEY='generateme'
+SECURE_AUTH_KEY='generateme'
+LOGGED_IN_KEY='generateme'
+NONCE_KEY='generateme'
+AUTH_SALT='generateme'
+SECURE_AUTH_SALT='generateme'
+LOGGED_IN_SALT='generateme'
+NONCE_SALT='generateme'
 ```
-docker-compose run composer create-project roots/bedrock
-````
-or if you have composer installed globally:
 
+Run the following command to install composer and all dependencies
 ```
-composer create-project roots/bedrock
+composer install
 ```
 
-5. copy `env` file from `src` folder to `bedrock` and rewrite. 
+#### 2. Setting Up Local Enviorment (Required step)
 
-6. From the root run:
+To create the images and containers needed, run the following command
+
 ```
 docker-compose up -d
 ```
 
-After an the Containers/Apps have been made run the following to update them
-```
-docker-compose build
-```
+</details>
 
-7. Wordpress is ready for installation on the localholst IP you have inserted in `.env` file.
+<details>
+ <summary>Tools</summary>
 
-## WP-CLI
+### Update WordPress Core and Composer packages (plugins/themes)
 
-To use wp-cli, you can easily set alias in `.bashrc` file in your user folder. 
-
-```
-alias wp="docker-compose run --rm wpcli"
+```shell
+docker-compose run composer update
 ```
 
-Then you can run standard commands. For instance for database manipulation you can run:
+#### Use WP-CLI
 
-Import database:
-``` 
-wp db import databasename.sql
+```shell
+docker exec -it myapp-wordpress bash
 ```
 
-Database dump:
+Login to the container
 
-```
-wp db export
-```
-
-Database drop:
-
-```
-wp db drop
+```shell
+wp search-replace https://olddomain.com https://newdomain.com --allow-root
 ```
 
-Search and replace:
+Run a wp-cli command
 
-```
-wp search-replace 'old-url' 'new-url'
-```
+> You can use this command first after you've installed WordPress using Composer as the example above.
 
-## MySQL
+### Useful Docker Commands
 
-If you want, you can use standard MySQL commands. 
+When making changes to the Dockerfile, use:
 
-Database dump:
-
-```
-docker exec CONTAINER-NAME sh -c 'exec mysqldump DBNAME -uroot -p"$MYSQL_ROOT_PASSWORD"' > backup.sql
+```bash
+docker-compose up -d --force-recreate --build
 ```
 
-Database import:
+Login to the docker container
 
+```shell
+docker exec -it myapp-wordpress bash
 ```
-docker exec -i CONTAINER-NAME sh -c 'exec mysql -uroot DBNAME -p"$MYSQL_ROOT_PASSWORD"' < backup.sql
+
+Stop
+
+```shell
+docker-compose stop
 ```
 
-## Additional settings
+Down (stop and remove)
 
-### Apache DOCUMENT ROOT change
+```shell
+docker-compose down
+```
 
-If you want to change the default web folder, just rewrite these 3 files:
+Cleanup
 
-1. In `bedrock` folder rename `web` folder to  `html` for instance
-2. In `config` folder in `application.php` change `$webroot_dir` variable from `web` to `html`
-3. In `Dockerfile` change `APACHE_DOCUMENT_ROOT`
+```shell
+docker-compose rm -v
+```
 
+Recreate
 
+```shell
+docker-compose up -d --force-recreate
+```
+
+Rebuild docker container when Dockerfile has changed
+
+```shell
+docker-compose up -d --force-recreate --build
+```
+</details>
+
+<details>
+ <summary>Run</summary>
+
+```shell
+docker-compose up -d
+```
+
+Docker Compose will now start all the services for you:
+
+```shell
+Starting gross-portfolio-phpmyadmin    ... Started
+Starting myapp-composer ... Started
+Starting myapp-nodejs ... Started
+Starting myapp-wpcli-1  ... Started
+Starting myapp-php81      ... Started
+Starting myapp-mysql8    ... Started
+```
+
+🚀 Open [http://localhost](http://localhost) in your browser
+
+if you recieve the following error message, this means an app is already running on localhost
+```
+Bind for 0.0.0.0:3306 failed: port is already allocated
+```
+
+## PhpMyAdmin
+
+PhpMyAdmin comes installed as a service in docker-compose.
+
+🚀 Open [http://localhost:8080/](http://localhost:8080/) in your browser
+
+## MailHog (will be in future setup)
+
+MailHog comes installed as a service in docker-compose.
+
+🚀 Open [http://0.0.0.0:8025/](http://0.0.0.0:8025/) in your browser
+
+</details>
+
+<details>
+ <summary>ToDo</summary>
+
+- Add instructions to add ACF Pro and set ACF to Default
+- Add MailHog Container
+
+</details>
