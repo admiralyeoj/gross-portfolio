@@ -16,7 +16,8 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint resources/scripts",
     "lint:css": "stylelint \"resources/**/*.{css,scss,vue}\"",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "postbuild": "yarn install && yarn build"
   },
   "devDependencies": {
     "@popperjs/core": "^2.11.5",
