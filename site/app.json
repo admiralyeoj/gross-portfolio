@@ -75,13 +75,16 @@
       "plan": "heroku-redis:hobby-dev"
     },
     {
-      "plan": "papertrail:choklad"
-    },
-    {
       "plan": "autobus:trip"
     },
     {
       "plan": "scheduler:standard"
+    },
+    {
+      "plan": "betteruptime:test"
+    },
+    {
+      "plan": "logtail:free"
     }
   ],
   "buildpacks": [
