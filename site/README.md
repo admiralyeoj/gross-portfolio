@@ -1,208 +1,106 @@
+<p align="center">
+  <a href="https://roots.io/bedrock/">
+    <img alt="Bedrock" src="https://cdn.roots.io/app/uploads/logo-bedrock.svg" height="100">
+  </a>
+</p>
 
-# Docker Compose and Bedrock
+<p align="center">
+  <a href="LICENSE.md">
+    <img alt="MIT License" src="https://img.shields.io/github/license/roots/bedrock?color=%23525ddc&style=flat-square" />
+  </a>
 
-Use WordPress locally with Docker using [Docker compose](https://docs.docker.com/compose/) and deploy to [Heroku](https://www.heroku.com/)
+  <a href="https://packagist.org/packages/roots/bedrock">
+    <img alt="Packagist" src="https://img.shields.io/packagist/v/roots/bedrock.svg?style=flat-square" />
+  </a>
 
-## Supported technologies
-- Apache 
-- PHP 8.1.5
-- MySQL 8
-- PhpMyAdmin
-- Composer
-- [Bedrock](https://roots.io/bedrock/) - modern development tools, easier configuration, and an improved secured folder structure for WordPress
-- [WP-CLI](https://wp-cli.org/) - WP-CLI is the command-line interface for WordPress.
-- [PhpMyAdmin](https://www.phpmyadmin.net/) - free and open source administration tool for MySQL and MariaDB
-- CLI script to create a SSL certificate
+  <a href="https://github.com/roots/bedrock/actions/workflows/ci.yml">
+    <img alt="Build Status" src="https://img.shields.io/github/workflow/status/roots/bedrock/CI?style=flat-square" />
+  </a>
 
-## Instructions
+  <a href="https://twitter.com/rootswp">
+    <img alt="Follow Roots" src="https://img.shields.io/twitter/follow/rootswp.svg?style=flat-square&color=1da1f2" />
+  </a>
+</p>
 
-<details>
- <summary>Requirements</summary>
+<p align="center">
+  <strong>A modern WordPress stack</strong>
+</p>
 
-+ [Docker](https://www.docker.com/get-started)
-+ PHP 7.4 >=
-  - [Mac](https://www.php.net/manual/en/install.macosx.php)
-  - [Windows](https://www.php.net/manual/en/install.windows.php)
-+ [Composer](https://getcomposer.org/download/)
-+ [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/)
-+ [ACF Pro](https://www.advancedcustomfields.com/)
+<p align="center">
+  <a href="https://roots.io/"><strong><code>Website</code></strong></a> &nbsp;&nbsp; <a href="https://docs.roots.io/bedrock/master/installation/"><strong><code>Documentation</code></strong></a> &nbsp;&nbsp; <a href="https://github.com/roots/bedrock/releases"><strong><code>Releases</code></strong></a> &nbsp;&nbsp; <a href="https://discourse.roots.io/"><strong><code>Support</code></strong></a>
+</p>
 
-</details>
+## Supporting
 
-<details>
- <summary>Setup</summary>
+**Bedrock** is an open source project and completely free to use.
 
- ### Setup Environment variables
+However, the amount of effort needed to maintain and develop new features and products within the Roots ecosystem is not sustainable without proper financial backing. If you have the capability, please consider donating using the links below:
 
+<div align="center">
 
-#### 1. Setting Up Dependencies (Required step)
+[![Sponsor on GitHub](https://img.shields.io/static/v1?label=sponsor&message=%E2%9D%A4&logo=GitHub&style=flat-square)](https://github.com/sponsors/roots)
+[![Sponsor on Patreon](https://img.shields.io/badge/sponsor-patreon-orange.svg?style=flat-square&logo=patreon")](https://www.patreon.com/rootsdev)
+[![Donate via PayPal](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square&logo=paypal)](https://www.paypal.me/rootsdev)
 
-Copy `.env.example` in the project root to `.env` and edit to your preferences.<br />
-Note: Change `APP_NAME` to the desired name for the project.
+</div>
 
-Example:
+## Overview
 
-```dotenv
-APP_NAME=project-name
+Bedrock is a modern WordPress stack that helps you get started with the best development tools and project structure.
 
-DB_NAME=wordpress
-DB_USER=admin
-DB_PASSWORD=admin
-DB_ROOT_PASSWORD=root
+Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
 
-# Optionally, you can use a data source name (DSN)
-# When using a DSN, you can remove the DB_NAME, DB_USER, DB_PASSWORD, and DB_HOST variables
-# DATABASE_URL='mysql://database_user:database_password@database_host:database_port/database_name'
+## Features
 
-# Optional variables
-DB_HOST='db:3306'
-# DB_PREFIX='wp_'
+- Better folder structure
+- Dependency management with [Composer](https://getcomposer.org)
+- Easy WordPress configuration with environment specific files
+- Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
+- Autoloader for mu-plugins (use regular plugins as mu-plugins)
+- Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
 
-WP_ENV='development'
-WP_HOME='http://localhost'
-WP_SITEURL="${WP_HOME}/wp"
+## Requirements
 
-#S3 Bucket URL Example: AWS_S3_URL=s3://ACCESS_ID:ACCESS_SECRET@s3-REGION.amazonaws.com/bucketName
+- PHP >= 7.4
+- Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 
-# Generate your keys here: https://roots.io/salts.html
-AUTH_KEY='generateme'
-SECURE_AUTH_KEY='generateme'
-LOGGED_IN_KEY='generateme'
-NONCE_KEY='generateme'
-AUTH_SALT='generateme'
-SECURE_AUTH_SALT='generateme'
-LOGGED_IN_SALT='generateme'
-NONCE_SALT='generateme'
-```
+## Installation
 
-Run the following command to install composer and all dependencies
-```
-composer install
-```
+1. Create a new project:
+   ```sh
+   $ composer create-project roots/bedrock
+   ```
+2. Update environment variables in the `.env` file. Wrap values that may contain non-alphanumeric characters with quotes, or they may be incorrectly parsed.
 
-#### 2. Setting Up Local Enviorment (Required step)
+- Database variables
+  - `DB_NAME` - Database name
+  - `DB_USER` - Database user
+  - `DB_PASSWORD` - Database password
+  - `DB_HOST` - Database host
+  - Optionally, you can define `DATABASE_URL` for using a DSN instead of using the variables above (e.g. `mysql://user:password@127.0.0.1:3306/db_name`)
+- `WP_ENV` - Set to environment (`development`, `staging`, `production`)
+- `WP_HOME` - Full URL to WordPress home (https://example.com)
+- `WP_SITEURL` - Full URL to WordPress including subdirectory (https://example.com/wp)
+- `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
+  - Generate with [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
+  - Generate with [our WordPress salts generator](https://roots.io/salts.html)
 
-To create the images and containers needed, run the following command
+3. Add theme(s) in `web/app/themes/` as you would for a normal WordPress site
+4. Set the document root on your webserver to Bedrock's `web` folder: `/path/to/site/web/`
+5. Access WordPress admin at `https://example.com/wp/wp-admin/`
 
-```
-docker-compose up -d
-```
+## Bedrock sponsors
 
-</details>
+Help support our open-source development efforts [becoming a GitHub sponsor](https://github.com/sponsors/roots) or [patron](https://www.patreon.com/rootsdev).
 
-<details>
- <summary>Tools</summary>
+<a href="https://k-m.com/"><img src="https://cdn.roots.io/app/uploads/km-digital.svg" alt="KM Digital" width="200" height="150"></a> <a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="200" height="150"></a> <a href="https://www.c21redwood.com/"><img src="https://cdn.roots.io/app/uploads/c21redwood.svg" alt="C21 Redwood Realty" width="200" height="150"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="200" height="150"></a> <a href="https://pantheon.io/"><img src="https://cdn.roots.io/app/uploads/pantheon.svg" alt="Pantheon" width="200" height="150"></a>
 
-### Update WordPress Core and Composer packages (plugins/themes)
+## Community
 
-```shell
-docker-compose run composer update
-```
+Keep track of development and community news.
 
-#### Use WP-CLI
-
-```shell
-docker exec -it myapp-wordpress bash
-```
-
-Login to the container
-
-```shell
-wp search-replace https://olddomain.com https://newdomain.com --allow-root
-```
-
-Run a wp-cli command
-
-> You can use this command first after you've installed WordPress using Composer as the example above.
-
-### Useful Docker Commands
-
-When making changes to the Dockerfile, use:
-
-```bash
-docker-compose up -d --force-recreate --build
-```
-
-Login to the docker container
-
-```shell
-docker exec -it myapp-wordpress bash
-```
-
-Stop
-
-```shell
-docker-compose stop
-```
-
-Down (stop and remove)
-
-```shell
-docker-compose down
-```
-
-Cleanup
-
-```shell
-docker-compose rm -v
-```
-
-Recreate
-
-```shell
-docker-compose up -d --force-recreate
-```
-
-Rebuild docker container when Dockerfile has changed
-
-```shell
-docker-compose up -d --force-recreate --build
-```
-</details>
-
-<details>
- <summary>Run</summary>
-
-```shell
-docker-compose up -d
-```
-
-Docker Compose will now start all the services for you:
-
-```shell
-Starting gross-portfolio-phpmyadmin    ... Started
-Starting myapp-composer ... Started
-Starting myapp-nodejs ... Started
-Starting myapp-wpcli-1  ... Started
-Starting myapp-php81      ... Started
-Starting myapp-mysql8    ... Started
-```
-
-🚀 Open [http://localhost](http://localhost) in your browser
-
-if you recieve the following error message, this means an app is already running on localhost
-```
-Bind for 0.0.0.0:3306 failed: port is already allocated
-```
-
-## PhpMyAdmin
-
-PhpMyAdmin comes installed as a service in docker-compose.
-
-🚀 Open [http://localhost:8080/](http://localhost:8080/) in your browser
-
-## MailHog (will be in future setup)
-
-MailHog comes installed as a service in docker-compose.
-
-🚀 Open [http://0.0.0.0:8025/](http://0.0.0.0:8025/) in your browser
-
-</details>
-
-<details>
- <summary>ToDo</summary>
-
-- Add instructions to add ACF Pro and set ACF to Default
-- Add MailHog Container
-
-</details>
+- Join us on Roots Slack by becoming a [GitHub sponsor](https://github.com/sponsors/roots) or [patron](https://www.patreon.com/rootsdev)
+- Participate on the [Roots Discourse](https://discourse.roots.io/)
+- Follow [@rootswp on Twitter](https://twitter.com/rootswp)
+- Read and subscribe to the [Roots Blog](https://roots.io/blog/)
+- Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
