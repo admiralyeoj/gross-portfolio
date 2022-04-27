@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "083a53eef1d2e491d900af169e50c70f",
+    "content-hash": "716542477adaf734bd537e95d5475731",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -70,16 +70,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.221.0",
+            "version": "3.222.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "6ef06165ef815358d3e60872b4c9f6c10deb3816"
+                "reference": "0074bca70bf023f049532b177bf90d3a75e425cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6ef06165ef815358d3e60872b4c9f6c10deb3816",
-                "reference": "6ef06165ef815358d3e60872b4c9f6c10deb3816",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0074bca70bf023f049532b177bf90d3a75e425cd",
+                "reference": "0074bca70bf023f049532b177bf90d3a75e425cd",
                 "shasum": ""
             },
             "require": {
@@ -155,9 +155,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.221.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.222.0"
             },
-            "time": "2022-04-26T18:19:33+00:00"
+            "time": "2022-04-27T18:36:42+00:00"
         },
         {
             "name": "composer/installers",
@@ -1905,16 +1905,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v6.0.3",
+            "version": "v6.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "8661b74dbabc23223f38c9b99d3f8ade71170430"
+                "reference": "af7edab28d17caecd1f40a9219fc646ae751c21f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/8661b74dbabc23223f38c9b99d3f8ade71170430",
-                "reference": "8661b74dbabc23223f38c9b99d3f8ade71170430",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/af7edab28d17caecd1f40a9219fc646ae751c21f",
+                "reference": "af7edab28d17caecd1f40a9219fc646ae751c21f",
                 "shasum": ""
             },
             "require": {
@@ -1946,7 +1946,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v6.0.3"
+                "source": "https://github.com/symfony/finder/tree/v6.0.8"
             },
             "funding": [
                 {
@@ -1962,7 +1962,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-26T17:23:29+00:00"
+            "time": "2022-04-15T08:07:58+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2629,12 +2629,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "e5e096c731d21614b952983804581389eb2a484f"
+                "reference": "f9837ae1f1830a09d71f5132112dcc9ed3ef9c65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e5e096c731d21614b952983804581389eb2a484f",
-                "reference": "e5e096c731d21614b952983804581389eb2a484f",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f9837ae1f1830a09d71f5132112dcc9ed3ef9c65",
+                "reference": "f9837ae1f1830a09d71f5132112dcc9ed3ef9c65",
                 "shasum": ""
             },
             "conflict": {
@@ -2693,6 +2693,7 @@
                 "craftcms/cms": "<3.7.29",
                 "croogo/croogo": "<3.0.7",
                 "cuyz/valinor": ">=0.5,<0.7",
+                "czproject/git-php": "<4.0.3",
                 "datadog/dd-trace": ">=0.30,<0.30.2",
                 "david-garcia/phpwhois": "<=4.3.1",
                 "derhansen/sf_event_mgt": "<4.3.1|>=5,<5.1.1",
@@ -3104,7 +3105,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-22T22:04:12+00:00"
+            "time": "2022-04-27T15:08:54+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
