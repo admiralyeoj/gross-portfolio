@@ -19,9 +19,13 @@
     "test": "npm run lint",
     "postbuild": "yarn install && yarn build"
   },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "stylelint-config-twbs-bootstrap": "^3.0.1",
+    "@roots/bud": "^5.7.7"
+  },
   "devDependencies": {
     "@popperjs/core": "^2.11.5",
-    "@roots/bud": "^5.7.7",
     "@roots/bud-babel": "^5.7.7",
     "@roots/bud-eslint": "^5.7.7",
     "@roots/bud-prettier": "^5.7.7",
@@ -30,9 +34,5 @@
     "@roots/eslint-config": "^5.7.7",
     "@roots/sage": "^5.7.7",
     "bootstrap": "^5.1.3"
-  },
-  "dependencies": {
-    "animate.css": "^4.1.1",
-    "stylelint-config-twbs-bootstrap": "^3.0.1"
   }
 }
