@@ -90,7 +90,8 @@
         "type:wordpress-muplugin",
         "humanmade/s3-uploads",
         "roots/wp-password-bcrypt",
-        "roots/soil"
+        "roots/soil",
+        "advanced-custom-fields/advanced-custom-fields-pro"
       ],
       "web/app/plugins/{$name}/": [
         "type:wordpress-plugin",
