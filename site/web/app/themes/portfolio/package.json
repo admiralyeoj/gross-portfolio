@@ -17,7 +17,6 @@
     "lint:js": "eslint resources/scripts",
     "lint:css": "stylelint \"resources/**/*.{css,scss,vue}\"",
     "test": "npm run lint",
-    "postbuild": "yarn install && yarn build",
     "poststart": "npm prune --production"
   },
   "devDependencies": {
