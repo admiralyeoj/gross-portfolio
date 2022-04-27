@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 -C site/config/heroku/apache2.conf web
+web: vendor/bin/heroku-php-apache2 -C config/heroku/apache2.conf web
