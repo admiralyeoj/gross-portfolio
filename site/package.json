@@ -9,6 +9,6 @@
   },
   "scripts": {
     "compile": "ls",
-    "heroku-postbuild": "cd web/app/themes/portfolio && yarn install && yarn build"
+    "heroku-postbuild": "cd theme && yarn install && yarn build"
   }
 }
