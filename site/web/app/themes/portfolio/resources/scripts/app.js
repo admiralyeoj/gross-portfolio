@@ -1,9 +1,6 @@
 import {domReady} from '@roots/sage/client';
 import 'bootstrap';
-import 'jquery';
 import Isotope from 'isotope-layout';
-
-let $ = jQuery;
 
 $(window).on("load", function() {
 
@@ -23,6 +20,7 @@ const main = async (err) => {
     // handle hmr errors
     console.error(err);
   }
+  
   animatedProgressBar();
   windowHieght();
 };
@@ -36,6 +34,10 @@ domReady(main);
 import.meta.webpackHot?.accept(main);
 
 
+
+/**
+ * Functions used
+ */
 function animatedProgressBar () {
   $(".progress").each(function() {
     var skillValue = $(this).find(".skill-lavel").attr("data-skill-value");

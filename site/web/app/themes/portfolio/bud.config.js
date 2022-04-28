@@ -5,6 +5,11 @@
  */
  module.exports = async (app) => {
   app
+
+    .provide({
+      jquery: ["jQuery", "$"],
+    })
+
     /**
      * Application entrypoints
      *
