@@ -1364,7 +1364,7 @@
     autobind-decorator "^2.4.0"
     tslib "^2.3.1"
 
-"@roots/bud@^5.7.7":
+"@roots/bud@^5.7.0":
   version "5.7.7"
   resolved "https://registry.yarnpkg.com/@roots/bud/-/bud-5.7.7.tgz#fd221dc7a40dd897dcb10f8c0996843b39aca7ac"
   integrity sha512-TG56xw+wWUn6vod5vCXhPWdpjMlLGqtw7rbTRKTdYDvMgwY0lbOKDYf5F+BGD3N5JdTXf+Xtzi48/PlkMIZkOw==

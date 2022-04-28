@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f7a87231c17075e8a5d018c9b98d298d",
+    "content-hash": "9a4dfe68b06c655f7a009be7023ce6ee",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -70,16 +70,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.222.0",
+            "version": "3.222.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0074bca70bf023f049532b177bf90d3a75e425cd"
+                "reference": "632621d97180e82d3adc1245a7b272774c30dbf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0074bca70bf023f049532b177bf90d3a75e425cd",
-                "reference": "0074bca70bf023f049532b177bf90d3a75e425cd",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/632621d97180e82d3adc1245a7b272774c30dbf5",
+                "reference": "632621d97180e82d3adc1245a7b272774c30dbf5",
                 "shasum": ""
             },
             "require": {
@@ -155,9 +155,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.222.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.222.1"
             },
-            "time": "2022-04-27T18:36:42+00:00"
+            "time": "2022-04-28T18:17:24+00:00"
         },
         {
             "name": "composer/installers",
@@ -2470,15 +2470,15 @@
         },
         {
             "name": "wpackagist-plugin/autoptimize",
-            "version": "3.0.2",
+            "version": "3.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autoptimize/",
-                "reference": "tags/3.0.2"
+                "reference": "tags/3.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autoptimize.3.0.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/autoptimize.3.0.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2503,24 +2503,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/cloudflare/"
-        },
-        {
-            "name": "wpackagist-plugin/post-smtp",
-            "version": "2.0.26",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/post-smtp/",
-                "reference": "tags/2.0.26"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/post-smtp.2.0.26.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/post-smtp/"
         },
         {
             "name": "wpackagist-plugin/redis-cache",
@@ -2560,15 +2542,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "18.5.1",
+            "version": "18.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/18.5.1"
+                "reference": "tags/18.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.18.5.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.18.6.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2578,15 +2560,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "3.3.0",
+            "version": "3.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/3.3.0"
+                "reference": "tags/3.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.3.3.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.3.4.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -3191,11 +3173,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4",
-        "ext-exif": "*",
-        "ext-imagick": "*",
-        "ext-gd": " *",
-        "ext-intl": "*"
+        "php": ">=7.4"
     },
     "platform-dev": [],
     "platform-overrides": {
