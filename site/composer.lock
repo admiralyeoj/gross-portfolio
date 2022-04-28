@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "716542477adaf734bd537e95d5475731",
+    "content-hash": "f7a87231c17075e8a5d018c9b98d298d",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -2505,6 +2505,24 @@
             "homepage": "https://wordpress.org/plugins/cloudflare/"
         },
         {
+            "name": "wpackagist-plugin/post-smtp",
+            "version": "2.0.26",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/post-smtp/",
+                "reference": "tags/2.0.26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/post-smtp.2.0.26.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/post-smtp/"
+        },
+        {
             "name": "wpackagist-plugin/redis-cache",
             "version": "1.3.5",
             "source": {
@@ -3173,7 +3191,11 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4"
+        "php": ">=7.4",
+        "ext-exif": "*",
+        "ext-imagick": "*",
+        "ext-gd": " *",
+        "ext-intl": "*"
     },
     "platform-dev": [],
     "platform-overrides": {
