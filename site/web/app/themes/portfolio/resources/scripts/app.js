@@ -27,7 +27,6 @@ const main = async (err) => {
 
   animatedProgressBar();
 	windowHieght();
-	previewPannel();
   
   function animatedProgressBar () {
 		$(".progress").each(function() {
@@ -77,25 +76,6 @@ const main = async (err) => {
 			$(this).addClass("active");
       iso.arrange({ filter: $(this).attr("data-filter") });
 			
-			return false;
-		});
-	}
-
-  /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-		Preview Pannel
-	-=-=-=-=-=-=-=-=-=--=-=-=-=-=-*/
-	function previewPannel() {
-		$(".switcher-trigger").on("click", function() {
-			$(".preview-wrapper").toggleClass("extend");
-			return false;
-		});
-		if ($(window).width() < 768 ) {            
-			//$(".preview-wrapper").removeClass("extend");
-		}
-		$(".color-options li").on("click", function(){			
-			$("#color-changer").attr({
-				"href":"css/colors/"+$(this).attr("data-color")+".css",
-			});
 			return false;
 		});
 	}
