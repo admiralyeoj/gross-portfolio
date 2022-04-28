@@ -53,6 +53,7 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=7.4",
+    "ext-gd":" *",
     
     "vlucas/phpdotenv": "^5.4",
     "oscarotero/env": "^2.1",
