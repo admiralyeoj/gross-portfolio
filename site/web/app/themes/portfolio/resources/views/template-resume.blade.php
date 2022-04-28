@@ -13,13 +13,7 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-            <div class="page-title text-center">
-              <h2>My <span class="primary">history</span> <span class="title-bg">Resume</span></h2>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                laoreet dolore magna aliquam erat volutpat.</p>
-            </div>
-          </div>
+          @include('partials.page-header')
         </div> <!-- /.row -->
 
         <div class="row">
@@ -158,7 +152,6 @@
         </div> <!-- /.row -->
       </div> <!-- /.container -->
 
-      @@include('blocks/page-nav.htm',{"prev":"services.html", "next":"works.html"})
       <!-- /.container -->
 
     </div> <!-- /.pt-tablecell -->

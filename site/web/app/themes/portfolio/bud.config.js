@@ -32,7 +32,7 @@
      *
      * This should be the URL you use to visit your local development server.
      */
-    .proxy('http://localhost')
+    .proxy('http://localhost:8080')
 
     /**
      * Development URL to be used in the browser.

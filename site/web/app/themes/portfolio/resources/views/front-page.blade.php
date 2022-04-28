@@ -11,7 +11,7 @@
           <div class="col-xs-12 col-md-10 col-lg-8 mx-auto position-relative">
             <div class="page-title home text-center">
               <h1>{{ $title }}</h1>
-              {!! $content !!}
+              {{ $content }}
             </div>
             
             @if (!empty($nav))
@@ -50,6 +50,8 @@
           </div> <!-- /.col-xs-12 -->
 
         </div> <!-- /.row -->
+
+        
       </div> <!-- /.container -->
 
     </div> <!-- /.pt-tablecell -->

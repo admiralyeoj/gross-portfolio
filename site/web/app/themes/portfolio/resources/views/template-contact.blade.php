@@ -13,13 +13,7 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-            <div class="page-title text-center">
-              <h2>Get in <span class="primary">touch</span> <span class="title-bg">Contact</span></h2>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                laoreet dolore magna aliquam erat volutpat.</p>
-            </div>
-          </div>
+          @include('partials.page-header')
         </div> <!-- /.row -->
 
         <div class="row">
@@ -31,7 +25,7 @@
                 </div>
                 <div class="media-body">
                   <h4>Email</h4>
-                  <p><a href="mailto:my_name@gmail.com">my_name@gmail.com</a></p>
+                  <p><a href="mailto:admiralyeoj@grossportfolio.com">admiralyeoj@grossportfolio.com</a></p>
                 </div>
               </div>
             </div>
@@ -48,39 +42,23 @@
               </div>
             </div>
             <!-- /.contact-block -->
-            <div class="contact-block">
-              <div class="media">
-                <div class="media-left">
-                  <i class="tf-mobile"></i>
-                </div>
-                <div class="media-body">
-                  <h4>Skype</h4>
-                  <p><a href="skype:my_name">my_name</a></p>
-                </div>
-              </div>
-            </div>
-            <!-- /.contact-block -->
 
             <ul class="contact-social">
               <li>
                 <span class="contact-social-hex"></span>
-                <a href="www.fb.com/themefisher"><i class="tf-ion-social-facebook"></i></a>
+                <a href="https://github.com/admiralyeoj/" target="_blank"><span class="fa-brands fa-github-alt"></span></a>
               </li>
               <li>
                 <span class="contact-social-hex"></span>
-                <a href="www.twitter.com/themefisher"><i class="tf-ion-social-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/grossjoseph" target="_blank"><span class="fa-brands fa-linkedin-in"></span></a>
               </li>
               <li>
                 <span class="contact-social-hex"></span>
-                <a href="#"><i class="tf-ion-social-google"></i></a>
-              </li>
-              <li>
-                <span class="contact-social-hex"></span>
-                <a href="www.dribbble.com/themefisher"><i class="tf-ion-social-dribbble"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><span class="fa-brands fa-twitter"></span></a>
               </li>
             </ul>
           </div>
-          <div class="col-xs-12 col-sm-7 col-md-7 col-md-offset-1 col-lg-offset-2">
+          <div class="col-xs-12 col-sm-7 col-md-7 mx-auto">
             <div class="section-title clear">
               <h3>Send me a meesage</h3>
               <span class="bar-dark"></span>
@@ -127,17 +105,6 @@
           </div> <!-- /.col- -->
         </div> <!-- /.row -->
       </div> <!-- /.container -->
-
-      <nav class="page-nav clear">
-        <div class="container">
-          <div class="flex flex-middle space-between">
-            <span class="prev-page"><a href="testimonials.html" class="link">&larr; Prev Page</a></span>
-            <span class="copyright">Copyright &copy; 2021, Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a>.</span>
-          </div>
-        </div>
-        <!-- /.page-nav -->
-      </nav>
-      <!-- @@include('blocks/page-nav.htm',{"prev":"testimonials.html", "next":"works.html"}) -->
       <!-- /.container -->
 
     </div> <!-- /.pt-tablecell -->

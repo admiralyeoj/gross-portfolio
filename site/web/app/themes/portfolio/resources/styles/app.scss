@@ -1,7 +1,7 @@
 @import "bootstrap";
 
-@import "animate.css";
 @import "fontawesome/fontawesome";
+@import "fontawesome/brands";
 @import "fontawesome/light";
 
 
@@ -64,6 +64,11 @@
 /* ------------------------------------------------
 	Start Styling
 ------------------------------------------------- */
+
+#app {
+	position: relative;
+}
+
 .site-wrapper {
 	border-top: 4px solid $primary-color;
 }
@@ -209,11 +214,13 @@
 .filter {
 	margin-bottom: 30px;
 	a {
+		font-size: 1.4rem;
+		text-decoration: none;
 		border-bottom: 2px solid transparent;
 	}
 	.active {
-		color: $primary-color;
-		border-bottom-color: $primary-color;
+		color: $accent-color;
+		border-bottom-color: $accent-color;
 	}
 }
 
@@ -265,7 +272,7 @@
 	p {
 		font-size: 12px;
 		font-weight: 400;
-		color: $light;
+		color: $light-dark;
 	}
 
 	&:hover {
@@ -399,7 +406,7 @@
 	}
 	h4 {
 		margin-bottom: 20px;
-		font-size: 16px;
+		font-size: 20px;
 		color: $light;
 	}
 	p {
@@ -619,12 +626,12 @@
 		width: 43px;
 		a {
 			position: absolute;
-			top: 50%;
+			top: 55%;
 			left: 50%;
 			display: block;
 			width: 43px;
 			height: 50px;
-			font-size: 14px;
+			font-size: 21px;
 			line-height: 50px;
 			color: $light;
 			text-align: center;
@@ -632,12 +639,14 @@
 		}
 		&:hover {
 			span {
-				background-color: $primary-color;
+				color: $primary-color;
+				background-color: $light;
+				@include transition (all .3s ease 0s);
 				&::before {
-					border-bottom-color: $primary-color;
+					border-bottom-color: $light;
 				}
 				&::after {
-					border-top-color: $primary-color;
+					border-top-color: $light;
 				}
 			}
 		}
@@ -712,7 +721,8 @@
 	.form-control {
 		width: 100%;
 		height: 48px;
-		padding-left: 70px;
+		padding-top: 10px;
+		padding-left: 20px;
 		font-family: $open-sans;
 		color: #bcbcbc;
 		background-color: $light-dark;
@@ -751,12 +761,25 @@
 	color: $primary-color;
 }
 
-.pt-table.desktop-768 .pt-tablecell {
-	padding-top: 60px;
-	padding-bottom: 110px;
-	.page-nav {
-	  	bottom: 40px;
+.pt-table {
+
+	&.desktop-768 .pt-tablecell {
+		padding-top: 60px;
+		padding-bottom: 110px;
+		.page-nav {
+				bottom: 40px;
+		}
 	}
+
+	.pt-tablecell {
+		padding-bottom: 60px;
+	}
+}
+
+footer {
+	position: absolute;
+	right: 40px;
+	bottom: 20px;
 }
 
 /* ------------------------------------------------

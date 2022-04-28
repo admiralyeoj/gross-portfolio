@@ -12,7 +12,8 @@ class TemplateServices extends Composer
      * @var array
      */
     protected static $views = [
-        //
+        'partials.page-header',
+        'partials.close-btn',
     ];
 
     /**

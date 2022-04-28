@@ -14,17 +14,17 @@
       <div class="container">
         <div class="row">
           
+          @include('partials.page-header')
 
           <div class="col-xs-12 col-md-6">
             <div class="about-author">
               <figure class="author-thumb">
-                <img src="images/author.jpg" alt="">
+                <img src="@asset('images/author.jpg')" alt="">
               </figure> <!-- /.author-bio -->
               <div class="author-desc">
-                <p><b>Date of birth:</b> 29th july, 1984</p>
-                <p><b>Language:</b> English, Spanish</p>
-                <p><b>Expert in:</b> UI/UX, Web development</p>
-                <p><b>Freelance:</b> Available</p>
+                <p><b>Expert in:</b> API and Web development</p>
+                <p><b>Hobbies:</b> Video Games, Reading and playing with my dog</p>
+                <p><b>Location:</b> Massillon, OH</p>
               </div>
               <!-- /.author-desc -->
             </div> <!-- /.about-author -->
@@ -83,7 +83,6 @@
           </div> <!-- /.col -->
         </div> <!-- /.row -->
       </div> <!-- /.container -->
-
       
       <!-- /.container -->
     </div> <!-- /.pt-tablecell -->

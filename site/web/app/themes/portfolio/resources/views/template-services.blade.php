@@ -13,12 +13,10 @@
       
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-lg-offset-1 col-lg-10">
-            <div class="page-title text-center">
-              <h2>Awesome <span class="primary">Services</span> <span class="title-bg">Services</span></h2>
-              <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est
-                notare quam littera gothica,quam nunc putamus parum claram anteposuerit.</p>
-            </div>
+
+          @include('partials.page-header')
+
+          <div class="col-xs-12 col-lg-10 m-auto">
 
             <div class="hexagon-menu services clear">
               <div class="service-hex">

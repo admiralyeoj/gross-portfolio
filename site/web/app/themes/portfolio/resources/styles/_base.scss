@@ -51,13 +51,13 @@ p {
  * Selection color
  */
 ::-moz-selection {
-  color: $light-dark;
-  background-color: $primary-color;
+  color: $primary-color;
+  background-color: $light;
 }
 
 ::selection {
-  color: $light-dark;
-  background-color: $primary-color;
+  color: $primary-color;
+  background-color: $light;
 }
 
 /*

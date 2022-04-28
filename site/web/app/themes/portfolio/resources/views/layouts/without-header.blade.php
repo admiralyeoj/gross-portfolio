@@ -10,4 +10,3 @@
     </aside>
   @endif
 
-@include('sections.footer')
