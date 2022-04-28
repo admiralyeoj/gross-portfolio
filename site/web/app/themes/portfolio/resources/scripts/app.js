@@ -7,6 +7,8 @@ let $ = jQuery;
 
 $(window).on("load", function() {
 
+  isotopeMasonry();
+
   $(".preloader").addClass("active");
   setTimeout(function () {
     $(".preloader").addClass("done");
@@ -21,8 +23,6 @@ const main = async (err) => {
     // handle hmr errors
     console.error(err);
   }
-
-  isotopeMasonry();
   animatedProgressBar();
   windowHieght();
 };
