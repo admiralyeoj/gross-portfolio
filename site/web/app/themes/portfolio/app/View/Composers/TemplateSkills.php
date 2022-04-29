@@ -34,7 +34,7 @@ class TemplateSkills extends Composer
         $terms = get_terms(array(
             'taxonomy' => 'skill_type',
             'orderby' => 'name',
-            'order' => 'DESC',
+            'order' => 'ASC',
         ));
 
         return $terms;
@@ -45,6 +45,8 @@ class TemplateSkills extends Composer
             'post_type' => 'skill',
             'posts_per_page' => -1,
             'post_status' => 'publish',
+            'orderby' => 'title',
+            'order' => 'ASC',
         );
 
         $query = new WP_Query($args);

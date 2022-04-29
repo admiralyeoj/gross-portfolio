@@ -213,9 +213,14 @@
 }
 
 // Skills
-
 .filter {
 	margin-bottom: 30px;
+	text-align: center;
+
+	li {
+		margin: auto 20px;
+	}
+
 	a {
 		font-size: 1.4rem;
 		text-decoration: none;
