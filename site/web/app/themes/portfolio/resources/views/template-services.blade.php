@@ -16,6 +16,8 @@
 
           @include('partials.page-header')
 
+          {{ $test }}
+
           <div class="col-xs-12 col-lg-10 m-auto">
             @if(!empty($services))
               <div class="hexagon-menu services clear">

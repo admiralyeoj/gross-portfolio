@@ -21,10 +21,11 @@ class TemplateServices extends Composer
      *
      * @return array
      */
-    public function with()
+    public function override()
     {
         return [
             'services' => get_field('services'),
+            'test' => 'test',
         ];
     }
 }
