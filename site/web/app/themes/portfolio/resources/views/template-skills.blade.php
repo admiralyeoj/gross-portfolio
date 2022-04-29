@@ -47,3 +47,31 @@
     </div> <!-- /.pt-tablecell -->
   </div> <!-- /.pt-table -->
 @endsection
+
+<style>
+.skill .skill-inner {
+  height: 100%;
+  display: flex;
+display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center;
+}
+.skill {
+  height: 200px;
+}
+
+.skills-item img {
+  width: 100%;
+  height: auto;
+  max-height: 170px;
+}
+
+.skills-item h4, .skills-item .h4 {
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  max-width: 130px;
+  font-size: 18px;
+}
+</style>

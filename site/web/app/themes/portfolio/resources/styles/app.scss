@@ -212,7 +212,7 @@
 	}
 }
 
-// Works
+// Skills
 
 .filter {
 	margin-bottom: 30px;
@@ -226,69 +226,77 @@
 		border-bottom-color: $accent-color;
 	}
 }
-
-.works-item {
-	position: relative;
-	margin-bottom: 30px;
-	font-family: $open-sans;
-
-	img {
-		width: 100%;
-		height: auto;
-	}
-
-	.overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
+.skill {
+	.skill-inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		height: 100%;
-		background-color: rgba(#1e2530, .96);
-		@include transition (all .3s ease 0s);
-		@include transform (scale(0));
-		&::before {
-			position: absolute;
-			top: 15px;
-			right: 15px;
-			bottom: 15px;
-			left: 15px;
-			content: "";
-			border: 1px solid $light;
-		}
-	}
-
-	.works-inner {
-		position: absolute;
-		top: 50%;
-		left: 50%;
 		text-align: center;
-		white-space: nowrap;
-		@include transition (all .3s ease 0s);
-		@include transform (translate3d(0, 0, 0) scale(0));
 	}
 
-	h4 {
-		font-weight: 700;
-		color: $light;
-		text-transform: uppercase;
-	}
+	.skills-item {
+		position: relative;
+		margin-bottom: 30px;
+		font-family: $open-sans;
 
-	p {
-		font-size: 12px;
-		font-weight: 400;
-		color: $text-color;
-	}
-
-	&:hover {
-		.overlay {
-			@include transform (scale(1));
+		img {
+			width: 100%;
+			height: auto;
 		}
-		.works-inner {
-			@include transform (translate(-50%, -50%) scale(1));
+
+		.overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(#1e2530, .96);
+			@include transition (all .3s ease 0s);
+			@include transform (scale(0));
+			&::before {
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				bottom: 15px;
+				left: 15px;
+				content: "";
+				border: 1px solid $light;
+			}
+		}
+
+		.overlay-inner {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			text-align: center;
+			white-space: nowrap;
+			@include transition (all .3s ease 0s);
+			@include transform (translate3d(0, 0, 0) scale(0));
+		}
+
+		h4 {
+			font-weight: 700;
+			color: $light;
+			text-transform: uppercase;
+		}
+
+		p {
+			font-size: 12px;
+			font-weight: 400;
+			color: $text-color;
+		}
+
+		&:hover {
+			.overlay {
+				@include transform (scale(1));
+			}
+			.overlay-inner {
+				@include transform (translate(-50%, -50%) scale(1));
+			}
 		}
 	}
 }
-
 // history/ resume
 
 .history-block {
