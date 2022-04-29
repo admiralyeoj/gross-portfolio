@@ -24,7 +24,7 @@ class TemplateServices extends Composer
     public function with()
     {
         return [
-            //
+            'services' => get_field('services'),
         ];
     }
 }

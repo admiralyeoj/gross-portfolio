@@ -12,8 +12,8 @@ class TemplateAbout extends Composer
      * @var array
      */
     protected static $views = [
-        'partials.page-header',
-        'partials.close-btn',
+        // 'partials.page-header',
+        // 'partials.close-btn',
     ];
 
     /**
@@ -21,10 +21,11 @@ class TemplateAbout extends Composer
      *
      * @return array
      */
-    public function with()
+    public function override()
     {
         return [
-            'title' => get_the_title()
+            'attributes' => get_field('attributes'),
+            'bio' => get_field('bio'),
         ];
     }
 }

@@ -12,7 +12,7 @@ class App extends Composer
      * @var array
      */
     protected static $views = [
-        '*',
+        // '*',
     ];
 
     /**
@@ -25,7 +25,6 @@ class App extends Composer
         return [
             'siteName' => $this->site_name(),
             'siteURL' => get_home_url(),
-            'title' => get_the_title(),
         ];
     }
 

@@ -30,13 +30,7 @@ class FrontPage extends Composer
             }
         }
 
-        $content = get_the_content(  );
-        $content = apply_filters( 'the_content', $content );
-        $content = str_replace( ']]>', ']]&gt;', $content );
-
         return [
-            'title' => get_the_title(),
-            'content' => $content,
             'nav' => $nav_items,
         ];
     }

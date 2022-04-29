@@ -4,16 +4,12 @@
   <div class="pt-table">
     <div class="pt-tablecell page-home relative">
 
-      <div class="overlay"></div>
-
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-md-10 col-lg-8 mx-auto position-relative">
-            <div class="page-title home text-center">
-              <h1>{{ $title }}</h1>
-              {{ $content }}
-            </div>
-            
+
+          @include('partials.page-header')
+
+          <div class="col-xs-12 col-md-10 col-lg-8 mx-auto position-relative">        
             @if (!empty($nav))
               <div class="hexagon-menu clear">
                 @foreach ($nav as $item)

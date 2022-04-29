@@ -1,25 +1,6 @@
 $light-dark: #1e2530;
 
 .dark {
-	background-color: #0c0f15;
-
-	.page-home .overlay {
-		background-color: rgba(#0e1118, .97);
-	}
-
-	.page-title {
-		h2 {
-			color: #fff;
-		}
-
-		.title-bg {
-			color: rgba(#46587c, .06);
-		}
-	}
-
-	.section-title h3::before {
-		background-color: #fff;
-	}
 
 	h1,
 	h2,
