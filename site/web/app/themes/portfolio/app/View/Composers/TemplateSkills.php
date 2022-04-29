@@ -3,8 +3,9 @@
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
+use WP_Query;
 
-class TemplateResume extends Composer
+class TemplateSkills extends Composer
 {
     /**
      * List of views served by this composer.
@@ -12,8 +13,7 @@ class TemplateResume extends Composer
      * @var array
      */
     protected static $views = [
-        'partials.page-header',
-        'partials.close-btn',
+
     ];
 
     /**
@@ -24,7 +24,30 @@ class TemplateResume extends Composer
     public function with()
     {
         return [
-            //
+            'terms' => $this->get_skill_types(),
+            'posts' => $this->get_skills(),
         ];
+    }
+
+    protected function get_skill_types() {
+
+        $terms = get_terms(array(
+            'taxonomy' => 'skill_type',
+            'orderby' => 'name',
+            'order' => 'DESC',
+        ));
+
+        return $terms;
+    }
+
+    protected function get_skills() {
+        $args = array(
+            'post_type' => 'skill',
+            'posts_per_page' => -1,
+            'post_status' => 'publish',
+        );
+
+        $query = new WP_Query($args);
+        return $query->posts;
     }
 }

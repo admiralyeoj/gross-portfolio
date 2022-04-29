@@ -65,8 +65,9 @@ function isotopeMasonry() {
   var iso;
   if(gutterSelector) {
     iso = new Isotope( gutterSelector, {
-      itemSelector: '[class^="col-"]',
+      itemSelector: '[class^="col"]',
       percentPosition: true,
+      layoutMode: 'fitRows',
     });
   }
 
