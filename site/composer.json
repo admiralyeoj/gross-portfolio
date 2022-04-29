@@ -54,6 +54,7 @@
   "require": {
     "php": ">=7.4",
     "ext-gd":" *",
+    "ext-imagick": "*",
     
     "vlucas/phpdotenv": "^5.4",
     "oscarotero/env": "^2.1",

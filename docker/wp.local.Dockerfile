@@ -1,45 +1,27 @@
-FROM php:fpm-alpine3.15
-
-ENV PHP=php81
+FROM php:8.1-fpm-alpine3.14
 
 RUN apk upgrade && \
   apk add --no-cache bash \
+  pcre-dev ${PHPIZE_DEPS} \
+  imagemagick \
+  imagemagick-dev \
   ca-certificates \
   curl \
-  mysql-client
+  mysql-client \
+  freetype-dev \
+  libjpeg-turbo-dev \
+  libpng-dev \
+  libzip-dev \
+  zlib-dev \
+  zip \
+  && pecl install imagick
   
-RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli 
 
-# Install PHP
-RUN apk add --no-cache php81 \
-  php81-apcu \
-  php81-bcmath \
-  php81-common \
-  php81-ctype \
-  php81-curl \
-  php81-dev \
-  php81-dom \
-  php81-fpm \
-  php81-gd \
-  php81-iconv \
-  php81-intl \
-  php81-json \
-  php81-mbstring \
-  php81-mcrypt \
-  php81-mysqli \
-  php81-opcache \
-  php81-openssl \
-  php81-pdo \
-  php81-pdo_mysql \
-  php81-pear \
-  php81-phar \
-  php81-session \
-  php81-simplexml \
-  php81-tokenizer \
-  php81-xml \
-  php81-xmlreader \
-  php81-xmlwriter \
-  # php81-zip
+RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
+RUN docker-php-ext-install gd
+RUN docker-php-ext-install zip
+RUN docker-php-ext-enable imagick
 
 # Install XDebug
 #RUN pecl config-set php_ini /etc/php7/php.ini
