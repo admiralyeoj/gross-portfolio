@@ -6,6 +6,7 @@ use Illuminate\View\Component;
 
 class SkillTile extends Component
 {
+    public $url;
 
     public $title;
 
@@ -30,6 +31,7 @@ class SkillTile extends Component
     {
         $this->title = $title;
         $this->postId = $postId;
+        $this->url = get_field('url', $this->postId);
         $this->terms = get_the_terms($this->postId, 'skill_type');
         $this->image = get_the_post_thumbnail($this->postId, 'medium');
         $this->image_alt = $this->get_featured_image_alt();

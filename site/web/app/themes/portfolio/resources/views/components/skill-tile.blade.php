@@ -4,7 +4,7 @@
             {!! $image !!}
             <div class="overlay"></div>
             <figcaption class="overlay-inner">
-                <h4>{{ $title }}</h4>
+                <a href="{{ $url }}" target="_blank"><h4>{{ $title }}</h4></a>
                 <p>{{ $term_list }}</p>
             </figcaption>
         </figure>
