@@ -16,8 +16,6 @@
 
           @include('partials.page-header')
 
-          {{ $test }}
-
           <div class="col-xs-12 col-lg-10 m-auto">
             @if(!empty($services))
               <div class="hexagon-menu services clear">
@@ -37,7 +35,7 @@
                         <i class="et-line icon-lightbulb"></i>
                       </div>
                       <h4>{{ $service['name'] }}</h4>
-                      <p>{{ service['content'] }}</p>
+                      <p>{{ $service['content'] }}</p>
                     </div>
                   </div>
                 @endforeach

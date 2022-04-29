@@ -12,7 +12,7 @@
 // Partials
 @import "partials/close-btn";
 
-.preloader {
+/* .preloader {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -59,7 +59,7 @@
 	.loading-mask {
 		width: 0;
 	}
-}
+} */
 
 /* ------------------------------------------------
 	Start Styling
@@ -268,14 +268,14 @@
 
 	h4 {
 		font-weight: 700;
-		color: $primary-color;
+		color: $light;
 		text-transform: uppercase;
 	}
 
 	p {
 		font-size: 12px;
 		font-weight: 400;
-		color: $light-dark;
+		color: $text-color;
 	}
 
 	&:hover {
@@ -373,6 +373,16 @@
 		top: 100%;
 		width: 0;
 		border-top: 19.05px solid #293342;
+	}
+}
+
+// Projects
+.project {
+	margin-bottom: 3rem;
+
+	img {
+		width: 100%;
+		margin: 20px 0;
 	}
 }
 

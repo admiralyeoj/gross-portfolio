@@ -1,12 +1,12 @@
 {{--
-  Template Name: Works
+  Template Name: Skills
 --}}
 
 @extends('layouts.app')
 
 @section('content')
   <div class="pt-table">
-    <div class="pt-tablecell page-works relative">
+    <div class="pt-tablecell page-resume relative">
       <!-- .close -->
       @include('partials.close-btn')
       <!-- /.close -->

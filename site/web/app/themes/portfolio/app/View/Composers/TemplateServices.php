@@ -12,8 +12,8 @@ class TemplateServices extends Composer
      * @var array
      */
     protected static $views = [
-        'partials.page-header',
-        'partials.close-btn',
+        // 'partials.page-header',
+        // 'partials.close-btn',
     ];
 
     /**
@@ -21,11 +21,10 @@ class TemplateServices extends Composer
      *
      * @return array
      */
-    public function override()
+    public function with()
     {
         return [
             'services' => get_field('services'),
-            'test' => 'test',
         ];
     }
 }
