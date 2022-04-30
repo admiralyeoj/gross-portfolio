@@ -111,7 +111,26 @@
 	Mobile (Portrait) Design for a width of 320px
 ============================================================== */
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991.98px) {
+	.contact-form.wpforms-container {
+
+		.btn-border,
+		button[type="submit"] {
+			width: 100%;
+		}
+
+		.wpforms-one-half {
+			width: 100%;
+			margin-left: 0;
+		}
+
+		.wpforms-first {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+@media only screen and (max-width: 767.98px) {
 
 	body {
 		overflow-x: hidden;
@@ -242,22 +261,6 @@
 				display: block;
 				margin: 20px 0;
 			}
-		}
-	}
-
-	.contact-form.wpforms-container {
-		.wpforms-one-half {
-			width: 100%;
-			margin-left: 0;
-		}
-
-		.wpforms-first {
-			margin-bottom: 10px;
-		}
-
-		.btn-border,
-		.btn-primary {
-			width: 100%;
 		}
 	}
 

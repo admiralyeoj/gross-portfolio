@@ -183,3 +183,8 @@ add_filter( 'wpforms_frontend_recaptcha', function ( $data, $form_data ) {
     return $data;
  
 }, 15, 2 );
+
+
+add_filter( 'wpforms_display_submit_spinner_src', function ( $src, $form_data ) {
+    return \Roots\asset('svg/light/spinner-third.svg')->uri();
+}, 10, 2 );
