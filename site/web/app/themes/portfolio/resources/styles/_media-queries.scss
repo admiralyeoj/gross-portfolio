@@ -261,6 +261,10 @@
 	}
 
 	.social-menu {
+
+		right: 90px;
+    bottom: -60px;
+
 		.menu-open:checked ~ .menu-item{
 
 			@for $i from 1 through $menu-items{
