@@ -24,7 +24,7 @@
               <div class="author-desc">
                 @if(!empty($attributes)) 
                   @foreach($attributes as $attr)
-                    <p><b>{{ $attr['title'] }}:</b> {{ $attr['content'] }}</p>
+                    <p><b>{{ $attr['title'] }}:</b></p><p>{{ $attr['content'] }}</p>
                   @endforeach
                 @endif
               </div>

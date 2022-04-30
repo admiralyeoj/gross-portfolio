@@ -16,8 +16,6 @@ class SkillTile extends Component
 
     public $image;
 
-    public $image_alt;
-
     public $term_list = '';
 
     public $term_classes = '';
@@ -34,7 +32,6 @@ class SkillTile extends Component
         $this->url = get_field('url', $this->postId);
         $this->terms = get_the_terms($this->postId, 'skill_type');
         $this->image = get_the_post_thumbnail($this->postId, 'medium');
-        $this->image_alt = $this->get_featured_image_alt();
 
         $this->set_term_vars();
     }
@@ -47,12 +44,6 @@ class SkillTile extends Component
     public function render()
     {
         return view('components.skill-tile');
-    }
-
-    protected function get_featured_image_alt(  ) {
-        $image_id = get_post_thumbnail_id( $this->postId );
-
-        return get_post_meta($image_id , '_wp_attachment_image_alt', true);
     }
 
     protected function set_term_vars() {

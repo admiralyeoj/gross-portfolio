@@ -1,12 +1,12 @@
 {
-    "key": "group_626cb69a4a49b",
-    "title": "Template - Contact",
+    "key": "group_626d7adc72a16",
+    "title": "CPT - Projects",
     "fields": [
         {
-            "key": "field_626dab638aafe",
-            "label": "Form",
-            "name": "form_id",
-            "type": "post_object",
+            "key": "field_626d7af5d08f1",
+            "label": "Project Link",
+            "name": "project_link",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,27 +15,20 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "wpforms"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
+            "return_format": "array"
         }
     ],
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "template-contact.blade.php"
+                "value": "projects"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -43,5 +36,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1651354533
+    "modified": 1651342101
 }

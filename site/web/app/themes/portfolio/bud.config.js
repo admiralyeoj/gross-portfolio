@@ -25,7 +25,7 @@
      * even if they are not explicitly imported in application assets.
      */
      .assets('images')
-     .assets('svg/light')
+     .assets('svg')
 
     /**
      * These files will trigger a full page reload

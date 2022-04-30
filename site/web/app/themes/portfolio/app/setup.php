@@ -102,6 +102,9 @@ add_action('after_setup_theme', function () {
         'style'
     ]);
 
+    // Add Image Size
+    add_image_size('project_thumbnail', 600, 300);
+
     /**
      * Enable selective refresh for widgets in customizer.
      * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
@@ -148,28 +151,6 @@ add_action('acf/init', function() {
 
 });
 
-add_filter('acf/load_field/type=select', function ( $field ) {
-    if(!str_contains($field['wrapper']['class'], 'wpforms'))
-        return $field;
-
-    $field['choices'] = array();
-    
-    $query = new WP_Query(array(
-        'post_type' => 'wpforms',
-        'posts_per_page' => -1,
-    ));
-
-    // print_r($query->posts);
-
-    if(!empty($query->posts)) {
-        foreach($query->posts as $post) {
-            $field['choices'][$post->ID] = $post->post_title;
-        }
-    }
-    
-    return $field;
-});
-
 // WP Forms
 add_filter( 'wpforms_frontend_recaptcha', function ( $data, $form_data ) {
      
@@ -188,3 +169,16 @@ add_filter( 'wpforms_frontend_recaptcha', function ( $data, $form_data ) {
 add_filter( 'wpforms_display_submit_spinner_src', function ( $src, $form_data ) {
     return \Roots\asset('svg/light/spinner-third.svg')->uri();
 }, 10, 2 );
+
+// Disable Wordpress Search
+add_action( 'parse_query', function ( $query, $error = true ) {
+    if ( is_search() ) {
+		$query->is_search = false;
+		$query->query_vars['s'] = false;
+		$query->query['s'] = false;
+		
+		// to error
+		if ( $error == true )
+			$query->is_404 = true;
+	}
+});

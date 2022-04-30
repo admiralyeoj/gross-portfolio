@@ -3,6 +3,7 @@
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
+use WP_Query;
 
 class TemplateProjects extends Composer
 {
@@ -22,7 +23,7 @@ class TemplateProjects extends Composer
     public function with()
     {
         return [
-            //
+            'posts' => get_field('projects'),
         ];
     }
 }
