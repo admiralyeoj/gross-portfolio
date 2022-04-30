@@ -63,7 +63,7 @@
               <span class="bar-primary"></span>
             </div>
 
-            {!! do_shortcode('[wpforms id="68" title="false"]') !!}
+            {!! do_shortcode("[wpforms id='{$form_id}' title='false']") !!}
 
           </div> <!-- /.col- -->
         </div> <!-- /.row -->

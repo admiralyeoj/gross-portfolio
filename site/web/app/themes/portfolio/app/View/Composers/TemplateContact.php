@@ -26,6 +26,7 @@ class TemplateContact extends Composer
             'email' => get_field('email', 'options'),
             'phone' => get_field('phone', 'options'),
             'location' => get_field('location', 'options'),
+            'form_id' => get_field('form_id'),
         ];
     }
 }

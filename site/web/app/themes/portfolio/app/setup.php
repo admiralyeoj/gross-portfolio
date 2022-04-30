@@ -6,6 +6,8 @@
 
 namespace App;
 
+use WP_Query;
+
 use function Roots\bundle;
 
 /**
@@ -144,4 +146,26 @@ add_action('acf/init', function() {
         'capability'	=> 'edit_posts',
     ));
 
+});
+
+add_filter('acf/load_field/type=select', function ( $field ) {
+    if(!str_contains($field['wrapper']['class'], 'wpforms'))
+        return $field;
+
+    $field['choices'] = array();
+    
+    $query = new WP_Query(array(
+        'post_type' => 'wpforms',
+        'posts_per_page' => -1,
+    ));
+
+    // print_r($query->posts);
+
+    if(!empty($query->posts)) {
+        foreach($query->posts as $post) {
+            $field['choices'][$post->ID] = $post->post_title;
+        }
+    }
+    
+    return $field;
 });
