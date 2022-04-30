@@ -169,3 +169,17 @@ add_filter('acf/load_field/type=select', function ( $field ) {
     
     return $field;
 });
+
+// WP Forms
+add_filter( 'wpforms_frontend_recaptcha', function ( $data, $form_data ) {
+     
+    $type = wpforms_setting( 'recaptcha_type', 'v3' );
+
+    print_r($type); exit;
+    if ( $captcha_settings['recaptcha_type'] === 'v3' ) {
+        $data[ 'badge' ] = 'inline';
+    }
+ 
+    return $data;
+ 
+}, 15, 2 );

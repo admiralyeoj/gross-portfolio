@@ -127,7 +127,7 @@
 	}
 
 	.page-title {
-		margin-bottom: 45px;
+		// margin-bottom: 45px;
 
 		h2 {
 			font-size: 35px;
@@ -255,7 +255,8 @@
 			margin-bottom: 10px;
 		}
 
-		.btn-border {
+		.btn-border,
+		.btn-primary {
 			width: 100%;
 		}
 	}
@@ -263,7 +264,7 @@
 	.social-menu {
 
 		right: 90px;
-    bottom: -60px;
+    bottom: -35px;
 
 		.menu-open:checked ~ .menu-item{
 
