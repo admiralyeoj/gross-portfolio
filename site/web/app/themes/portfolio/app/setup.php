@@ -58,8 +58,8 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary' => __('Primary Navigation', 'sage'),
-        'homepage' => __('Homepage Navigation', 'sage')
+        'primary' => __('Primary Menu', 'sage'),
+        'homepage' => __('Homepage Menu', 'sage'),
     ]);
 
     /**
@@ -129,4 +129,19 @@ add_action('widgets_init', function () {
         'name' => __('Footer', 'sage'),
         'id' => 'sidebar-footer'
     ] + $config);
+});
+
+add_action('acf/init', function() {
+    if( !function_exists('acf_add_options_page') )
+        return false;
+
+
+    acf_add_options_page(array(
+        'position'      => 2.3, 
+        'page_title' 	=> 'Theme Settings',
+        'menu_title'	=> 'Theme Settings',
+        'menu_slug' 	=> 'theme-settings',
+        'capability'	=> 'edit_posts',
+    ));
+
 });

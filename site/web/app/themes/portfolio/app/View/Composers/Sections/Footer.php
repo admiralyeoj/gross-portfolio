@@ -1,18 +1,19 @@
 <?php
 
-namespace App\View\Composers;
+namespace App\View\Composers\Sections;
 
 use Roots\Acorn\View\Composer;
 
-class TemplateContact extends Composer
+class Footer extends Composer
 {
+
     /**
      * List of views served by this composer.
      *
      * @var array
      */
     protected static $views = [
-        //
+        
     ];
 
     /**
@@ -23,9 +24,7 @@ class TemplateContact extends Composer
     public function with()
     {
         return [
-            'email' => get_field('email', 'options'),
-            'phone' => get_field('phone', 'options'),
-            'location' => get_field('location', 'options'),
+            'social_menu' => get_field('socials', 'options'),
         ];
     }
 }

@@ -19,7 +19,7 @@
           <div class="col-xs-12 col-md-6">
             <div class="about-author">
               <figure class="author-thumb">
-                <img src="@asset('images/author.jpg')" alt="">
+                {!! $image !!}
               </figure> <!-- /.author-bio -->
               <div class="author-desc">
                 @if(!empty($attributes)) 

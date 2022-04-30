@@ -41,3 +41,15 @@ add_filter( 'upload_mimes', function( $mimes ) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 } );
+
+
+// WP Forms Hooks
+add_action( 'wpforms_display_submit_before', function( $form_data ) {
+    if(str_contains($form_data['settings']['form_class'], 'contact-form'))
+        echo '<span class="btn-border">';
+});
+
+add_action( 'wpforms_display_submit_after', function( $form_data ) {
+    if(str_contains($form_data['settings']['form_class'], 'contact-form'))
+        echo '</span>';
+});
