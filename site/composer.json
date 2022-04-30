@@ -75,6 +75,7 @@
     "wpackagist-plugin/cloudflare":"4.8.3",
     "wpackagist-plugin/wordfence": "7.5.9",
     "wpackagist-plugin/wp-mail-smtp":"3.4.0",
+    "wpackagist-plugin/wpforms-lite":"1.7.4",
     
 		"advanced-custom-fields/advanced-custom-fields-pro": "^5.0.0"
   },
@@ -102,7 +103,8 @@
         "wpackagist-plugin/autoptimize",
         "wpackagist-plugin/cloudflare",
         "wpackagist-plugin/wordpress-seo",
-        "wpackagist-plugin/wordfence"
+        "wpackagist-plugin/wordfence",
+        "wpackagist-plugin/wpforms-lite"
       ],
       "web/app/themes/{$name}/": [
         "type:wordpress-theme"
