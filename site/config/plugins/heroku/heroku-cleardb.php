@@ -1,6 +1,7 @@
 <?php
 /**
  * Configuration - Database: Heroku ClearDb
+ * @url: https://elements.heroku.com/addons/cleardb
  */
 if (!empty(getenv('CLEARDB_DATABASE_URL'))) {
     $env = parse_url(getenv('CLEARDB_DATABASE_URL'));
