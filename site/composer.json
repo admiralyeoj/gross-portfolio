@@ -68,6 +68,7 @@
     "roots/soil": "^4.0.5",
 
     "humanmade/s3-uploads": "3.0.4",
+		"wpackagist-plugin/redis-cache": "2.0.25",
 		"predis/predis": "1.1.1",
     "wpackagist-plugin/wordpress-seo":"18.6",
 		"wpackagist-plugin/autoptimize":"3.0.3",
@@ -86,6 +87,9 @@
   "extra": {
     "wordpress-install-dir": "web/wp",
     "installer-paths": {
+      "vendor/dumpster/": [
+        "wpackagist-plugin/redis-cache"
+      ],
       "web/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
         "humanmade/s3-uploads",
