@@ -5,4 +5,4 @@ export WP_CACHE=false
 cd $HOME
 
 # Run cronjob using wp-cli
-vendor/bin/wp cron event run --all
+vendor/bin/wp cron event run -due-now
