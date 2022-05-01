@@ -73,7 +73,6 @@
     "wpackagist-plugin/wordpress-seo":"18.6",
 		"wpackagist-plugin/autoptimize":"3.0.3",
     "wpackagist-plugin/cloudflare":"4.8.3",
-    "wpackagist-plugin/wp-mail-smtp":"3.4.0",
     "wpackagist-plugin/wpforms-lite":"1.7.4",
     
 		"advanced-custom-fields/advanced-custom-fields-pro": "^5.0.0"
@@ -94,8 +93,7 @@
         "humanmade/s3-uploads",
         "roots/wp-password-bcrypt",
         "roots/soil",
-        "advanced-custom-fields/advanced-custom-fields-pro",
-        "wpackagist-plugin/wp-mail-smtp"
+        "advanced-custom-fields/advanced-custom-fields-pro"
       ],
       "web/app/plugins/{$name}/": [
         "type:wordpress-plugin",
