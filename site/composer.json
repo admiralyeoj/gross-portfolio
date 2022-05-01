@@ -140,6 +140,9 @@
 		],
     "compile": [
       "cd web/app/themes/portfolio && composer install"
+    ],
+    "poststart": [
+      "cd web/app/themes/portfolio && npm prune --production"
     ]
 	}
 }
