@@ -74,6 +74,7 @@
 		"wpackagist-plugin/autoptimize":"3.0.3",
     "wpackagist-plugin/cloudflare":"4.8.3",
     "wpackagist-plugin/wpforms-lite":"1.7.4",
+    "wpackagist-plugin/wp-mail-smtp":"3.4.0",
     
 		"advanced-custom-fields/advanced-custom-fields-pro": "^5.0.0"
   },
@@ -100,6 +101,7 @@
         "wpackagist-plugin/autoptimize",
         "wpackagist-plugin/cloudflare",
         "wpackagist-plugin/wordpress-seo",
+        "wpackagist-plugin/wp-mail-smtp",
         "wpackagist-plugin/wpforms-lite"
       ],
       "web/app/themes/{$name}/": [
