@@ -41,6 +41,34 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_626f02397637e",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "fa-light fa-browsers": "Browser",
+                        "fa-light fa-link-simple": "Link",
+                        "fa-light fa-rectangle-list": "Rectangle List",
+                        "fa-light fa-eye": "Eye",
+                        "fa-brands fa-yoast": "Yoast"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
                     "key": "field_626b2d0b3f024",
                     "label": "Content",
                     "name": "content",
@@ -80,5 +108,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1651191602
+    "modified": 1651442260
 }

@@ -32,7 +32,7 @@
 
                     <div class="content">
                       <div class="icon">
-                        <i class="et-line icon-lightbulb"></i>
+                        <i class="{{ $service['icon'] }}"></i>
                       </div>
                       <h4>{{ $service['name'] }}</h4>
                       <p>{{ $service['content'] }}</p>
