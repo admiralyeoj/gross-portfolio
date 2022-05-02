@@ -5,6 +5,10 @@ import Isotope from 'isotope-layout';
 $(window).on("load", function() {
 
   isotopeMasonry();
+  
+  window.setInterval(function() {
+    animateCSS('.page-close', 'heartBeat');
+  }, 5000);
 
   $(".preloader").addClass("active");
   setTimeout(function () {
@@ -38,6 +42,24 @@ import.meta.webpackHot?.accept(main);
 /**
  * Functions used
  */
+ const animateCSS = (element, animation, prefix = 'animate__') =>
+ // We create a Promise and return it
+ new Promise((resolve) => {
+   const animationName = `${prefix}${animation}`;
+   const node = document.querySelector(element);
+
+   node.classList.add(`${prefix}animated`, animationName);
+
+   // When the animation ends, we clean the classes and resolve the Promise
+   function handleAnimationEnd(event) {
+     event.stopPropagation();
+     node.classList.remove(`${prefix}animated`, animationName);
+     resolve('Animation ended');
+   }
+
+   node.addEventListener('animationend', handleAnimationEnd, {once: true});
+ });
+
 function animatedProgressBar () {
   $(".progress").each(function() {
     var skillValue = $(this).find(".skill-lavel").attr("data-skill-value");
