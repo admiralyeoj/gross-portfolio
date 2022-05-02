@@ -104,6 +104,7 @@ add_action('after_setup_theme', function () {
 
     // Add Image Size
     add_image_size('project_thumbnail', 600, 300);
+    add_image_size('bio_thumbnail', 600, 400);
 
     /**
      * Enable selective refresh for widgets in customizer.
