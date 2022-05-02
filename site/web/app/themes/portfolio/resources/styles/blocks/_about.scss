@@ -11,6 +11,8 @@
 			background-color: $light;
 	  	border: 5px solid $light-dark;
 	  	img {
+				width: 100%;
+				height: auto;
 	  		border: 2px solid $light-dark;
 	  	}
 	}
