@@ -91,9 +91,9 @@
                         "id": ""
                     },
                     "choices": {
-                        "fa-brands fa-github-alt": "Twitter",
-                        "fa-brands fa-linkedin-in": "Github",
-                        "fa-brands fa-twitter": "Linkedin",
+                        "fa-brands fa-twitter": "Twitter",
+                        "fa-brands fa-github-alt": "Github",
+                        "fa-brands fa-linkedin-in": "Linkedin",
                         "fa-light fa-file-pdf": "PDF File"
                     },
                     "default_value": false,
@@ -176,5 +176,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1651282223
+    "modified": 1651508942
 }
