@@ -4,6 +4,7 @@ services:
   # database service
   mysql:
     image: mariadb:latest
+    command: --lower_case_table_names=2
     env_file:
       - .env
     environment:
@@ -12,7 +13,7 @@ services:
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - db_data:/var/lib/mysql
+      - db_data:/var/lib/mysql:delegated
     ports:
       - "3306:3306"
     restart: unless-stopped
@@ -53,6 +54,22 @@ services:
     ports:
       - "3000:3000"
       - "3001:3001"
+    networks:
+      - my-network
+  phpmyadmin:
+    image: phpmyadmin:latest
+    env_file:
+      - .env
+    environment:
+      PMA_HOST: "${DB_HOST}"
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+    ports:
+      - '8082:80'
+    volumes:
+      - ./config/phpmyadmin.ini:/usr/local/etc/php/conf.d/phpmyadmin.ini
+    depends_on:
+      - mysql
     networks:
       - my-network
 networks:
