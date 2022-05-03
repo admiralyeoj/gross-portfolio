@@ -25,15 +25,7 @@ class PageHeader extends Composer
         return [
             'page_title' => get_field('title'),
             'behind_title' => get_field('behind_title'),
-            'description' => $this->get_content(),
+            'intro' => get_field('intro'),
         ];
-    }
-
-    protected function get_content() {
-        $content = get_the_content(  );
-        $content = apply_filters( 'the_content', $content );
-        $content = str_replace( ']]>', ']]&gt;', $content );
-
-        return $content;
     }
 }

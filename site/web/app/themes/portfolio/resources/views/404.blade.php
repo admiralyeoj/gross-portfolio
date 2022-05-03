@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="pt-table">
-    <div class="pt-tablecell page-about relative">
+    <div class="pt-tablecell relative">
       <!-- .close -->
         @include('partials.close-btn')
       <!-- /.close -->

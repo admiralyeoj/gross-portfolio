@@ -4,6 +4,6 @@
       <h1>{{ $page_title }}</h1>
       <span class="title-bg">{{ $behind_title }}</span>
     </div>
-    {!! $description !!}
+    {!! $intro !!}
   </div>
 </div>

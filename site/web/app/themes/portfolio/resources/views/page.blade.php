@@ -1,8 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-  @while(have_posts()) @php(the_post())
-    @include('partials.page-header')
-    @includeFirst(['partials.content-page', 'partials.content'])
-  @endwhile
+  <div class="pt-table">
+    <div class="pt-tablecell relative">
+      <!-- .close -->
+        @include('partials.close-btn')
+      <!-- /.close -->
+
+      <div class="container">
+        <div class="row">
+          
+          @include('partials.page-header')
+
+          <div class="col-xs-12">
+            {!! $content !!}
+          </div> <!-- /.col -->
+        </div> <!-- /.row -->
+      </div> <!-- /.container -->
+      
+      <!-- /.container -->
+    </div> <!-- /.pt-tablecell -->
+  </div> <!-- /.pt-table -->
 @endsection
