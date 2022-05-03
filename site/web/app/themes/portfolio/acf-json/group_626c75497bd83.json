@@ -1,6 +1,6 @@
 {
     "key": "group_626c75497bd83",
-    "title": "Options - Theme Settings",
+    "title": "Options - General Settings",
     "fields": [
         {
             "key": "field_626c757604ca0",
@@ -163,7 +163,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "theme-settings"
+                "value": "acf-options-general"
             }
         ]
     ],
@@ -176,5 +176,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1651508942
+    "modified": 1651548762
 }

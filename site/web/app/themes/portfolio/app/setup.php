@@ -142,12 +142,37 @@ add_action('acf/init', function() {
         return false;
 
 
-    acf_add_options_page(array(
+    /* acf_add_options_page(array(
         'position'      => 2.3, 
         'page_title' 	=> 'Theme Settings',
         'menu_title'	=> 'Theme Settings',
         'menu_slug' 	=> 'theme-settings',
         'capability'	=> 'edit_posts',
+    )); */
+
+     // Add parent.
+     $parent = acf_add_options_page(array(
+        'position'    => 2.3,
+        'menu_title'  => __('Theme Settings'),
+        'capability'  => 'edit_posts',
+        'redirect'    => true,
+    ));
+
+    // Add sub page.
+    acf_add_options_page(array(
+        'page_title'  => __('General Settings'),
+        'menu_title'  => __('General'),
+        'capability'  => 'edit_posts',
+        'parent_slug' => $parent['menu_slug'],
+    ));
+
+    // Add sub page.
+    acf_add_options_page(array(
+        'page_title'  => __('404 Settings'),
+        'menu_title'  => __('404'),
+        'capability'  => 'edit_posts',
+        'parent_slug' => $parent['menu_slug'],
+        'post_id' => '404_options',
     ));
 
 });

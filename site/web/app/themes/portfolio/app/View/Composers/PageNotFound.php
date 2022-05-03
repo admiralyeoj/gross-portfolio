@@ -4,7 +4,7 @@ namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
 
-class App extends Composer
+class PageNotFound extends Composer
 {
     /**
      * List of views served by this composer.
@@ -12,7 +12,7 @@ class App extends Composer
      * @var array
      */
     protected static $views = [
-        '*',
+        '404'
     ];
 
     /**
@@ -23,18 +23,9 @@ class App extends Composer
     public function with()
     {
         return [
-            'siteName' => $this->site_name(),
-            'siteURL' => get_home_url(),
+            'page_title' => get_field('page_title', '404_options'),
+            'behind_title' => get_field('behind_title', '404_options'),
+            'description' => get_field('content', '404_options'),
         ];
-    }
-
-    /**
-     * Returns the site name.
-     *
-     * @return string
-     */
-    public function site_name()
-    {
-        return get_bloginfo('name', 'display');
     }
 }

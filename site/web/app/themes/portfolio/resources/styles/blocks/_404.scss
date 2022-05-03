@@ -1,0 +1,126 @@
+/* ------------------------------------------------
+    404 Page
+------------------------------------------------- */
+
+.error404 {
+  svg {
+    display: block;
+    margin: 0 auto;
+    overflow: visible !important;
+
+    #robot {
+      animation-name: vertical-animation;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    #light {
+      animation-name: blink-light;
+      animation-duration: .5s;
+      animation-timing-function: steps(2);
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    #left-eye,
+    #right-eye {
+      transform-origin: 50% 50%;
+      animation-name: blink-eye;
+      animation-duration: 1.8s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    #left-arm {
+      transition: all;
+      transform-origin: 50% 10%;
+      animation-name: move-left-arm;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    #right-arm {
+      transform-origin: 50% 10%;
+      animation-name: move-right-arm;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    #shadow {
+      transform-origin: 50%;
+      animation-name: shadow-animation;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+  }
+
+  @keyframes wave {
+    0% {
+      transform: rotate(120deg);
+    }
+    100% {
+      transform: rotate(170deg);
+    }
+  }
+  @keyframes move-left-arm {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(4deg);
+    }
+  }
+  @keyframes move-right-arm {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(-4deg);
+    }
+  }
+  @keyframes shadow-animation {
+    0% {
+      opacity: .4;
+      transform: scale(1);
+    }
+    100% {
+      opacity: .6;
+      transform: scale(1.15);
+    }
+  }
+  @keyframes vertical-animation {
+    0% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(10px);
+    }
+  }
+  @keyframes blink-light {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes blink-eye {
+    0% {
+      transform: scaleY(0);
+    }
+    4% {
+      transform: scaleY(1);
+    }
+  }
+
+
+}

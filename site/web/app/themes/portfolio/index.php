@@ -59,7 +59,7 @@
     </style>
   </head>
 
-  <body <?php body_class('dark'); ?>>
+  <body <?php body_class(); ?>>
 
     <div class="preloader">
         <div class="loading-mask"></div>
