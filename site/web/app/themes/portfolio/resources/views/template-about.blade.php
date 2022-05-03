@@ -33,7 +33,7 @@
           </div> <!-- /.col -->
 
           <div class="col-xs-12 col-md-6">
-            {!! $bio !!}
+            {!! $content !!}
           </div> <!-- /.col -->
         </div> <!-- /.row -->
       </div> <!-- /.container -->

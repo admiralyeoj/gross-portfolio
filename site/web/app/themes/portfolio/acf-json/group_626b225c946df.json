@@ -60,25 +60,6 @@
                     "maxlength": ""
                 }
             ]
-        },
-        {
-            "key": "field_626b22b6fd13a",
-            "label": "Bio",
-            "name": "bio",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
         }
     ],
     "location": [
@@ -99,5 +80,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1651188625
+    "modified": 1651552048
 }
