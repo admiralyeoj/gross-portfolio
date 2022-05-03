@@ -17,7 +17,7 @@
         </div> <!-- /.row -->
 
         <div class="row">
-          <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+          <div class="col-xs-12 col-md-6 col-lg-3">
             <div class="contact-block">
               <div class="media">
                 <div class="media-left">
@@ -56,7 +56,7 @@
             <!-- /.contact-block -->
 
           </div>
-          <div class="col-xs-12 col-sm-7 col-md-7 mx-auto">
+          <div class="col-md-12 col-lg-7 mx-auto">
             <div class="section-title clear">
               <h3>Send me a meesage</h3>
               <span class="bar-dark"></span>
