@@ -62,10 +62,9 @@
 
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "^5.9.3",
+    "roots/wordpress": "^6.5.3",
     "roots/wp-config": "^1.0.0",
     "roots/wp-password-bcrypt": "^1.1.0",
-    "roots/soil": "^4.0.5",
 
     "humanmade/s3-uploads": "3.0.4",
 		"wpackagist-plugin/redis-cache": "2.0.25",
@@ -76,7 +75,8 @@
     "wpackagist-plugin/wpforms-lite":"1.7.4",
     "wpackagist-plugin/wp-mail-smtp":"3.4.0",
     
-		"advanced-custom-fields/advanced-custom-fields-pro": "^5.0.0"
+		"advanced-custom-fields/advanced-custom-fields-pro": "^5.0.0",
+    "roots/acorn-prettify": "^1.0"
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*",
