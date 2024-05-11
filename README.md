@@ -1,18 +1,37 @@
+# Introduction
 
-# Docker Compose and Bedrock
+While [bedrock/trellis/sage](https://roots.io) is a very well thought project, and makes the complete development lifecycle i.e. `design -> code -> release -> deploy` a breeze, the trellis dependency on vagrant makes it slow to develop. This is my attempt to create a boiler plate.
 
-Use WordPress locally with Docker using [Docker compose](https://docs.docker.com/compose/) and deploy to [Heroku](https://www.heroku.com/)
+## Project Structure
 
-## Supported technologies
-- Apache 
-- PHP 8.1.5
-- MySQL 8
-- PhpMyAdmin
-- Composer
-- [Bedrock](https://roots.io/bedrock/) - modern development tools, easier configuration, and an improved secured folder structure for WordPress
-- [WP-CLI](https://wp-cli.org/) - WP-CLI is the command-line interface for WordPress.
-- [PhpMyAdmin](https://www.phpmyadmin.net/) - free and open source administration tool for MySQL and MariaDB
-- CLI script to create a SSL certificate
+<details>
+ <summary>Bedrock</summary>
+
+  [bedrock](https://roots.io/bedrock) is present at `site` folder
+</details>
+
+<details>
+ <summary>Sage</summary>
+
+  [sage](https://roots.io/sage) is present at `/site/web/app/themes/portfolio`. To rename, you can do the following, but you should really follow getting started.
+
+  ```bash
+  unlink theme
+  cd /site/web/app/themes
+  rm -rf humans
+  composer create-project roots/sage <theme-name>
+  cd ../../../
+  ln -s /site/web/app/themes/<theme-name>
+  ```
+
+  forget about yarn for now.
+</details>
+
+<details>
+ <summary>Trellis</summary>
+
+  [Trellis](https://roots.io/trellis) is at `/trellis`.
+</details>
 
 ## Instructions
 
@@ -32,62 +51,44 @@ Use WordPress locally with Docker using [Docker compose](https://docs.docker.com
 <details>
  <summary>Setup</summary>
 
- ### Setup Environment variables
+  First clone the project.
 
+  ```bash
+  git clone --depth=1 git@github.com:admiralyeoj/gross-portfolio.git $PROJECT_NAME && rm -rf $PROJECT_NAME/.git
+  ```
 
-#### 1. Setting Up Dependencies (Required step)
+  where `$PROJECT_NAME` is your project name e.g. `www.example.com` or `blog.your-name.com` or whatever.
 
-Copy `.env.example` in the project root to `.env` and edit to your preferences.<br />
-Note: Change `APP_NAME` to the desired name for the project.
+  ### Trellis/Sage: The latest and greatest
 
-Example:
+  To upgrade to latest trellis
 
-```dotenv
-APP_NAME=project-name
+  ```bash
+  cd $PROJECT_NAME && rm -rf trellis && git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
+  ```
 
-DB_NAME=wordpress
-DB_USER=admin
-DB_PASSWORD=admin
-DB_ROOT_PASSWORD=root
+  This will remove this trellis and download the latest release.
 
-# Optionally, you can use a data source name (DSN)
-# When using a DSN, you can remove the DB_NAME, DB_USER, DB_PASSWORD, and DB_HOST variables
-# DATABASE_URL='mysql://database_user:database_password@database_host:database_port/database_name'
+  If you look at the folder structure, you will see a _soft link_ by the name `theme -> site/web/app/themes/humans`. _humans_ is basically [sage](https://roots.io/sage). You would want the latest and greatest here too? right? No Problem. Follow the steps. This assumes that you are in your `$PROJECT_NAME` folder.
 
-# Optional variables
-DB_HOST='db:3306'
-# DB_PREFIX='wp_'
+  ```bash
+  unlink theme
+  rm -rf humans
+  composer create-project roots/sage $THEME_NAME
+  ```
 
-WP_ENV='development'
-WP_HOME='http://localhost'
-WP_SITEURL="${WP_HOME}/wp"
+  When composer is creating a new project for you, On the prompt, devUrl, point it to `http://wp:8080`. This is important, if you don't want to mess with `docker-compose.yml` file. Also, don't do `yarn install` or `yarn build`. Leave that. **Docker** will take care of that.
 
-#S3 Bucket URL Example: AWS_S3_URL=s3://ACCESS_ID:ACCESS_SECRET@s3-REGION.amazonaws.com/bucketName
+  ```bash
+  cd ../../../
+  ln -s /site/web/app/themes/$THEME_NAME theme
+  ```
 
-# Generate your keys here: https://roots.io/salts.html
-AUTH_KEY='generateme'
-SECURE_AUTH_KEY='generateme'
-LOGGED_IN_KEY='generateme'
-NONCE_KEY='generateme'
-AUTH_SALT='generateme'
-SECURE_AUTH_SALT='generateme'
-LOGGED_IN_SALT='generateme'
-NONCE_SALT='generateme'
-```
+  you can take a look at `docker-compose.yml`. All the docker related files are at `/docker` folder. This is a minamal setup, to get you quickly started wtih docker, bedrock, trellis and sage without loosing any of the benefits of either of these. Follow the instructions on each of the package documentation to get started on all them. Now for the fireworks ...
 
-Run the following command to install composer and all dependencies
-```
-composer install
-```
-
-#### 2. Setting Up Local Enviorment (Required step)
-
-To create the images and containers needed, run the following command
-
-```
-docker-compose up -d
-```
-
+  ```bash
+  docker-compose up --build --force-recreate -d
+  ```
 </details>
 
 <details>
@@ -158,51 +159,4 @@ Rebuild docker container when Dockerfile has changed
 ```shell
 docker-compose up -d --force-recreate --build
 ```
-</details>
-
-<details>
- <summary>Run</summary>
-
-```shell
-docker-compose up -d
-```
-
-Docker Compose will now start all the services for you:
-
-```shell
-Starting gross-portfolio-phpmyadmin    ... Started
-Starting myapp-composer ... Started
-Starting myapp-nodejs ... Started
-Starting myapp-wpcli-1  ... Started
-Starting myapp-php81      ... Started
-Starting myapp-mysql8    ... Started
-```
-
-🚀 Open [http://localhost](http://localhost) in your browser
-
-if you recieve the following error message, this means an app is already running on localhost
-```
-Bind for 0.0.0.0:3306 failed: port is already allocated
-```
-
-## PhpMyAdmin
-
-PhpMyAdmin comes installed as a service in docker-compose.
-
-🚀 Open [http://localhost:8080/](http://localhost:8080/) in your browser
-
-## MailHog (will be in future setup)
-
-MailHog comes installed as a service in docker-compose.
-
-🚀 Open [http://0.0.0.0:8025/](http://0.0.0.0:8025/) in your browser
-
-</details>
-
-<details>
- <summary>ToDo</summary>
-
-- Add instructions to add ACF Pro and set ACF to Default
-- Add MailHog Container
-
 </details>
