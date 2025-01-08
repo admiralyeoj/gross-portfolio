@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "@roots/sage/stylelint-config",
+    "stylelint-config-twbs-bootstrap"
+  ],
+  "rules": {
+    "selector-max-id": 1,
+    "selector-no-vendor-prefix": null,
+    "no-empty-source": null,
+
+    "declaration-no-important": null,
+    "selector-class-pattern": null,
+    "selector-no-qualifying-type": null,
+    "scss/dollar-variable-pattern": "",
+    "property-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null,
+    "function-no-unknown": null,
+    "indentation": null
+  },
+  "ignoreFiles": [
+    "**/fontawesome/*.scss"
+  ]
+}

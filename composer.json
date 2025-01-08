@@ -1,0 +1,146 @@
+{
+  "name": "admiralyeoj/gross-portfolio",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
+  "homepage": "https://www.grossportfolio",
+  "authors": [
+    {
+      "name": "Joey Gross",
+      "homepage": "https://github.com/admiralyeoj"
+    }
+  ],
+  "keywords": [
+    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config", "portfolio"
+  ],
+  "config": {
+    "preferred-install": "dist",
+    "platform":{
+      "php": "8.1",
+      "ext-gettext": "1.0"
+    },
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "composer/installers": true,
+      "wp-cli/autoload-splitter": true,
+      "ffraenz/private-composer-installer": true,
+      "johnpbloch/wordpress-core-installer": true,
+      "roots/wordpress-core-installer": true
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.12.2",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%ACF_PRO_KEY}&t={%version}"
+        },
+        "require": {
+          "ffraenz/private-composer-installer": "^5.0"
+        }
+      }
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.4",
+    "ext-gd":" *",
+    "ext-imagick": "*",
+    
+    "vlucas/phpdotenv": "^5.4",
+    "oscarotero/env": "^2.1",
+    "wp-cli/wp-cli" : "2.6.0",
+
+    "roots/bedrock-autoloader": "^1.0",
+    "roots/bedrock-disallow-indexing": "^2.0",
+    "roots/wordpress": "^6.5.3",
+    "roots/wp-config": "^1.0.0",
+    "roots/wp-password-bcrypt": "^1.1.0",
+
+    "humanmade/s3-uploads": "3.0.4",
+		"wpackagist-plugin/redis-cache": "2.0.25",
+		"predis/predis": "1.1.1",
+    "wpackagist-plugin/wordpress-seo":"18.6",
+		"wpackagist-plugin/autoptimize":"3.0.3",
+    "wpackagist-plugin/cloudflare":"4.8.3",
+    "wpackagist-plugin/wpforms-lite":"1.7.4",
+    "wpackagist-plugin/wp-mail-smtp":"3.4.0",
+    
+		"advanced-custom-fields/advanced-custom-fields-pro": "^5.0.0",
+    "roots/acorn-prettify": "^1.0"
+  },
+  "require-dev": {
+    "heroku/heroku-buildpack-php": "*",
+    "squizlabs/php_codesniffer": "^3.6.2",
+    "roave/security-advisories": "dev-latest"
+  },
+  "extra": {
+    "wordpress-install-dir": "web/wp",
+    "installer-paths": {
+      "vendor/dumpster/": [
+        "wpackagist-plugin/redis-cache"
+      ],
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "humanmade/s3-uploads",
+        "roots/wp-password-bcrypt",
+        "roots/soil",
+        "advanced-custom-fields/advanced-custom-fields-pro"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin",
+        "wpackagist-plugin/autoptimize",
+        "wpackagist-plugin/cloudflare",
+        "wpackagist-plugin/wordpress-seo",
+        "wpackagist-plugin/wp-mail-smtp",
+        "wpackagist-plugin/wpforms-lite"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "dropin-paths": {
+			"web/app": [
+        "package:wpackagist-plugin/redis-cache:includes/object-cache.php"
+			]
+		}
+  },
+  "scripts": {
+		"wordpress-setup-core-install-prompt": "wp core install --prompt",
+		"wordpress-setup-core-install": "wp core install --skip-email",
+		"wordpress-setup-clear-home": "wp option delete home || true",
+    "wordpress-setup-clear-siteurl": "wp option delete siteurl || true",
+		"wordpress-setup-configure-s3": "echo '{\"domain\":\"path\",\"copy-to-s3\":\"1\",\"serve-from-s3\":\"1\",\"ssl\":\"request\"}' | wp option add tantan_wordpress_s3 --format=json",
+		"wordpress-setup-enable-plugins": "wp plugin activate s3-uploads wordpress-seo wp-mail-smtp",
+		"wordpress-setup-permalink-structure": "wp rewrite structure '/%postname%/' || true",
+		"wordpress-setup": [
+			"@wordpress-setup-core-install-prompt",
+			"@wordpress-setup-finalize"
+		],
+		"wordpress-setup-finalize": [
+			"@wordpress-setup-clear-home",
+			"@wordpress-setup-configure-s3",
+			"@wordpress-setup-enable-plugins",
+			"@wordpress-setup-permalink-structure"
+		],
+		"wordpress-setup-demo-theme": "wp theme activate ",
+		"wordpress-setup-welcome-post": [
+			"echo 'It works! Please see <a href=\"https://github.com/dzuelke/wordpress-12factor\">wordpress-12factor on GitHub</a> for info and post-install instructions.' | wp post update 1 - --post_title=\"Welcome to WordPress on Heroku\""
+		],
+    "compile": [
+      "cd web/app/themes/portfolio && composer install"
+    ],
+    "poststart": [
+      "cd web/app/themes/portfolio && npm prune --production"
+    ]
+	}
+}

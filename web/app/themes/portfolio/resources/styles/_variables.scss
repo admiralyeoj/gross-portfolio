@@ -1,0 +1,32 @@
+//
+// Typography
+//
+
+$font-stack: "Libre Baskerville", serif;
+$open-sans: "Open Sans", sans-serif;
+
+//
+// Colors
+//
+$dark: #0e1118;
+$primary-color: #1e2530;
+$light-dark: #46587c;
+$light: #fff;
+$text-color: #ababab;
+$title-color: #fff;
+$border-color: #eee;
+$accent-color: #e6e6fa;
+//
+// Hexagon
+//
+$sqrt3: 1.7320508075688772;
+$edgeSize: 100px;
+$hexWidth: $edgeSize * 2;
+$hexHeight: $sqrt3 * $edgeSize;
+
+// Display
+$borderHover: 15px;
+
+// Easing
+$ease-out-expo: cubic-bezier(.19, 1, .22, 1);
+$ease-out-quart: cubic-bezier(.165, .84, .44, 1);

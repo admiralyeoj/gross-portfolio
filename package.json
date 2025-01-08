@@ -1,0 +1,13 @@
+{
+  "name": "gross-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x",
+    "yarn": "1.x"
+  },
+  "scripts": {
+    "heroku-postbuild": "cd web/app/themes/portfolio && yarn install && yarn build"
+  }
+}

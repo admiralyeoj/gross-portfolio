@@ -1,0 +1,20 @@
+/* ------------------------------------------------
+    Welcome Page
+------------------------------------------------- */
+
+.author-image-large {
+  position: absolute;
+  top: 0;
+  right: 0;
+  img {
+    @include calc(height, "100vh - 4px");
+  }
+}
+
+// .hexagon-item {
+// 	a {
+// 		path {
+// 			fill: #59C4B4;
+// 		}
+// 	}
+// }

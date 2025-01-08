@@ -1,0 +1,168 @@
+/* ------------------------------------------------
+  Home Page
+------------------------------------------------- */
+.page-home {
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  .hexagon-item:nth-last-child(1),
+  .hexagon-item:nth-last-child(2) {
+    @include transform (rotate(30deg) translate(87px, -80px));
+  }
+}
+
+.home .hexagon-menu {
+  max-width: 550px;
+  margin: auto;
+}
+
+/* End of container */
+
+// Contains 2 hexagons (.hex)
+.hexagon-item {
+  position: relative;
+  z-index: 0;
+  float: left;
+  width: $hexWidth;
+  height: $hexHeight;
+  margin-left: -29px;
+  cursor: pointer;
+  @include transform(rotate(30deg));
+  &:first-child {
+    margin-left: 0;
+  }
+  // Hover state
+  &:hover {
+    z-index: 1;
+    .hex-item:last-child {
+      opacity: 1;
+      @include transform(scale(1.3));
+    }
+    .hex-item:first-child {
+      opacity: 1;
+      @include transform(scale(1.2));
+      div::before,
+      div::after {
+        height: $borderHover;
+      }
+    }
+    .hex-item {
+      div::before,
+      div::after {
+        background-color: $light;
+      }
+    }
+    .hex-content svg {
+      @include transform (scale(.97));
+    }
+  }
+}
+
+// Contains 3 div that makes the hexagon
+.hex-item {
+  position: absolute;
+  top: 0;
+  left: $edgeSize / 2;
+  width: $edgeSize;
+  height: $hexHeight;
+  // Inset
+  &:first-child {
+    z-index: 0;
+    @include transform (scale(.9));
+    @include transition (all .3s $ease-out-quart);
+  }
+  // Outset
+  &:last-child {
+    z-index: 1;
+    transition: all .3s $ease-out-expo;
+  }
+  div {
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+    width: $edgeSize;
+    height: $hexHeight;
+    @include transform-origin (center center);
+    &::before,
+    &::after {
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      content: "";
+      background-color: $accent-color;
+      @include transition (all .3s $ease-out-quart 0s);
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    &:nth-child(1) {
+      @include transform (rotate(0deg));
+    }
+    &:nth-child(2) {
+      @include transform (rotate(60deg));
+    }
+    &:nth-child(3) {
+      @include transform (rotate(120deg));
+    }
+  }
+}
+
+.hex-content {
+  position: relative;
+  display: block;
+  width: 156px;
+  height: 180px;
+  margin: 0 auto;
+  color: $light;
+  text-align: center;
+  transform: rotate(-30deg);
+  .hex-content-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -3px 0 0 2px;
+    @include transform(translate(-50%, -50%));
+  }
+  .icon {
+    display: block;
+    margin-bottom: 11px;
+    font-size: 36px;
+    line-height: 30px;
+
+    svg {
+      position: relative;
+      top: inherit;
+      left: inherit;
+      z-index: 0;
+      display: block;
+      width: 50px;
+      margin: auto;
+      fill: $light;
+      transform: scale(.87);
+    }
+  }
+  .title {
+    display: block;
+    font-family: $open-sans;
+    font-size: 14px;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  svg {
+    position: absolute;
+    top: -13px;
+    left: -7px;
+    z-index: -1;
+    transform: scale(.87);
+    @include transition (all .3s $ease-out-quart 0s);
+  }
+  &:hover {
+    color: $light;
+  }
+}

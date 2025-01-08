@@ -1,0 +1,39 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "dev": "bud dev",
+    "build": "bud build",
+    "translate": "npm run translate:pot && npm run translate:js",
+    "translate:pot": "wp i18n make-pot . ./resources/lang/sage.pot --ignore-domain --include=\"app,resources\"",
+    "translate:js": "wp i18n make-json ./resources/lang --pretty-print",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint resources/scripts",
+    "lint:css": "stylelint \"resources/**/*.{css,scss,vue}\"",
+    "test": "npm run lint",
+    "poststart": "npm prune --production"
+  },
+  "devDependencies": {
+    "@popperjs/core": "^2.11.5",
+    "@roots/bud": "^5.7.0",
+    "@roots/bud-babel": "^5.7.7",
+    "@roots/bud-eslint": "^5.7.7",
+    "@roots/bud-prettier": "^5.7.7",
+    "@roots/bud-sass": "^5.7.7",
+    "@roots/bud-stylelint": "^5.7.7",
+    "@roots/eslint-config": "^5.7.7",
+    "@roots/sage": "^5.7.7",
+    "bootstrap": "^5.1.3"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "isotope-layout": "^3.0.6",
+    "stylelint-config-twbs-bootstrap": "^3.0.1"
+  }
+}
