@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -e
+
+BASEDIR=$(dirname $0)
+echo "Script location: ${BASEDIR}"
+echo "Files"
+ls -l
+exit
+
+cd /wp
+
+composer install
+
+wp core install --url=$WP_HOME \
+  --title=wp \
+  --admin_user=dev \
+  --admin_email=admin@example.com \
+  --admin_password=dev
+
+wp package install aaemnnosttv/wp-cli-login-command \
+  || echo 'wp-cli-login-command is already installed'
+
+wp login install --activate --yes --skip-plugins --skip-themes
+
+wp login as 1
+
+/usr/bin/supervisord -c /etc/supervisord.conf > /dev/null

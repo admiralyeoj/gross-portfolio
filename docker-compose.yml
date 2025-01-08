@@ -1,0 +1,29 @@
+services:
+  mariadb:
+    image: mariadb
+    container_name: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: '${DB_NAME}'
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+    ports:
+      - 3030:3030
+    volumes:
+      - data:/var/lib/mysql
+
+  wp:
+    build:
+      context: .
+      dockerfile: ./build/wp.dockerfile
+    container_name: wp
+    restart: always
+    links:
+      - mariadb
+    ports:
+      - 8000:80
+    env_file: .env
+    volumes:
+      - ./wp:/srv/wp
+
+volumes:
+  data:
