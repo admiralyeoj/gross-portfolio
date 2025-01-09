@@ -93,7 +93,5 @@ RUN chmod +x /srv/wp.sh \
 COPY ./build/bin/wp-install.sh /srv/wp-install.sh
 RUN chmod +x /srv/wp-install.sh
 
-EXPOSE 8080
-
 WORKDIR /srv/wordpress
 CMD ["/srv/wp-install.sh"]
