@@ -1,5 +1,5 @@
 FROM php:8.2-fpm AS base
-LABEL name=wp
+LABEL name=wordpress
 LABEL intermediate=true
 
 # Install essential packages
@@ -19,7 +19,7 @@ RUN apt-get update \
   && apt-get clean
 
 FROM base AS php
-LABEL name=wp
+LABEL name=wordpress
 LABEL intermediate=true
 
 # Install php extensions and related packages
@@ -59,8 +59,8 @@ RUN apt-get update \
   && docker-php-ext-enable imagick \
   && rm -rf /var/lib/apt/lists/*
 
-FROM php AS wp
-LABEL name=wp
+FROM php AS wordpress
+LABEL name=wordpress
 
 # Install nginx & supervisor
 RUN curl -sL https://deb.nodesource.com/setup_20.x | bash \
@@ -93,5 +93,7 @@ RUN chmod +x /srv/wp.sh \
 COPY ./build/bin/wp-install.sh /srv/wp-install.sh
 RUN chmod +x /srv/wp-install.sh
 
-WORKDIR /srv/wp
+EXPOSE 8080
+
+WORKDIR /srv/wordpress
 CMD ["/srv/wp-install.sh"]

@@ -60,7 +60,6 @@ function includeDirectory($dir)
         }
     }
 }
-includeDirectory($root_dir."/config/plugins/heroku");
 includeDirectory($root_dir."/config/plugins/wordpress");
 
 /**
@@ -159,12 +158,4 @@ Config::apply();
  */
 if (!defined('ABSPATH')) {
     define('ABSPATH', $webroot_dir . '/wp/');
-}
-
-// installs using a Heroku button do not know the URL, so they use example.com as the site URL, which we need to fix
-if(function_exists('get_option') && get_option('home') == 'http://example.herokuapp.com') {
-	update_option('home', Config::get('WP_HOME'));
-    update_option('siteurl', Config::get('WP_SITEURL'));
-	header("Location: $url".$_SERVER['REQUEST_URI']);
-	exit;
 }

@@ -1,13 +1,15 @@
 services:
   mariadb:
-    image: mariadb
+    image: mariadb:latest
     container_name: mariadb
     restart: always
     environment:
       MYSQL_DATABASE: '${DB_NAME}'
-      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_ROOT_PASSWORD: '${DB_ROOT_PASSWORD}'
+      MYSQL_USER: '${DB_USER}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
     ports:
-      - 3030:3030
+      - 3030:3306
     volumes:
       - data:/var/lib/mysql
 
@@ -20,10 +22,11 @@ services:
     links:
       - mariadb
     ports:
-      - 8000:80
+      - 8080:80
     env_file: .env
     volumes:
-      - ./wp:/srv/wp
+      - ./wordpress:/srv/wordpress
+    command: bash -c "composer install && php-fpm"
 
 volumes:
   data:
