@@ -2,14 +2,6 @@
 
 set -e
 
-BASEDIR=$(dirname $0)
-echo "Script location: ${BASEDIR}"
-echo "Files"
-ls -l
-exit
-
-cd /wp
-
 composer install
 
 wp core install --url=$WP_HOME \

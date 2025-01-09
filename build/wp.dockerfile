@@ -50,6 +50,15 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
 
+# Install ImageMagick and Imagick extension
+RUN apt-get update \
+  && apt-get install -y \
+    imagemagick \
+    libmagickwand-dev \
+  && pecl install imagick \
+  && docker-php-ext-enable imagick \
+  && rm -rf /var/lib/apt/lists/*
+
 FROM php AS wp
 LABEL name=wp
 
