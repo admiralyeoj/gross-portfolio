@@ -15,7 +15,8 @@ composer install > /srv/composer.log 2>&1 || { echo "Composer install failed"; c
 echo "Theme Composer install completed"
 
 echo "Starting Yarn install for theme"
-composer install > /srv/composer.log 2>&1 || { echo "Composer install failed"; cat /srv/composer.log; exit 1; }
+yarn install > /srv/yarn.log 2>&1 || { echo "Yarn install failed"; cat /srv/yarn.log; exit 1; }
+yarn build > /srv/yarn.log 2>&1 || { echo "Yarn build failed"; cat /srv/yarn.log; exit 1; }
 echo "Theme Yarn install completed"
 
 echo "Installing WordPress"
