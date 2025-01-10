@@ -37,5 +37,4 @@ wp login install --activate --yes --skip-plugins --skip-themes
 echo "Logging in as user 1"
 wp login as 1
 
-echo "Starting Supervisor"
-/var/www/html/bin/supervisord -c /etc/supervisord.conf
+/usr/bin/supervisord -c /etc/supervisord.conf

@@ -93,5 +93,8 @@ RUN chmod +x /var/www/html/wp.sh \
 COPY /build/bin/wp-install.sh /var/www/html/wp-install.sh
 RUN chmod +x /var/www/html/wp-install.sh
 
-WORKDIR ./var/www/html
-CMD ["wp-install.sh"]
+COPY /build/bin/wp-install.sh /var/www/html/theme-install.sh
+RUN chmod +x /var/www/html/theme-install.sh
+
+WORKDIR /var/www/html
+CMD ["/var/www/html/wp-install.sh", "/var/www/html/theme-install.sh"]
