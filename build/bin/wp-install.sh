@@ -22,9 +22,9 @@ echo "Theme Yarn install completed"
 echo "Installing WordPress"
 wp core install --url=$WP_HOME \
   --title=wp \
-  --admin_user=dev \
-  --admin_email=admin@example.com \
-  --admin_password=dev
+  --admin_user=$WP_USER \
+  --admin_email=$WP_USER_EMAIL \
+  --admin_password=$WP_PASSWORD
 
 echo "Installing WP CLI Login Command"
 wp package install aaemnnosttv/wp-cli-login-command || echo 'wp-cli-login-command is already installed'
