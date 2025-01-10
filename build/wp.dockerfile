@@ -14,6 +14,7 @@ RUN apt-get update \
     vim \
     unzip \
     zip \
+    dos2unix \
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
@@ -91,10 +92,16 @@ RUN chmod +x /var/www/html/wp.sh \
 
 # Installation helper
 COPY /build/bin/wp-install.sh /var/www/html/wp-install.sh
-RUN chmod +x /var/www/html/wp-install.sh
+COPY /build/bin/theme-install.sh /var/www/html/theme-install.sh
+RUN chmod +x /var/www/html/wp-install.sh /var/www/html/theme-install.sh
 
-COPY /build/bin/wp-install.sh /var/www/html/theme-install.sh
-RUN chmod +x /var/www/html/theme-install.sh
+# Convert line endings
+RUN dos2unix /var/www/html/wp-install.sh /var/www/html/theme-install.sh
+
+# Verify file types
+RUN ls -l /var/www/html/ && file /var/www/html/wp-install.sh && file /var/www/html/theme-install.sh
 
 WORKDIR /var/www/html
-CMD ["/var/www/html/wp-install.sh", "/var/www/html/theme-install.sh"]
+
+# CMD for installation script
+CMD ["bash", "/var/www/html/wp-install.sh", "/var/www/html/theme-install.sh"]

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 cd wordpress
 
@@ -11,7 +11,7 @@ echo "Website Composer install completed"
 
 echo "Installing WordPress"
 wp core install --url=$WP_HOME \
-  --title=wp \
+  --title=wordpress \
   --admin_user=$WP_USER \
   --admin_email=$WP_USER_EMAIL \
   --admin_password=$WP_PASSWORD
