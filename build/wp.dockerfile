@@ -85,13 +85,13 @@ COPY ./build/supervisor/supervisord.conf /etc/supervisord.conf
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
   && chmod +x wp-cli.phar \
   && mv wp-cli.phar /usr/bin/_wp;
-COPY ./build/bin/wp.sh /srv/wp.sh
-RUN chmod +x /srv/wp.sh \
-  && mv /srv/wp.sh /usr/bin/wp
+COPY ./build/bin/wp.sh /var/www/html/wp.sh
+RUN chmod +x /var/www/html/wp.sh \
+  && mv /var/www/html/wp.sh /usr/bin/wp
 
 # Installation helper
-COPY ./build/bin/wp-install.sh /srv/wp-install.sh
-RUN chmod +x /srv/wp-install.sh
+COPY /build/bin/wp-install.sh /var/www/html/wp-install.sh
+RUN chmod +x /var/www/html/wp-install.sh
 
-WORKDIR /srv/wordpress
-CMD ["/srv/wp-install.sh"]
+WORKDIR ./var/www/html
+CMD ["wp-install.sh"]
