@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec96e5e285ddda112ad0ee581174ceca",
+    "content-hash": "9a7012935e3172fa216eea7ee42cbbff",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.336.12",
+            "version": "3.336.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a173ab3af8d9186d266e4937d8254597f36a9e15"
+                "reference": "dcb43c029ca74c52fa03a739341cc77086296a83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a173ab3af8d9186d266e4937d8254597f36a9e15",
-                "reference": "a173ab3af8d9186d266e4937d8254597f36a9e15",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/dcb43c029ca74c52fa03a739341cc77086296a83",
+                "reference": "dcb43c029ca74c52fa03a739341cc77086296a83",
                 "shasum": ""
             },
             "require": {
@@ -154,9 +154,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.336.12"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.336.13"
             },
-            "time": "2025-01-09T19:04:34+00:00"
+            "time": "2025-01-10T19:04:25+00:00"
         },
         {
             "name": "composer/installers",
@@ -2464,15 +2464,15 @@
         },
         {
             "name": "wpackagist-plugin/autoptimize",
-            "version": "3.0.3",
+            "version": "3.1.13",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autoptimize/",
-                "reference": "tags/3.0.3"
+                "reference": "tags/3.1.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autoptimize.3.0.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/autoptimize.3.1.13.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2482,15 +2482,15 @@
         },
         {
             "name": "wpackagist-plugin/cloudflare",
-            "version": "4.8.3",
+            "version": "4.12.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cloudflare/",
-                "reference": "tags/4.8.3"
+                "reference": "tags/4.12.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cloudflare.4.8.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/cloudflare.4.12.8.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2518,15 +2518,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "18.6",
+            "version": "24.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/18.6"
+                "reference": "tags/24.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.18.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.24.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2536,15 +2536,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "3.4.0",
+            "version": "4.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/3.4.0"
+                "reference": "tags/4.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.3.4.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.3.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2553,16 +2553,34 @@
             "homepage": "https://wordpress.org/plugins/wp-mail-smtp/"
         },
         {
-            "name": "wpackagist-plugin/wpforms-lite",
-            "version": "1.7.4",
+            "name": "wpackagist-plugin/wp-migrate-db",
+            "version": "2.6.11",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wpforms-lite/",
-                "reference": "tags/1.7.4"
+                "url": "https://plugins.svn.wordpress.org/wp-migrate-db/",
+                "reference": "tags/2.6.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpforms-lite.1.7.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-migrate-db.2.6.11.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-migrate-db/"
+        },
+        {
+            "name": "wpackagist-plugin/wpforms-lite",
+            "version": "1.9.2.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wpforms-lite/",
+                "reference": "tags/1.9.2.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wpforms-lite.1.9.2.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
