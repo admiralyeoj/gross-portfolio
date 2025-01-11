@@ -29,7 +29,6 @@ services:
     env_file: .env
     volumes:
       - ./wordpress:/var/www/html/wordpress
-    # command: bash -c "sh wp-install.sh"
 
 volumes:
   data:

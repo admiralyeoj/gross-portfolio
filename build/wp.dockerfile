@@ -92,16 +92,12 @@ RUN chmod +x /var/www/html/wp.sh \
 
 # Installation helper
 COPY /build/bin/wp-install.sh /var/www/html/wp-install.sh
-COPY /build/bin/theme-install.sh /var/www/html/theme-install.sh
-RUN chmod +x /var/www/html/wp-install.sh /var/www/html/theme-install.sh
+RUN chmod +x /var/www/html/wp-install.sh
 
 # Convert line endings
-RUN dos2unix /var/www/html/wp-install.sh /var/www/html/theme-install.sh
-
-# Verify file types
-RUN ls -l /var/www/html/ && file /var/www/html/wp-install.sh && file /var/www/html/theme-install.sh
+RUN dos2unix /var/www/html/wp-install.sh 
 
 WORKDIR /var/www/html
 
 # CMD for installation script
-CMD ["bash", "/var/www/html/wp-install.sh", "/var/www/html/theme-install.sh"]
+CMD ["bash", "/var/www/html/wp-install.sh"]
