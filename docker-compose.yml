@@ -12,7 +12,6 @@ services:
       - 3030:3306
     volumes:
       - data:/var/lib/mysql
-
   wp:
     build:
       context: .
@@ -29,6 +28,23 @@ services:
     env_file: .env
     volumes:
       - ./wordpress:/var/www/html/wordpress
+  phpmyadmin:
+    image: lscr.io/linuxserver/phpmyadmin:latest
+    container_name: phpmyadmin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      - PMA_ARBITRARY=1
+    volumes:
+      - ./phpmyadmin:/config
+    ports:
+      - 8181:80
+    restart: unless-stopped
+    links:
+      - mariadb
+    depends_on:
+      - mariadb
 
 volumes:
   data:

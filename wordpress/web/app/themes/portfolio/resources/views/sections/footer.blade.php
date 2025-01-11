@@ -1,6 +1,8 @@
 <footer>
   <div class="container">
-    @if(!empty($social_menu))
+    @if(!empty($social_menu) && is_array($social_menu))
+
+      <?= $social_menu ?>
       <div class="social-menu">
 
         <nav class="menu">
@@ -14,8 +16,6 @@
           @foreach($social_menu as $item)
             <a href="{{ $item['icon']['label'] === 'PDF File' ? $item['file'] : $item['url'] }}" class="menu-item" target="_blank"> <span class="{{ $item['icon']['value'] }}"></span></a>
           @endforeach
-          
-          
         </nav>
 
 
