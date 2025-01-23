@@ -2,7 +2,6 @@
   <div class="container">
     @if(!empty($social_menu) && is_array($social_menu))
 
-      <?= $social_menu ?>
       <div class="social-menu">
 
         <nav class="menu">

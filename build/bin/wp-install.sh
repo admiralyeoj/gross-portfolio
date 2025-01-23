@@ -4,6 +4,24 @@ set -e
 
 cd wordpress
 
+# Check if required environment variables are set
+if [ -z "$ACF_PRO_KEY" ] || [ -z "$WP_HOME" ]; then
+  echo "ERROR: ACF_PRO_KEY and WP_HOME must be set."
+  exit 1
+fi
+
+# Create the auth.json file
+echo "{
+  \"http-basic\": {
+    \"connect.advancedcustomfields.com\": {
+      \"username\": \"$ACF_PRO_KEY\",
+      \"password\": \"$WP_HOME\"
+    }
+  }
+}" > /var/www/html/wordpress/auth.json
+
+echo "auth.json created successfully at /var/www/html/wordpress/auth.json."
+
 echo "Starting Composer install for website"
 composer install > /var/www/html/composer.log 2>&1 || { echo "Composer install failed"; cat /var/www/html/composer.log; exit 1; }
 echo "Website Composer install completed"

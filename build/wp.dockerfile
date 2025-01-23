@@ -94,14 +94,10 @@ RUN chmod +x /var/www/html/wp.sh \
 COPY /build/bin/wp-install.sh /var/www/html/wp-install.sh
 RUN chmod +x /var/www/html/wp-install.sh
 
-# Copy an entry script
-COPY /build/bin/set-permissions.sh /var/www/html/set-permissions.sh
-RUN chmod +x /var/www/html/set-permissions.sh
-
 # Convert line endings
-RUN dos2unix /var/www/html/wp-install.sh 
+RUN dos2unix /var/www/html/wp-install.sh
 
 WORKDIR /var/www/html
 
 # CMD for installation script
-CMD ["bash", "/var/www/html/set-permissions.sh", "/var/www/html/wp-install.sh"]
+CMD ["bash", "/var/www/html/wp-install.sh"]

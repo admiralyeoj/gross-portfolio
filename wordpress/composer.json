@@ -36,7 +36,7 @@
     },
     {
       "type":"composer",
-      "url":"https://composer.advancedcustomfields.com"
+      "url":"https://connect.advancedcustomfields.com"
     }
   ],
   "minimum-stability": "stable",
@@ -65,7 +65,7 @@
     "wpackagist-plugin/wp-mail-smtp":"4.3.0",
     "wpackagist-plugin/wp-migrate-db":"2.6.11",
     
-		"wpengine/advanced-custom-fields": "^6",
+		"wpengine/advanced-custom-fields-pro": "^6.0",
     "roots/acorn-prettify": "^1.0"
   },
   "require-dev": {
@@ -83,7 +83,7 @@
         "humanmade/s3-uploads",
         "roots/wp-password-bcrypt",
         "roots/soil",
-        "advanced-custom-fields/advanced-custom-fields-pro"
+        "wpengine/advanced-custom-fields-pro"
       ],
       "web/app/plugins/{$name}/": [
         "type:wordpress-plugin",
