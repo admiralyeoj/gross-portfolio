@@ -13,9 +13,7 @@ services:
     volumes:
       - data:/var/lib/mysql
   wp:
-    build:
-      context: .
-      dockerfile: ./build/wp.dockerfile
+    image: ghcr.io/admiralyeoj/gross-portfolio:latest
     container_name: wp
     restart: always
     links:
