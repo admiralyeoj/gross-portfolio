@@ -21,33 +21,57 @@ Welcome to my portfolio website! This repository contains the codebase for [gros
 ### Example `docker-compose.yml`
 
 ```yaml
-version: '3.9'
 services:
-  web:
-    image: wordpress:php7.4-fpm
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
     ports:
-      - "8080:80"
+      - 3030:3306
     volumes:
-      - ./web:/var/www/html
+      - data:/var/lib/mysql
+  wp:
+    build:
+      context: .
+      dockerfile: ./build/wp.dockerfile
+    container_name: wp
+    restart: always
+    links:
+      - mariadb
     depends_on:
-      - db
-
-  db:
-    image: mariadb:10.5
-    environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: portfolio
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      - mariadb
     ports:
-      - "3306:3306"
-
+      - 8080:8080
+      - 9001:9000
+    env_file: .env
+    volumes:
+      - ./wordpress:/var/www/html/wordpress
   phpmyadmin:
-    image: phpmyadmin
-    ports:
-      - "8081:80"
+    image: lscr.io/linuxserver/phpmyadmin:latest
+    container_name: phpmyadmin
     environment:
-      PMA_HOST: db
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      - PMA_HOST=mariadb
+    volumes:
+      - ./phpmyadmin:/config
+    ports:
+      - 8181:80
+    restart: unless-stopped
+    links:
+      - mariadb
+    depends_on:
+      - mariadb
+
+volumes:
+  data:
+
 ```
 
 ### Example `.env` File
@@ -55,13 +79,50 @@ services:
 Create a `.env` file in the root directory with the following configuration:
 
 ```env
-DB_NAME=portfolio
-DB_USER=user
-DB_PASSWORD=password
-DB_HOST=db:3306
-WP_ENV=development
-WP_HOME=http://localhost:8080
-WP_SITEURL=http://localhost:8080/wp
+APP_NAME=gross-portfolio
+
+DB_NAME=wordpress
+DB_USER=admin
+DB_PASSWORD=admin
+DB_ROOT_PASSWORD=root
+
+# Optionally, you can use a data source name (DSN)
+# When using a DSN, you can remove the DB_NAME, DB_USER, DB_PASSWORD, and DB_HOST variables
+# DATABASE_URL='mysql://database_user:database_password@database_host:database_port/database_name'
+
+# Optional variables
+DB_HOST='mariadb:3306'
+DB_PREFIX='wp_'
+
+WP_ENV='development'
+WP_HOME='http://localhost:8080'
+WP_SITEURL="${WP_HOME}/wp"
+
+WP_USER=dev
+WP_USER_EMAIL=admin@example.com
+WP_PASSWORD=admin
+
+#S3 Bucket URL Example: AWS_S3_URL=s3://ACCESS_ID:ACCESS_SECRET@s3-REGION.amazonaws.com/bucketName
+
+AWS_S3_UPLOADS_BUCKET_URL=https://cdn.example.com
+AWS_S3_URL=s3://ACCESS_ID:ACCESS_SECRET@s3-REGION.amazonaws.com/bucketName
+
+ACF_PRO_KEY=XXXXXXXXXXXXXXXXXXXXXX
+
+#Mail Infos3://ACCESS_ID:ACCESS_SECRET@s3-REGION.amazonaws.com/bucketName
+MAIL_FROM_NAME='Gross Portfolio'
+
+NPM_CONFIG_PRODUCTION=false
+
+# Generate your keys here: https://roots.io/salts.html
+AUTH_KEY='XXXXXXXXXXXXXXXXXXXXXX'
+SECURE_AUTH_KEY='XXXXXXXXXXXXXXXXXXXXXX'
+LOGGED_IN_KEY='XXXXXXXXXXXXXXXXXXXXXX'
+NONCE_KEY='XXXXXXXXXXXXXXXXXXXXXX'
+AUTH_SALT='XXXXXXXXXXXXXXXXXXXXXX'
+SECURE_AUTH_SALT='XXXXXXXXXXXXXXXXXXXXXX'
+LOGGED_IN_SALT='XXXXXXXXXXXXXXXXXXXXXX'
+NONCE_SALT='XXXXXXXXXXXXXXXXXXXXXX'
 ```
 
 </details>
