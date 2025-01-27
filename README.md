@@ -90,7 +90,7 @@ WP_SITEURL=http://localhost:8080/wp
 
 5. Start the local server:
    ```bash
-   php -S localhost:8080 -t web
+   docker-compose up
    ```
 
 </details>
