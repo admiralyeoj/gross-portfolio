@@ -102,9 +102,9 @@ WORKDIR /var/www/html
 #     chmod -R 755 /var/www/html
 
 # Configure nginx, php-fpm, and supervisor (custom files)
-COPY ./build/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY ./build/nginx/sites-enabled /etc/nginx/conf.d
-COPY ./build/supervisor/supervisord.conf /etc/supervisord.conf
+# COPY ./build/nginx/nginx.conf /etc/nginx/nginx.conf
+# COPY ./build/nginx/sites-enabled /etc/nginx/conf.d
+# COPY ./build/supervisor/supervisord.conf /etc/supervisord.conf
 
 # Expose ports for nginx and php-fpm
 EXPOSE 80 9000
