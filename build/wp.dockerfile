@@ -77,9 +77,9 @@ COPY ./wordpress /var/www/html
 RUN composer install --no-dev --optimize-autoloader
 
 # Move to Sage theme directory and install theme dependencies
-# WORKDIR /var/www/html/web/app/themes/portfolio
-# RUN composer install --no-dev --optimize-autoloader
-# RUN yarn install && yarn build
+WORKDIR /var/www/html/web/app/themes/portfolio
+RUN composer install --no-dev --optimize-autoloader
+RUN yarn install && yarn build
 
 # Return to the root directory
 WORKDIR /var/www/html
@@ -114,4 +114,4 @@ EXPOSE 80 9000
 ARG RUN_SUPERVISORD=true
 
 # Start supervisor to manage nginx and php-fpm, but only if RUN_SUPERVISORD is true
-CMD ["/bin/sh", "-c", "if [ \"$RUN_SUPERVISORD\" = \"true\" ]; then /usr/bin/supervisord -c /etc/supervisord.conf; else echo 'Skipping supervisord'; fi"]
+# CMD ["/bin/sh", "-c", "if [ \"$RUN_SUPERVISORD\" = \"true\" ]; then /usr/bin/supervisord -c /etc/supervisord.conf; else echo 'Skipping supervisord'; fi"]
