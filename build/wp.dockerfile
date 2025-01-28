@@ -31,21 +31,21 @@ RUN apk update && apk add --no-cache \
     nodejs \
     npm \
     nginx \
-    supervisor
+    supervisor \
+    bash \
+    autoconf \
+    gcc \
+    g++ \
+    make \
+    libtool \
+    pkgconfig
 
 # Install php extensions installer script
-RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions && chmod +x /usr/local/bin/install-php-extensions
+RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
+  && chmod +x /usr/local/bin/install-php-extensions
 
 # Install php extensions
-RUN install-php-extensions \
-    @composer \
-    exif \
-    gd \
-    memcached \
-    mysqli \
-    pcntl \
-    pdo_mysql \
-    zip
+RUN install-php-extensions exif gd memcached mysqli pcntl pdo_mysql zip
 
 # Install Imagick PHP extension
 RUN apk add --no-cache --virtual .build-deps gcc g++ make autoconf \
@@ -56,8 +56,11 @@ RUN apk add --no-cache --virtual .build-deps gcc g++ make autoconf \
 # Clean up unnecessary files
 RUN rm -rf /var/cache/apk/*
 
-# Install global Node.js tools
+# Install global Node.js tools (Yarn)
 RUN npm install -g yarn
+
+# Install Composer globally
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # WordPress CLI
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
@@ -98,7 +101,6 @@ RUN if ! getent group www-data >/dev/null 2>&1; then \
     \
     # Set directory and file permissions to ensure the web server can read and execute them
     chmod -R 755 /var/www/html
-
 
 
 # Configure nginx, php-fpm, and supervisor (custom files)
