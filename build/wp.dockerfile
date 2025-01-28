@@ -102,7 +102,6 @@ RUN if ! getent group www-data >/dev/null 2>&1; then \
     # Set directory and file permissions to ensure the web server can read and execute them
     chmod -R 755 /var/www/html
 
-
 # Configure nginx, php-fpm, and supervisor (custom files)
 COPY ./build/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY ./build/nginx/sites-enabled /etc/nginx/conf.d
@@ -111,5 +110,8 @@ COPY ./build/supervisor/supervisord.conf /etc/supervisord.conf
 # Expose ports for nginx and php-fpm
 EXPOSE 80 9000
 
-# Start supervisor to manage nginx and php-fpm
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+# Define a build argument to control if supervisord should be run
+ARG RUN_SUPERVISORD=true
+
+# Start supervisor to manage nginx and php-fpm, but only if RUN_SUPERVISORD is true
+CMD ["/bin/sh", "-c", "if [ \"$RUN_SUPERVISORD\" = \"true\" ]; then /usr/bin/supervisord -c /etc/supervisord.conf; else echo 'Skipping supervisord'; fi"]
