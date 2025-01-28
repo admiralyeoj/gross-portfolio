@@ -25,15 +25,16 @@ jobs:
 
       # Authenticate Composer for private dependencies
       - name: Set up Composer Authentication
-        run: echo '${{ secrets.AUTH_JSON }}' > wordpress/auth.json
+        run: printf '%s' "$COMPOSER_AUTH" > wordpress/auth.json
+        shell: bash
         env:
-          # Define COMPOSER_AUTH using GitHub secrets
-          AUTH_JSON: >
+          COMPOSER_AUTH: >
             {"http-basic":
               {"${{ secrets.COMPOSER_REPO_URL }}":
                 {"username":"${{ secrets.COMPOSER_USERNAME }}","password":"${{ secrets.COMPOSER_TOKEN }}"}
               }
             }
+
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
