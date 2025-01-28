@@ -25,7 +25,7 @@ jobs:
 
       # Authenticate Composer for private dependencies
       - name: Add HTTP basic auth credentials
-        run: echo '${{ secrets.COMPOSER_AUTH_JSON }}' > $GITHUB_WORKSPACE/auth.json
+        run: echo '${{ secrets.COMPOSER_AUTH_JSON }}' > wordpress/auth.json
 
 
       - name: Build and push Docker image
