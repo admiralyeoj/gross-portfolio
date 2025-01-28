@@ -25,47 +25,47 @@ RUN apk update && apk add --no-cache \
     yarn
 
 # Install php extensions installer script
-RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
-  && chmod +x /usr/local/bin/install-php-extensions
+# RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
+#   && chmod +x /usr/local/bin/install-php-extensions
 
-# Install php extensions
-RUN install-php-extensions \
-    exif \
-    gd \
-    memcached \
-    mysqli \
-    pcntl \
-    pdo_mysql \
-    zip
+# # Install php extensions
+# RUN install-php-extensions \
+#     exif \
+#     gd \
+#     memcached \
+#     mysqli \
+#     pcntl \
+#     pdo_mysql \
+#     zip
 
 # Install Imagick PHP extension
-RUN apk add --no-cache --virtual .build-deps gcc make autoconf g++ imagemagick-dev \
-  && pecl install imagick \
-  && docker-php-ext-enable imagick \
-  && apk del .build-deps gcc make autoconf g++
+# RUN apk add --no-cache --virtual .build-deps gcc make autoconf g++ imagemagick-dev \
+#   && pecl install imagick \
+#   && docker-php-ext-enable imagick \
+#   && apk del .build-deps gcc make autoconf g++
 
-# Install Composer globally
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# # Install Composer globally
+# RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# WordPress CLI
-RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
-  && chmod +x wp-cli.phar \
-  && mv wp-cli.phar /usr/bin/wp
+# # WordPress CLI
+# RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+#   && chmod +x wp-cli.phar \
+#   && mv wp-cli.phar /usr/bin/wp
 
-# Define the working directory
-WORKDIR /var/www/html
+# # Define the working directory
+# WORKDIR /var/www/html
 
-# Copy Bedrock files
-COPY ./wordpress /var/www/html
+# # Copy Bedrock files
+# COPY ./wordpress /var/www/html
 
 # Install Composer dependencies for Bedrock
-RUN composer install --no-dev --optimize-autoloader
+# RUN composer install --no-dev --optimize-autoloader
 
 # Move to Sage theme directory and install theme dependencies
-WORKDIR /var/www/html/web/app/themes/portfolio
-RUN composer install --no-dev --optimize-autoloader \
-  && yarn install \
-  && yarn build
+# WORKDIR /var/www/html/web/app/themes/portfolio
+# RUN composer install --no-dev --optimize-autoloader \
+#   && yarn install \
+#   && yarn build
 
 # Return to the root directory
 WORKDIR /var/www/html

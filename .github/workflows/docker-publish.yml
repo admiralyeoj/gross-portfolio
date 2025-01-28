@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths-ignore:
-        - '**/*.md'  # Ignore changes to markdown files or other unnecessary files
+      - '**/*.md'  # Avoid triggering the workflow due to non-essential changes
 
 jobs:
   build-and-push:
@@ -28,15 +28,14 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # Authenticate Composer for private dependencies
+      # Add Composer credentials conditionally
       - name: Add HTTP basic auth credentials
         run: |
           if [ ! -f wordpress/auth.json ]; then
             echo '${{ secrets.COMPOSER_AUTH_JSON }}' > wordpress/auth.json
           fi
 
-
-      # Build Docker image without running supervisord
+      # Build and push Docker image with caching enabled
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
@@ -48,6 +47,5 @@ jobs:
           platforms: linux/amd64,linux/arm64/v8
           build-args: |
             RUN_SUPERVISORD=false
-          cache-from: type=gha  # Cache from GitHub Actions cache
-          cache-to: type=gha,mode=max  # Cache to GitHub Actions
-
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
