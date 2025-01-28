@@ -38,14 +38,23 @@ RUN apk update && apk add --no-cache \
     g++ \
     make \
     libtool \
-    pkgconfig
+    pkgconfig \
+    libzip-dev \
+    && rm -rf /var/cache/apk/*
 
 # Install php extensions installer script
 RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
   && chmod +x /usr/local/bin/install-php-extensions
 
-# Install php extensions
-RUN install-php-extensions exif gd memcached mysqli pcntl pdo_mysql zip
+# Install php extensions one at a time for better debugging
+RUN install-php-extensions exif || exit 1
+RUN install-php-extensions gd || exit 1
+RUN install-php-extensions memcached || exit 1
+RUN install-php-extensions mysqli || exit 1
+RUN install-php-extensions pcntl || exit 1
+RUN install-php-extensions pdo_mysql || exit 1
+RUN install-php-extensions zip || exit 1
+
 
 # Install Imagick PHP extension
 RUN apk add --no-cache --virtual .build-deps gcc g++ make autoconf \
@@ -85,22 +94,22 @@ COPY ./wordpress /var/www/html
 # WORKDIR /var/www/html
 
 # # Ensure the www-data group exists; create it only if it doesn't
-RUN if ! getent group www-data >/dev/null 2>&1; then \
-        # Create the group 'www-data' with GID 1000
-        addgroup -g 1000 www-data; \
-    fi && \
-    \
-    # Ensure the www-data user exists; create it only if it doesn't
-    if ! id -u www-data >/dev/null 2>&1; then \
-        # Create the user 'www-data' with UID 1000 and assign it to the group 'www-data'
-        adduser -D -u 1000 -G www-data www-data; \
-    fi && \
-    \
-    # Change ownership of the /var/www/html directory to the www-data user and group
-    chown -R www-data:www-data /var/www/html && \
-    \
-    # Set directory and file permissions to ensure the web server can read and execute them
-    chmod -R 755 /var/www/html
+# RUN if ! getent group www-data >/dev/null 2>&1; then \
+#         # Create the group 'www-data' with GID 1000
+#         addgroup -g 1000 www-data; \
+#     fi && \
+#     \
+#     # Ensure the www-data user exists; create it only if it doesn't
+#     if ! id -u www-data >/dev/null 2>&1; then \
+#         # Create the user 'www-data' with UID 1000 and assign it to the group 'www-data'
+#         adduser -D -u 1000 -G www-data www-data; \
+#     fi && \
+#     \
+#     # Change ownership of the /var/www/html directory to the www-data user and group
+#     chown -R www-data:www-data /var/www/html && \
+#     \
+#     # Set directory and file permissions to ensure the web server can read and execute them
+#     chmod -R 755 /var/www/html
 
 # # Configure nginx, php-fpm, and supervisor (custom files)
 COPY ./build/nginx/nginx.conf /etc/nginx/nginx.conf
