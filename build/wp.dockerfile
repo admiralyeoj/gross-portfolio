@@ -36,19 +36,19 @@ RUN install-php-extensions exif
 RUN install-php-extensions gd
 
 # Install memcached extension
-RUN install-php-extensions memcached
+# RUN install-php-extensions memcached
 
 # Install mysqli extension
-RUN install-php-extensions mysqli
+# RUN install-php-extensions mysqli
 
 # Install pcntl extension
-RUN install-php-extensions pcntl
+# RUN install-php-extensions pcntl
 
 # Install pdo_mysql extension
-RUN install-php-extensions pdo_mysql
+# RUN install-php-extensions pdo_mysql
 
 # Install zip extension
-RUN install-php-extensions zip
+# RUN install-php-extensions zip
 
 
 # Install Imagick PHP extension
