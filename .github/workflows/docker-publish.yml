@@ -25,7 +25,7 @@ jobs:
 
       # Authenticate Composer for private dependencies
       - name: Set up Composer Authentication
-        run: printf '%s' "$COMPOSER_AUTH" > wordpress/auth.json
+        run: printf '%s' "$COMPOSER_AUTH" > ~/.composer/auth.json
         shell: bash
         env:
           COMPOSER_AUTH: >
