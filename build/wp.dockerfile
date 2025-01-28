@@ -5,24 +5,9 @@ LABEL name=bedrock-sage
 LABEL intermediate=true
 
 # Install essential packages (using apk for Alpine)
-RUN apk update && apk add --no-cache \
-    curl \
-    git \
-    less \
-    nano \
-    vim \
-    unzip \
-    zip \
-    libpng-dev \
-    libjpeg-turbo-dev \
-    freetype-dev \
-    libmemcached-dev \
-    imagemagick \
-    imagemagick-dev \
-    nodejs \
-    npm \
-    libzip-dev \
-    yarn
+RUN apk update && apk add --no-cache curl git less nano vim unzip zip
+RUN apk add --no-cache libpng-dev libjpeg-turbo-dev freetype-dev libmemcached-dev imagemagick imagemagick-dev
+RUN apk add --no-cache nodejs npm libzip-dev yarn
 
 # Install php extensions installer script
 RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
