@@ -77,9 +77,9 @@ COPY ./wordpress /var/www/html
 RUN composer install --no-dev --optimize-autoloader
 
 # Move to Sage theme directory and install theme dependencies
-WORKDIR /var/www/html/web/app/themes/portfolio
-RUN composer install --no-dev --optimize-autoloader
-RUN yarn install && yarn build
+# WORKDIR /var/www/html/web/app/themes/portfolio
+# RUN composer install --no-dev --optimize-autoloader
+# RUN yarn install && yarn build
 
 # Return to the root directory
 WORKDIR /var/www/html
