@@ -31,22 +31,12 @@ RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases
 # # Install php extensions
 RUN install-php-extensions \
     exif \
-    gd
-
-# Install memcached extension
-# RUN install-php-extensions memcached
-
-# Install mysqli extension
-# RUN install-php-extensions mysqli
-
-# Install pcntl extension
-# RUN install-php-extensions pcntl
-
-# Install pdo_mysql extension
-# RUN install-php-extensions pdo_mysql
-
-# Install zip extension
-# RUN install-php-extensions zip
+    gd \
+    memcached \
+    mysqli \
+    pcntl \
+    pdo_mysql \
+    zip 
 
 
 # Install Imagick PHP extension
