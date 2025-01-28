@@ -25,18 +25,18 @@ RUN apk update && apk add --no-cache \
     yarn
 
 # Install php extensions installer script
-# RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
-#   && chmod +x /usr/local/bin/install-php-extensions
+RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
+  && chmod +x /usr/local/bin/install-php-extensions
 
-# # Install php extensions
-# RUN install-php-extensions \
-#     exif \
-#     gd \
-#     memcached \
-#     mysqli \
-#     pcntl \
-#     pdo_mysql \
-#     zip
+# Install php extensions
+RUN install-php-extensions \
+    exif \
+    gd \
+    memcached \
+    mysqli \
+    pcntl \
+    pdo_mysql \
+    zip
 
 # Install Imagick PHP extension
 # RUN apk add --no-cache --virtual .build-deps gcc make autoconf g++ imagemagick-dev \
