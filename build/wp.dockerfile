@@ -1,6 +1,7 @@
+# Base image for PHP with all dependencies
 FROM php:8.2-fpm-alpine AS base
 
-LABEL name=wordpress
+LABEL name=bedrock-sage
 LABEL intermediate=true
 
 # Install essential packages (using apk for Alpine)
@@ -26,7 +27,11 @@ RUN apk update && apk add --no-cache \
     pngquant \
     bash \
     imagemagick \
-    imagemagick-dev # Install imagemagick-dev for compiling imagick extension
+    imagemagick-dev \
+    nodejs \
+    npm \
+    nginx \
+    supervisor
 
 # Install php extensions installer script
 RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions && chmod +x /usr/local/bin/install-php-extensions
@@ -51,42 +56,58 @@ RUN apk add --no-cache --virtual .build-deps gcc g++ make autoconf \
 # Clean up unnecessary files
 RUN rm -rf /var/cache/apk/*
 
-# Continue with the rest of your setup
-FROM base AS wordpress
-LABEL name=wordpress
-
-# Install nginx, nodejs, npm, and supervisor on Alpine
-RUN apk update && apk add --no-cache \
-    nginx \
-    nodejs \
-    npm \
-    supervisor \
-  && rm -rf /var/cache/apk/* \
-  && npm install -g yarn
-
-# Configure nginx, php-fpm, and supervisor
-COPY ./build/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY ./build/nginx/sites-enabled /etc/nginx/conf.d
-COPY ./build/nginx/sites-enabled /etc/nginx/sites-enabled
-COPY ./build/php/8.2/fpm/pool.d /etc/php/8.2/fpm/pool.d
-COPY ./build/supervisor/supervisord.conf /etc/supervisord.conf
+# Install global Node.js tools
+RUN npm install -g yarn
 
 # WordPress CLI
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
   && chmod +x wp-cli.phar \
-  && mv wp-cli.phar /usr/bin/_wp
-COPY ./build/bin/wp.sh /var/www/html/wp.sh
-RUN chmod +x /var/www/html/wp.sh \
-  && mv /var/www/html/wp.sh /usr/bin/wp
+  && mv wp-cli.phar /usr/bin/wp
 
-# Installation helper
-COPY /build/bin/wp-install.sh /var/www/html/wp-install.sh
-RUN chmod +x /var/www/html/wp-install.sh
-
-# Convert line endings
-RUN dos2unix /var/www/html/wp-install.sh
-
+# Define the working directory
 WORKDIR /var/www/html
 
-# CMD for installation script
-CMD ["bash", "/var/www/html/wp-install.sh"]
+# Copy Bedrock files
+COPY ./wordpress /var/www/html
+
+# Install Composer dependencies for Bedrock
+RUN composer install --no-dev --optimize-autoloader
+
+# Move to Sage theme directory and install theme dependencies
+WORKDIR /var/www/html/web/app/themes/portfolio
+RUN composer install --no-dev --optimize-autoloader
+RUN yarn install && yarn build
+
+# Return to the root directory
+WORKDIR /var/www/html
+
+# Ensure the www-data group exists; create it only if it doesn't
+RUN if ! getent group www-data >/dev/null 2>&1; then \
+        # Create the group 'www-data' with GID 1000
+        addgroup -g 1000 www-data; \
+    fi && \
+    \
+    # Ensure the www-data user exists; create it only if it doesn't
+    if ! id -u www-data >/dev/null 2>&1; then \
+        # Create the user 'www-data' with UID 1000 and assign it to the group 'www-data'
+        adduser -D -u 1000 -G www-data www-data; \
+    fi && \
+    \
+    # Change ownership of the /var/www/html directory to the www-data user and group
+    chown -R www-data:www-data /var/www/html && \
+    \
+    # Set directory and file permissions to ensure the web server can read and execute them
+    chmod -R 755 /var/www/html
+
+
+
+# Configure nginx, php-fpm, and supervisor (custom files)
+COPY ./build/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY ./build/nginx/sites-enabled /etc/nginx/conf.d
+COPY ./build/supervisor/supervisord.conf /etc/supervisord.conf
+
+# Expose ports for nginx and php-fpm
+EXPOSE 80 9000
+
+# Start supervisor to manage nginx and php-fpm
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
