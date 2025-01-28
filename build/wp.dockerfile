@@ -77,41 +77,41 @@ COPY ./wordpress /var/www/html
 RUN composer install --no-dev --optimize-autoloader
 
 # Move to Sage theme directory and install theme dependencies
-WORKDIR /var/www/html/web/app/themes/portfolio
-RUN composer install --no-dev --optimize-autoloader
-RUN yarn install && yarn build
+# WORKDIR /var/www/html/web/app/themes/portfolio
+# RUN composer install --no-dev --optimize-autoloader
+# RUN yarn install && yarn build
 
-# Return to the root directory
-WORKDIR /var/www/html
+# # Return to the root directory
+# WORKDIR /var/www/html
 
-# Ensure the www-data group exists; create it only if it doesn't
-RUN if ! getent group www-data >/dev/null 2>&1; then \
-        # Create the group 'www-data' with GID 1000
-        addgroup -g 1000 www-data; \
-    fi && \
-    \
-    # Ensure the www-data user exists; create it only if it doesn't
-    if ! id -u www-data >/dev/null 2>&1; then \
-        # Create the user 'www-data' with UID 1000 and assign it to the group 'www-data'
-        adduser -D -u 1000 -G www-data www-data; \
-    fi && \
-    \
-    # Change ownership of the /var/www/html directory to the www-data user and group
-    chown -R www-data:www-data /var/www/html && \
-    \
-    # Set directory and file permissions to ensure the web server can read and execute them
-    chmod -R 755 /var/www/html
+# # Ensure the www-data group exists; create it only if it doesn't
+# RUN if ! getent group www-data >/dev/null 2>&1; then \
+#         # Create the group 'www-data' with GID 1000
+#         addgroup -g 1000 www-data; \
+#     fi && \
+#     \
+#     # Ensure the www-data user exists; create it only if it doesn't
+#     if ! id -u www-data >/dev/null 2>&1; then \
+#         # Create the user 'www-data' with UID 1000 and assign it to the group 'www-data'
+#         adduser -D -u 1000 -G www-data www-data; \
+#     fi && \
+#     \
+#     # Change ownership of the /var/www/html directory to the www-data user and group
+#     chown -R www-data:www-data /var/www/html && \
+#     \
+#     # Set directory and file permissions to ensure the web server can read and execute them
+#     chmod -R 755 /var/www/html
 
-# Configure nginx, php-fpm, and supervisor (custom files)
-COPY ./build/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY ./build/nginx/sites-enabled /etc/nginx/conf.d
-COPY ./build/supervisor/supervisord.conf /etc/supervisord.conf
+# # Configure nginx, php-fpm, and supervisor (custom files)
+# COPY ./build/nginx/nginx.conf /etc/nginx/nginx.conf
+# COPY ./build/nginx/sites-enabled /etc/nginx/conf.d
+# COPY ./build/supervisor/supervisord.conf /etc/supervisord.conf
 
-# Expose ports for nginx and php-fpm
-EXPOSE 80 9000
+# # Expose ports for nginx and php-fpm
+# EXPOSE 80 9000
 
-# Define a build argument to control if supervisord should be run
-ARG RUN_SUPERVISORD=true
+# # Define a build argument to control if supervisord should be run
+# ARG RUN_SUPERVISORD=true
 
 # Start supervisor to manage nginx and php-fpm, but only if RUN_SUPERVISORD is true
 # CMD ["/bin/sh", "-c", "if [ \"$RUN_SUPERVISORD\" = \"true\" ]; then /usr/bin/supervisord -c /etc/supervisord.conf; else echo 'Skipping supervisord'; fi"]
