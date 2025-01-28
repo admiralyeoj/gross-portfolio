@@ -25,7 +25,7 @@ jobs:
 
       # Authenticate Composer for private dependencies
       - name: Set up Composer Authentication
-        run: echo '${{ secrets.COMPOSER_AUTH }}' > ~/wordpress/auth.json
+        run: echo '${{ secrets.COMPOSER_AUTH }}' > wordpress/auth.json
         env:
           # Define COMPOSER_AUTH using GitHub secrets
           COMPOSER_AUTH: >
