@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+        - '**/*.md'  # Ignore changes to markdown files or other unnecessary files
 
 jobs:
   build-and-push:
@@ -28,17 +30,24 @@ jobs:
 
       # Authenticate Composer for private dependencies
       - name: Add HTTP basic auth credentials
-        run: echo '${{ secrets.COMPOSER_AUTH_JSON }}' > wordpress/auth.json
+        run: |
+          if [ ! -f wordpress/auth.json ]; then
+            echo '${{ secrets.COMPOSER_AUTH_JSON }}' > wordpress/auth.json
+          fi
+
 
       # Build Docker image without running supervisord
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: build/wp.dockerfile # Specify the Dockerfile path
+          file: build/wp.dockerfile
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
-          platforms: linux/amd64,linux/arm64/v8  # Build for both AMD64 and ARM64
+          platforms: linux/amd64,linux/arm64/v8
           build-args: |
-            RUN_SUPERVISORD=false  # Pass the argument to skip supervisord during build
+            RUN_SUPERVISORD=false
+          cache-from: type=gha  # Cache from GitHub Actions cache
+          cache-to: type=gha,mode=max  # Cache to GitHub Actions
+
