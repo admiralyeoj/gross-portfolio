@@ -32,7 +32,6 @@ RUN apk update && apk add --no-cache \
     npm \
     nginx \
     supervisor \
-    bash \
     autoconf \
     gcc \
     g++ \
@@ -49,7 +48,7 @@ RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases
 # Install php extensions one at a time for better debugging
 RUN install-php-extensions exif || exit 1
 RUN install-php-extensions gd || exit 1
-RUN install-php-extensions memcached || exit 1
+# RUN install-php-extensions memcached || exit 1
 RUN install-php-extensions mysqli || exit 1
 RUN install-php-extensions pcntl || exit 1
 RUN install-php-extensions pdo_mysql || exit 1
