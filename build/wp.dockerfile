@@ -25,8 +25,8 @@ RUN apk update && apk add --no-cache \
     yarn
 
 # Install php extensions installer script
-# RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
-#   && chmod +x /usr/local/bin/install-php-extensions
+RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
+  && chmod +x /usr/local/bin/install-php-extensions
 
 # # Install php extensions
 # RUN install-php-extensions \
