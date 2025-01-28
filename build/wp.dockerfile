@@ -29,11 +29,9 @@ RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases
   && chmod +x /usr/local/bin/install-php-extensions
 
 # # Install php extensions
-# Install exif extension
-RUN install-php-extensions exif
-
-# Install gd extension
-RUN install-php-extensions gd
+RUN install-php-extensions \
+    exif \
+    gd
 
 # Install memcached extension
 # RUN install-php-extensions memcached
