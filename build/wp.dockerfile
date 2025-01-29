@@ -9,8 +9,9 @@ RUN apk update && apk add --no-cache curl git less nano vim unzip zip nginx pyth
 RUN apk add --no-cache libpng-dev libjpeg-turbo-dev freetype-dev libmemcached-dev imagemagick imagemagick-dev
 RUN apk add --no-cache nodejs npm libzip-dev yarn
 
-# Install Supervisor via pip
-RUN pip install supervisor
+# Install Supervisor via pip in a virtual environment
+RUN python3 -m venv /venv
+RUN /venv/bin/pip install supervisor
 
 # Install php extensions installer script
 RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
@@ -76,5 +77,8 @@ COPY ./build/supervisor/supervisord.conf /etc/supervisord.conf
 # Expose ports for nginx and php-fpm
 EXPOSE 80 9000
 
+# Prevent Python from using buffered I/O, which can cause issues inside Docker.
+ENV PYTHONUNBUFFERED=1
+
 # Start supervisor to manage nginx and php-fpm
-CMD ["/usr/local/bin/supervisord", "-c", "/etc/supervisord.conf"]
+CMD ["/venv/bin/supervisord", "-c", "/etc/supervisord.conf"]
