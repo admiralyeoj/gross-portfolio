@@ -5,13 +5,9 @@ LABEL name=bedrock-sage
 LABEL intermediate=true
 
 # Install essential packages (using apk for Alpine)
-RUN apk update && apk add --no-cache curl git less nano vim unzip zip nginx python3 py3-pip
+RUN apk update && apk add --no-cache curl git less nano vim unzip zip nginx supervisor
 RUN apk add --no-cache libpng-dev libjpeg-turbo-dev freetype-dev libmemcached-dev imagemagick imagemagick-dev
 RUN apk add --no-cache nodejs npm libzip-dev yarn
-
-# Install Supervisor via pip in a virtual environment
-RUN python3 -m venv /venv
-RUN /venv/bin/pip install supervisor
 
 # Install php extensions installer script
 RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
