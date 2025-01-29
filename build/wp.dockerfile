@@ -5,9 +5,12 @@ LABEL name=bedrock-sage
 LABEL intermediate=true
 
 # Install essential packages (using apk for Alpine)
-RUN apk update && apk add --no-cache curl git less nano vim unzip zip nginx
+RUN apk update && apk add --no-cache curl git less nano vim unzip zip nginx python3 py3-pip
 RUN apk add --no-cache libpng-dev libjpeg-turbo-dev freetype-dev libmemcached-dev imagemagick imagemagick-dev
-RUN apk add --no-cache nodejs npm libzip-dev yarn supervisor
+RUN apk add --no-cache nodejs npm libzip-dev yarn
+
+# Install Supervisor via pip
+RUN pip install supervisor
 
 # Install php extensions installer script
 RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
@@ -24,7 +27,7 @@ RUN apk add --no-cache --virtual .build-deps \
 # Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# # WordPress CLI
+# WordPress CLI
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
   && chmod +x wp-cli.phar \
   && mv wp-cli.phar /usr/bin/wp
@@ -73,8 +76,5 @@ COPY ./build/supervisor/supervisord.conf /etc/supervisord.conf
 # Expose ports for nginx and php-fpm
 EXPOSE 80 9000
 
-# Prevent Python from using buffered I/O, which can cause issues inside Docker.
-ENV PYTHONUNBUFFERED=1
-
 # Start supervisor to manage nginx and php-fpm
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+CMD ["/usr/local/bin/supervisord", "-c", "/etc/supervisord.conf"]
