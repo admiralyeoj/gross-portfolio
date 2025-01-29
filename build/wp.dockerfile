@@ -20,13 +20,13 @@ RUN apk add --no-cache --virtual .build-deps gcc make autoconf libpng-dev libjpe
 
 
 # Install Imagick PHP extension
-# RUN apk add --no-cache --virtual .build-deps gcc make autoconf g++ imagemagick-dev \
-#   && pecl install imagick \
-#   && docker-php-ext-enable imagick \
-#   && apk del .build-deps gcc make autoconf g++
+RUN apk add --no-cache --virtual .build-deps gcc make autoconf g++ imagemagick-dev \
+  && pecl install imagick \
+  && docker-php-ext-enable imagick \
+  && apk del .build-deps gcc make autoconf g++
 
-# # Install Composer globally
-# RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# Install Composer globally
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # # WordPress CLI
 # RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
