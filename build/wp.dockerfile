@@ -29,24 +29,24 @@ RUN apk add --no-cache --virtual .build-deps gcc make autoconf g++ imagemagick-d
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # # WordPress CLI
-# RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
-#   && chmod +x wp-cli.phar \
-#   && mv wp-cli.phar /usr/bin/wp
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+  && chmod +x wp-cli.phar \
+  && mv wp-cli.phar /usr/bin/wp
 
-# # Define the working directory
-# WORKDIR /var/www/html
+# Define the working directory
+WORKDIR /var/www/html
 
-# # Copy Bedrock files
-# COPY ./wordpress /var/www/html
+# Copy Bedrock files
+COPY ./wordpress /var/www/html
 
 # Install Composer dependencies for Bedrock
-# RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader
 
 # Move to Sage theme directory and install theme dependencies
-# WORKDIR /var/www/html/web/app/themes/portfolio
-# RUN composer install --no-dev --optimize-autoloader \
-#   && yarn install \
-#   && yarn build
+WORKDIR /var/www/html/web/app/themes/portfolio
+RUN composer install --no-dev --optimize-autoloader \
+  && yarn install \
+  && yarn build
 
 # Return to the root directory
 WORKDIR /var/www/html
