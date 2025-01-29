@@ -5,25 +5,21 @@ LABEL name=bedrock-sage
 LABEL intermediate=true
 
 # Install essential packages (using apk for Alpine)
-RUN apk update && apk add --no-cache curl git less nano vim unzip zip supervisor
+RUN apk update && apk add --no-cache curl git less nano vim unzip zip
 RUN apk add --no-cache libpng-dev libjpeg-turbo-dev freetype-dev libmemcached-dev imagemagick imagemagick-dev
-RUN apk add --no-cache nodejs npm libzip-dev yarn 
+RUN apk add --no-cache nodejs npm libzip-dev yarn supervisor
 
 # Install php extensions installer script
 RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
   && chmod +x /usr/local/bin/install-php-extensions
 
-# Install php extensions
-RUN apk add --no-cache --virtual .build-deps gcc make autoconf libpng-dev libjpeg-turbo-dev freetype-dev libmemcached-dev \
-    && install-php-extensions exif gd memcached mysqli pcntl pdo_mysql zip \
-    && apk del .build-deps
-
-
-# Install Imagick PHP extension
-RUN apk add --no-cache --virtual .build-deps gcc make autoconf g++ imagemagick-dev \
+# Install PHP extensions and Imagick
+RUN apk add --no-cache --virtual .build-deps \
+    gcc make autoconf g++ libpng-dev libjpeg-turbo-dev freetype-dev libmemcached-dev imagemagick-dev \
+  && install-php-extensions exif gd memcached mysqli pcntl pdo_mysql zip \
   && pecl install imagick \
   && docker-php-ext-enable imagick \
-  && apk del .build-deps gcc make autoconf g++
+  && apk del .build-deps
 
 # Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
