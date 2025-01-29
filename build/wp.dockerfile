@@ -73,5 +73,8 @@ COPY ./build/supervisor/supervisord.conf /etc/supervisord.conf
 # Expose ports for nginx and php-fpm
 EXPOSE 80 9000
 
+# Prevent Python from using buffered I/O, which can cause issues inside Docker.
+ENV PYTHONUNBUFFERED=1
+
 # Start supervisor to manage nginx and php-fpm
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
