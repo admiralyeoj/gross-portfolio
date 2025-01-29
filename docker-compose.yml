@@ -13,10 +13,9 @@ services:
     volumes:
       - data:/var/lib/mysql
   wp:
-    image: ghcr.io/admiralyeoj/gross-portfolio:latest
-    # build:
-    #   context: .
-    #   dockerfile: ./build/wp.dockerfile
+    build:
+      context: .
+      dockerfile: ./build/wp.dockerfile
     container_name: wp
     restart: always
     links:
@@ -27,8 +26,8 @@ services:
       - 8080:80
       - 9001:9000
     env_file: .env
-    # volumes:
-    #   - ./wordpress:/var/www/html/wordpress
+    volumes:
+      - ./wordpress:/var/www/html/wordpress/
   phpmyadmin:
     image: lscr.io/linuxserver/phpmyadmin:latest
     container_name: phpmyadmin
