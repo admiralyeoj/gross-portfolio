@@ -16,6 +16,38 @@ Welcome to my portfolio website! This repository contains the codebase for [gros
 ## Local Development Setup
 
 <details>
+<summary>Cloning from GitHub Package</summary>
+
+### Steps
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/admiralyeoj/portfolio-website.git
+   ```
+
+2. Navigate to the directory:
+
+   ```bash
+   cd portfolio-website
+   ```
+
+3. Install dependencies using Composer:
+
+   ```bash
+   composer install
+   ```
+
+4. Set up the `.env` file as shown above.
+
+5. Start the local server:
+   ```bash
+   docker-compose up
+   ```
+
+</details>
+
+<details>
 <summary>Using Docker Compose</summary>
 
 ### Example `docker-compose.yml`
@@ -62,7 +94,7 @@ services:
     volumes:
       - ./phpmyadmin:/config
     ports:
-      - 8181:80
+      - 8181:79
     restart: unless-stopped
     links:
       - mariadb
@@ -71,7 +103,6 @@ services:
 
 volumes:
   data:
-
 ```
 
 ### Example `.env` File
@@ -126,33 +157,21 @@ NONCE_SALT='XXXXXXXXXXXXXXXXXXXXXX'
 ```
 
 </details>
-
 <details>
-<summary>Cloning from GitHub Package</summary>
+<summary>For downloading ACF Pro</summary>
 
-### Steps
+### Example `auth.json`
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/admiralyeoj/portfolio-website.git
-   ```
-
-2. Navigate to the directory:
-   ```bash
-   cd portfolio-website
-   ```
-
-3. Install dependencies using Composer:
-   ```bash
-   composer install
-   ```
-
-4. Set up the `.env` file as shown above.
-
-5. Start the local server:
-   ```bash
-   docker-compose up
-   ```
+```json
+{
+  "http-basic": {
+    "connect.advancedcustomfields.com": {
+      "username": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "password": "http://www.example.com"
+    }
+  }
+}
+```
 
 </details>
 
@@ -175,4 +194,3 @@ Feel free to suggest improvements, raise issues, or submit pull requests. Feedba
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
