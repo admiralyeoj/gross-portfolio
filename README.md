@@ -141,8 +141,6 @@ WP_PASSWORD=admin
 AWS_S3_UPLOADS_BUCKET_URL=https://cdn.example.com
 AWS_S3_URL=s3://ACCESS_ID:ACCESS_SECRET@s3-REGION.amazonaws.com/bucketName
 
-ACF_PRO_KEY=XXXXXXXXXXXXXXXXXXXXXX
-
 #Mail Infos3://ACCESS_ID:ACCESS_SECRET@s3-REGION.amazonaws.com/bucketName
 MAIL_FROM_NAME='Gross Portfolio'
 

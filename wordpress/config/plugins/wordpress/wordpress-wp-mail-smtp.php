@@ -4,22 +4,21 @@
  * @url: https://wordpress.org/plugins/wp-mail-smtp/
  */
 
-// define('WPMS_ON', true);
+define('WPMS_ON', true);
 
-/* if (!empty(getenv('SENDGRID_USERNAME')) && !empty(getenv('SENDGRID_PASSWORD'))) {
-    // Auth method ('credentials')
-    
-    define('WPMS_MAILER', 'smtp');
-    
-    define( 'WPMS_SMTP_HOST', 'smtp.sendgrid.net' ); // The SMTP mail host.
-    define( 'WPMS_SMTP_PORT', 587 ); // The SMTP server port number.
-    define( 'WPMS_SSL', 'tls' ); // Possible values '', 'ssl', 'tls' - note TLS is not STARTTLS.
-    define( 'WPMS_SMTP_AUTH', true ); // True turns it on, false turns it off.
-    define( 'WPMS_SMTP_USER', getenv('SENDGRID_USERNAME') ); // SMTP authentication username, only used if WPMS_SMTP_AUTH is true.
-    define( 'WPMS_SMTP_PASS', getenv('SENDGRID_PASSWORD') ); // SMTP authentication password, only used if WPMS_SMTP_AUTH is true.
-    define( 'WPMS_SMTP_AUTOTLS', true ); // True turns it on, false turns it off.
-} else if (!empty(getenv('SENDGRID_API_KEY'))) {
 
-    define('WPMS_MAILER', 'sendgrid');
-    define( 'WPMS_SENDGRID_API_KEY', getenv('SENDGRID_API_KEY') );
-} */
+if (!empty(getenv('WPMS_MAIL_FROM'))) {
+    define( 'WPMS_MAIL_FROM_FORCE', true );
+    define('WPMS_MAIL_FROM', getenv('WPMS_MAIL_FROM'));
+}
+
+if(getenv('WPMS_MAILER') === 'sendgrid') {
+    define('WPMS_MAILER', getenv('WPMS_MAILER'));	
+    define( 'WPMS_SENDGRID_DOMAIN', getenv('WPMS_SENDGRID_DOMAIN') );
+    define( 'WPMS_SENDGRID_API_KEY', getenv('WPMS_SENDGRID_API_KEY') );
+} else if(getenv('WPMS_MAILER') === 'mailgun') {	
+    define( 'WPMS_MAILGUN_API_KEY', getenv('WPMS_MAILGUN_API_KEY') );
+    define( 'WPMS_MAILGUN_DOMAIN', getenv('WPMS_MAILGUN_DOMAIN') );
+    define( 'WPMS_MAILGUN_REGION', 'US' );
+    define( 'WPMS_MAILER', 'mailgun' );
+}
