@@ -2,30 +2,30 @@
     About Page
 ------------------------------------------------- */
 .about-author {
-	margin-bottom: 23px;
-	@include align-items(center);
-	.author-thumb {
-			width: fit-content;
-			padding: 5px;
-			margin-right: 30px;
-			background-color: $light;
-	  	border: 5px solid $light-dark;
-	  	img {
-				width: 100%;
-				height: auto;
-	  		border: 2px solid $light-dark;
-	  	}
-	}
-	.author-desc {
-		p {
-			margin-bottom: 4px;
-			font-family: $open-sans;
-			color: $light;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-		}
-		b {
-			font-family: $open-sans;
-		}
-	}
+  margin-bottom: 23px;
+  @include align-items(center);
+  .author-thumb {
+    width: fit-content;
+    padding: 5px;
+    margin-right: 30px;
+    background-color: $light;
+    border: 5px solid $light-dark;
+    img {
+      width: 100%;
+      height: auto;
+      border: 2px solid $light-dark;
+    }
+  }
+  .author-desc {
+    p {
+      margin-bottom: 4px;
+      font-family: $open-sans;
+      color: $light;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    b {
+      font-family: $open-sans;
+    }
+  }
 }

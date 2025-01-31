@@ -4,6 +4,8 @@
     "stylelint-config-twbs-bootstrap"
   ],
   "rules": {
+    "string-quotes": "double",
+    "number-leading-zero": "always",
     "selector-max-id": 1,
     "selector-no-vendor-prefix": null,
     "no-empty-source": null,
@@ -17,7 +19,5 @@
     "function-no-unknown": null,
     "indentation": null
   },
-  "ignoreFiles": [
-    "**/fontawesome/*.scss"
-  ]
+  "ignoreFiles": ["**/fontawesome/*.scss"]
 }

@@ -24,7 +24,7 @@ a {
     outline: 0 none;
   }
 
-  @include transition(all .3s ease 0s);
+  @include transition(all 0.3s ease 0s);
 }
 
 h1,
@@ -98,7 +98,7 @@ label {
 }
 
 .btn {
-  @include transition(all .3s ease 0s);
+  @include transition(all 0.3s ease 0s);
 
   &:hover,
   &:focus,
@@ -135,7 +135,6 @@ label {
  *  CSS Helper Class
  */
 .clear {
-
   &::before,
   &::after {
     display: table;

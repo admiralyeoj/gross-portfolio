@@ -1,34 +1,33 @@
 $light-dark: #1e2530;
 
 .dark {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .about-author .author-desc p {
+    color: #fff;
+  }
+  .switcher-body h4 {
+    color: #0c0f15;
+  }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	.about-author .author-desc p {
-		color: #fff;
-	}
-	.switcher-body h4 {
-		color: #0c0f15;
-	}
+  .service-hex {
+    .st0 {
+      fill: transparent;
+    }
 
-	.service-hex {
-		.st0 {
-			fill: transparent;
-		}
+    &:hover {
+      .st0 {
+        fill: #fff;
+      }
+    }
+  }
 
-		&:hover {
-			.st0 {
-				fill: #fff;
-			}
-		}
-	}
-
-	.testimonials .text,
-	.btn-border {
-		border-color: #1e2530;
-	}
+  .testimonials .text,
+  .btn-border {
+    border-color: #1e2530;
+  }
 }

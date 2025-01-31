@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bee3c1a85d075860c2f7871c2ddb445d",
+    "content-hash": "2b888010a310b4650357fc090c1bfaff",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.339.3",
+            "version": "3.339.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "2ceb0a5b4c0dcd3c5ca6ea7480f3da62bd4fd588"
+                "reference": "ea62ad03645ef7a1d3f1cda2de49f0869de3c582"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2ceb0a5b4c0dcd3c5ca6ea7480f3da62bd4fd588",
-                "reference": "2ceb0a5b4c0dcd3c5ca6ea7480f3da62bd4fd588",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ea62ad03645ef7a1d3f1cda2de49f0869de3c582",
+                "reference": "ea62ad03645ef7a1d3f1cda2de49f0869de3c582",
                 "shasum": ""
             },
             "require": {
@@ -154,9 +154,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.3"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.4"
             },
-            "time": "2025-01-30T19:18:55+00:00"
+            "time": "2025-01-31T19:04:39+00:00"
         },
         {
             "name": "composer/installers",
@@ -2499,6 +2499,24 @@
             "homepage": "https://wordpress.org/plugins/cloudflare/"
         },
         {
+            "name": "wpackagist-plugin/forminator",
+            "version": "1.38.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/forminator/",
+                "reference": "tags/1.38.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/forminator.1.38.3.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/forminator/"
+        },
+        {
             "name": "wpackagist-plugin/redis-cache",
             "version": "2.0.25",
             "source": {
@@ -2571,24 +2589,6 @@
             "homepage": "https://wordpress.org/plugins/wp-migrate-db/"
         },
         {
-            "name": "wpackagist-plugin/wpforms-lite",
-            "version": "1.9.3.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wpforms-lite/",
-                "reference": "tags/1.9.3.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpforms-lite.1.9.3.1.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wpforms-lite/"
-        },
-        {
             "name": "wpengine/advanced-custom-fields-pro",
             "version": "6.3.12",
             "dist": {
@@ -2612,12 +2612,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "b6841f6613aeea6dbf722ac1663e6409653873d5"
+                "reference": "c10bce58e215dabda33ba5dd3f3a153e85684222"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/b6841f6613aeea6dbf722ac1663e6409653873d5",
-                "reference": "b6841f6613aeea6dbf722ac1663e6409653873d5",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/c10bce58e215dabda33ba5dd3f3a153e85684222",
+                "reference": "c10bce58e215dabda33ba5dd3f3a153e85684222",
                 "shasum": ""
             },
             "conflict": {
@@ -2716,6 +2716,7 @@
                 "codeigniter4/framework": "<4.5.8",
                 "codeigniter4/shield": "<1.0.0.0-beta8",
                 "codiad/codiad": "<=2.8.4",
+                "components/jquery": ">=1.0.3,<3.5",
                 "composer/composer": "<1.10.27|>=2,<2.2.24|>=2.3,<2.7.7",
                 "concrete5/concrete5": "<9.3.4",
                 "concrete5/core": "<8.5.8|>=9,<9.1",
@@ -3475,7 +3476,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-30T23:05:03+00:00"
+            "time": "2025-01-31T21:04:56+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",

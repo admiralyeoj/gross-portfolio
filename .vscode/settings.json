@@ -1,0 +1,44 @@
+{
+  "files.associations": {
+    "*.scss": "scss",
+    "*.sass": "scss"
+  },
+  "scss.validate": false,
+  "css.validate": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.snippetSuggestions": "inline",
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "prettier.trailingComma": "es5",
+  "prettier.useTabs": false,
+  "stylelint.enable": true,
+  "stylelint.config": {
+    "extends": [
+      "@roots/sage/stylelint-config",
+      "stylelint-config-twbs-bootstrap"
+    ],
+    "rules": {
+      "selector-max-id": 1,
+      "selector-no-vendor-prefix": null,
+      "no-empty-source": null,
+      "declaration-no-important": null,
+      "selector-class-pattern": null,
+      "selector-no-qualifying-type": null,
+      "scss/dollar-variable-pattern": "",
+      "property-no-vendor-prefix": null,
+      "value-no-vendor-prefix": null,
+      "function-no-unknown": null,
+      "indentation": null
+    },
+    "ignoreFiles": ["**/fontawesome/*.scss"]
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true
+  }
+}
