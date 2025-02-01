@@ -48,15 +48,10 @@ RUN composer install --no-dev --optimize-autoloader \
 # Return to the root directory
 WORKDIR /var/www/html
 
-# Ensure the www-data group exists; create it only if it doesn't
-RUN if ! getent group www-data >/dev/null 2>&1; then \
-        addgroup -g 1000 www-data; \
-    fi && \
-    if ! id -u www-data >/dev/null 2>&1; then \
-        adduser -D -u 1000 -G www-data www-data; \
-    fi && \
-    chown -R www-data:www-data /var/www/html && \
-    chmod -R 755 /var/www/html
+# Creates the user if it doesnt exist and sets
+RUN id -u www-data >/dev/null 2>&1 || adduser -D -u 1000 -G www-data www-data \
+    && chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
 
 # Configure nginx, php-fpm, and supervisor (custom files)
 COPY ./build/nginx/nginx.conf /etc/nginx/nginx.conf
