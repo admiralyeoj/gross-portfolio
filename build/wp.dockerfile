@@ -1,17 +1,18 @@
 # Base image for PHP with all dependencies
 FROM php:8.2-fpm-alpine
-    
-# Install essential packages (using apk for Alpine)
-RUN apk update && apk add --no-cache curl git less nano vim unzip zip nginx supervisor
-RUN apk add --no-cache libpng-dev libjpeg-turbo-dev freetype-dev libmemcached-dev imagemagick imagemagick-dev
-RUN apk add --no-cache nodejs npm libzip-dev yarn gcc make autoconf g++
+
+# Install essential system packages & required libraries
+RUN apk update && apk add --no-cache \
+    curl git less nano vim unzip zip nginx supervisor \
+    libpng-dev libjpeg-turbo-dev freetype-dev libmemcached-dev imagemagick imagemagick-dev \
+    nodejs npm libzip-dev yarn gcc make autoconf g++ pkgconfig
 
 # Install PHP extensions installer script
 RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions \
   && chmod +x /usr/local/bin/install-php-extensions
 
 # Install PHP extensions
-RUN install-php-extensions exif gd memcached mysqli pdo_mysql zip
+RUN install-php-extensions exif gd memcached mysqli pcntl pdo_mysql zip
 
 # Install and enable Imagick
 RUN pecl install imagick \
