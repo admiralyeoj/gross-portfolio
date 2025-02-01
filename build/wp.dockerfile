@@ -42,7 +42,7 @@ RUN composer install --no-dev --optimize-autoloader
 # Move to Sage theme directory and install theme dependencies
 WORKDIR /var/www/html/web/app/themes/portfolio
 RUN composer install --no-dev --optimize-autoloader \
-  && yarn install --production \
+  && yarn install \
   && yarn build
 
 # Return to the root directory
