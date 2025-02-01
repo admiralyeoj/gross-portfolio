@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b888010a310b4650357fc090c1bfaff",
+    "content-hash": "516cc01af0b2c65ef70ef1e9ec6402a4",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -693,16 +693,16 @@
         },
         {
             "name": "humanmade/s3-uploads",
-            "version": "3.0.4",
+            "version": "3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/S3-Uploads.git",
-                "reference": "8ad534d49c0307dd7ee56f0ab6d18c478f83a34a"
+                "reference": "b65f2c73ca8b248232407bbe0db93e6b728ed0ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/S3-Uploads/zipball/8ad534d49c0307dd7ee56f0ab6d18c478f83a34a",
-                "reference": "8ad534d49c0307dd7ee56f0ab6d18c478f83a34a",
+                "url": "https://api.github.com/repos/humanmade/S3-Uploads/zipball/b65f2c73ca8b248232407bbe0db93e6b728ed0ee",
+                "reference": "b65f2c73ca8b248232407bbe0db93e6b728ed0ee",
                 "shasum": ""
             },
             "require": {
@@ -740,7 +740,7 @@
                 "issues": "https://github.com/humanmade/s3-uploads/issues",
                 "source": "https://github.com/humanmade/s3-uploads"
             },
-            "time": "2022-03-02T11:59:49+00:00"
+            "time": "2023-05-04T08:22:25+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",

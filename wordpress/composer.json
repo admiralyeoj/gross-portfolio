@@ -61,7 +61,7 @@
     "roots/wordpress": "^6.5.3",
     "roots/wp-config": "^1.0.0",
     "roots/wp-password-bcrypt": "^1.1.0",
-    "humanmade/s3-uploads": "3.0.4",
+    "humanmade/s3-uploads": "3.0.7",
     "wpackagist-plugin/redis-cache": "2.0.25",
     "predis/predis": "1.1.1",
     "wpackagist-plugin/wordpress-seo": "24.2",
