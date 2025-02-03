@@ -1,52 +1,55 @@
 // variables
 // --------------------------
 
-$fa-css-prefix          : fa !default;
-$fa-style               : 900 !default;
-$fa-style-family        : "Font Awesome 6 Pro" !default;
+$fa-css-prefix: fa !default;
+$fa-style: 900 !default;
+$fa-style-family: "Font Awesome 6 Pro" !default;
 
-$fa-display             : inline-block !default;
+$fa-icon-property: --fa;
+$fa-duotone-icon-property: --fa--fa;
 
-$fa-fw-width            : fa-divide(20em, 16);
-$fa-inverse             : #fff !default;
+$fa-display: inline-block !default;
 
-$fa-border-color        : #eee !default;
-$fa-border-padding      : .2em .25em .15em !default;
-$fa-border-radius       : .1em !default;
-$fa-border-style        : solid !default;
-$fa-border-width        : .08em !default;
+$fa-fw-width: fa-divide(20em, 16);
+$fa-inverse: #fff !default;
 
-$fa-size-scale-2xs      : 10 !default;
-$fa-size-scale-xs       : 12 !default;
-$fa-size-scale-sm       : 14 !default;
-$fa-size-scale-base     : 16 !default;
-$fa-size-scale-lg       : 20 !default;
-$fa-size-scale-xl       : 24 !default;
-$fa-size-scale-2xl      : 32 !default;
+$fa-border-color: #eee !default;
+$fa-border-padding: 0.2em 0.25em 0.15em !default;
+$fa-border-radius: 0.1em !default;
+$fa-border-style: solid !default;
+$fa-border-width: 0.08em !default;
+
+$fa-size-scale-2xs: 10 !default;
+$fa-size-scale-xs: 12 !default;
+$fa-size-scale-sm: 14 !default;
+$fa-size-scale-base: 16 !default;
+$fa-size-scale-lg: 20 !default;
+$fa-size-scale-xl: 24 !default;
+$fa-size-scale-2xl: 32 !default;
 
 $fa-sizes: (
-  "2xs"                 : $fa-size-scale-2xs,
-  "xs"                  : $fa-size-scale-xs,
-  "sm"                  : $fa-size-scale-sm,
-  "lg"                  : $fa-size-scale-lg,
-  "xl"                  : $fa-size-scale-xl,
-  "2xl"                 : $fa-size-scale-2xl
+  "2xs": $fa-size-scale-2xs,
+  "xs": $fa-size-scale-xs,
+  "sm": $fa-size-scale-sm,
+  "lg": $fa-size-scale-lg,
+  "xl": $fa-size-scale-xl,
+  "2xl": $fa-size-scale-2xl,
 ) !default;
 
-$fa-li-width            : 2em !default;
-$fa-li-margin           : $fa-li-width * fa-divide(5, 4) !default;
+$fa-li-width: 2em !default;
+$fa-li-margin: $fa-li-width * fa-divide(5, 4) !default;
 
-$fa-pull-margin         : .3em !default;
+$fa-pull-margin: 0.3em !default;
 
-$fa-primary-opacity     : 1 !default;
-$fa-secondary-opacity   : .4 !default;
+$fa-primary-opacity: 1 !default;
+$fa-secondary-opacity: 0.4 !default;
 
 $fa-stack-vertical-align: middle !default;
-$fa-stack-width         : ($fa-fw-width * 2) !default;
-$fa-stack-z-index       : auto !default;
+$fa-stack-width: ($fa-fw-width * 2) !default;
+$fa-stack-z-index: auto !default;
 
-$fa-font-display        : block !default;
-$fa-font-path           : "../../fonts" !default;
+$fa-font-display: block !default;
+$fa-font-path: "../../fonts" !default;
 
 $fa-var-0: \30;
 $fa-var-1: \31;
@@ -4148,478 +4151,536 @@ $fa-var-yen: \f157;
 $fa-var-yin-yang: \f6ad;
 $fa-var-z: \5a;
 
-$fa-var-42-group: \e080;
-$fa-var-innosoft: \e080;
-$fa-var-500px: \f26e;
-$fa-var-accessible-icon: \f368;
-$fa-var-accusoft: \f369;
-$fa-var-adn: \f170;
-$fa-var-adversal: \f36a;
-$fa-var-affiliatetheme: \f36b;
-$fa-var-airbnb: \f834;
-$fa-var-algolia: \f36c;
-$fa-var-alipay: \f642;
-$fa-var-amazon: \f270;
-$fa-var-amazon-pay: \f42c;
-$fa-var-amilia: \f36d;
-$fa-var-android: \f17b;
-$fa-var-angellist: \f209;
-$fa-var-angrycreative: \f36e;
-$fa-var-angular: \f420;
-$fa-var-app-store: \f36f;
-$fa-var-app-store-ios: \f370;
-$fa-var-apper: \f371;
-$fa-var-apple: \f179;
-$fa-var-apple-pay: \f415;
-$fa-var-artstation: \f77a;
-$fa-var-asymmetrik: \f372;
-$fa-var-atlassian: \f77b;
-$fa-var-audible: \f373;
-$fa-var-autoprefixer: \f41c;
-$fa-var-avianex: \f374;
-$fa-var-aviato: \f421;
-$fa-var-aws: \f375;
-$fa-var-bandcamp: \f2d5;
-$fa-var-battle-net: \f835;
-$fa-var-behance: \f1b4;
-$fa-var-behance-square: \f1b5;
-$fa-var-bilibili: \e3d9;
-$fa-var-bimobject: \f378;
-$fa-var-bitbucket: \f171;
-$fa-var-bitcoin: \f379;
-$fa-var-bity: \f37a;
-$fa-var-black-tie: \f27e;
-$fa-var-blackberry: \f37b;
-$fa-var-blogger: \f37c;
-$fa-var-blogger-b: \f37d;
-$fa-var-bluetooth: \f293;
-$fa-var-bluetooth-b: \f294;
-$fa-var-bootstrap: \f836;
-$fa-var-bots: \e340;
-$fa-var-btc: \f15a;
-$fa-var-buffer: \f837;
-$fa-var-buromobelexperte: \f37f;
-$fa-var-buy-n-large: \f8a6;
-$fa-var-buysellads: \f20d;
-$fa-var-canadian-maple-leaf: \f785;
-$fa-var-cc-amazon-pay: \f42d;
-$fa-var-cc-amex: \f1f3;
-$fa-var-cc-apple-pay: \f416;
-$fa-var-cc-diners-club: \f24c;
-$fa-var-cc-discover: \f1f2;
-$fa-var-cc-jcb: \f24b;
-$fa-var-cc-mastercard: \f1f1;
-$fa-var-cc-paypal: \f1f4;
-$fa-var-cc-stripe: \f1f5;
+$fa-var-monero: \f3d0;
+$fa-var-hooli: \f427;
+$fa-var-yelp: \f1e9;
 $fa-var-cc-visa: \f1f0;
-$fa-var-centercode: \f380;
-$fa-var-centos: \f789;
-$fa-var-chrome: \f268;
-$fa-var-chromecast: \f838;
-$fa-var-cloudflare: \e07d;
-$fa-var-cloudscale: \f383;
-$fa-var-cloudsmith: \f384;
-$fa-var-cloudversify: \f385;
-$fa-var-cmplid: \e360;
-$fa-var-codepen: \f1cb;
-$fa-var-codiepie: \f284;
-$fa-var-confluence: \f78d;
-$fa-var-connectdevelop: \f20e;
-$fa-var-contao: \f26d;
-$fa-var-cotton-bureau: \f89e;
-$fa-var-cpanel: \f388;
-$fa-var-creative-commons: \f25e;
-$fa-var-creative-commons-by: \f4e7;
+$fa-var-lastfm: \f202;
+$fa-var-shopware: \f5b5;
 $fa-var-creative-commons-nc: \f4e8;
-$fa-var-creative-commons-nc-eu: \f4e9;
-$fa-var-creative-commons-nc-jp: \f4ea;
-$fa-var-creative-commons-nd: \f4eb;
-$fa-var-creative-commons-pd: \f4ec;
-$fa-var-creative-commons-pd-alt: \f4ed;
-$fa-var-creative-commons-remix: \f4ee;
-$fa-var-creative-commons-sa: \f4ef;
-$fa-var-creative-commons-sampling: \f4f0;
-$fa-var-creative-commons-sampling-plus: \f4f1;
-$fa-var-creative-commons-share: \f4f2;
-$fa-var-creative-commons-zero: \f4f3;
-$fa-var-critical-role: \f6c9;
-$fa-var-css3: \f13c;
-$fa-var-css3-alt: \f38b;
-$fa-var-cuttlefish: \f38c;
-$fa-var-d-and-d: \f38d;
-$fa-var-d-and-d-beyond: \f6ca;
-$fa-var-dailymotion: \e052;
-$fa-var-dashcube: \f210;
-$fa-var-deezer: \e077;
-$fa-var-delicious: \f1a5;
-$fa-var-deploydog: \f38e;
-$fa-var-deskpro: \f38f;
-$fa-var-dev: \f6cc;
-$fa-var-deviantart: \f1bd;
-$fa-var-dhl: \f790;
-$fa-var-diaspora: \f791;
-$fa-var-digg: \f1a6;
-$fa-var-digital-ocean: \f391;
-$fa-var-discord: \f392;
-$fa-var-discourse: \f393;
-$fa-var-dochub: \f394;
-$fa-var-docker: \f395;
-$fa-var-draft2digital: \f396;
-$fa-var-dribbble: \f17d;
-$fa-var-dribbble-square: \f397;
-$fa-var-dropbox: \f16b;
-$fa-var-drupal: \f1a9;
+$fa-var-aws: \f375;
+$fa-var-redhat: \f7bc;
+$fa-var-yoast: \f2b1;
+$fa-var-cloudflare: \e07d;
+$fa-var-ups: \f7e0;
+$fa-var-pixiv: \e640;
+$fa-var-wpexplorer: \f2de;
 $fa-var-dyalog: \f399;
-$fa-var-earlybirds: \f39a;
-$fa-var-ebay: \f4f4;
-$fa-var-edge: \f282;
-$fa-var-edge-legacy: \e078;
-$fa-var-elementor: \f430;
-$fa-var-ello: \f5f1;
-$fa-var-ember: \f423;
-$fa-var-empire: \f1d1;
-$fa-var-envira: \f299;
-$fa-var-erlang: \f39d;
-$fa-var-ethereum: \f42e;
-$fa-var-etsy: \f2d7;
-$fa-var-evernote: \f839;
-$fa-var-expeditedssl: \f23e;
-$fa-var-facebook: \f09a;
-$fa-var-facebook-f: \f39e;
-$fa-var-facebook-messenger: \f39f;
-$fa-var-facebook-square: \f082;
-$fa-var-fantasy-flight-games: \f6dc;
-$fa-var-fedex: \f797;
-$fa-var-fedora: \f798;
-$fa-var-figma: \f799;
-$fa-var-firefox: \f269;
-$fa-var-firefox-browser: \e007;
+$fa-var-bity: \f37a;
+$fa-var-stackpath: \f842;
+$fa-var-buysellads: \f20d;
 $fa-var-first-order: \f2b0;
-$fa-var-first-order-alt: \f50a;
+$fa-var-modx: \f285;
+$fa-var-guilded: \e07e;
+$fa-var-vnv: \f40b;
+$fa-var-square-js: \f3b9;
+$fa-var-js-square: \f3b9;
+$fa-var-microsoft: \f3ca;
+$fa-var-qq: \f1d6;
+$fa-var-orcid: \f8d2;
+$fa-var-java: \f4e4;
+$fa-var-invision: \f7b0;
+$fa-var-creative-commons-pd-alt: \f4ed;
+$fa-var-centercode: \f380;
+$fa-var-glide-g: \f2a6;
+$fa-var-drupal: \f1a9;
+$fa-var-jxl: \e67b;
+$fa-var-dart-lang: \e693;
+$fa-var-hire-a-helper: \f3b0;
+$fa-var-creative-commons-by: \f4e7;
+$fa-var-unity: \e049;
+$fa-var-whmcs: \f40d;
+$fa-var-rocketchat: \f3e8;
+$fa-var-vk: \f189;
+$fa-var-untappd: \f405;
+$fa-var-mailchimp: \f59e;
+$fa-var-css3-alt: \f38b;
+$fa-var-square-reddit: \f1a2;
+$fa-var-reddit-square: \f1a2;
+$fa-var-vimeo-v: \f27d;
+$fa-var-contao: \f26d;
+$fa-var-square-font-awesome: \e5ad;
+$fa-var-deskpro: \f38f;
+$fa-var-brave: \e63c;
+$fa-var-sistrix: \f3ee;
+$fa-var-square-instagram: \e055;
+$fa-var-instagram-square: \e055;
+$fa-var-battle-net: \f835;
+$fa-var-the-red-yeti: \f69d;
+$fa-var-square-hacker-news: \f3af;
+$fa-var-hacker-news-square: \f3af;
+$fa-var-edge: \f282;
+$fa-var-threads: \e618;
+$fa-var-napster: \f3d2;
+$fa-var-square-snapchat: \f2ad;
+$fa-var-snapchat-square: \f2ad;
+$fa-var-google-plus-g: \f0d5;
+$fa-var-artstation: \f77a;
+$fa-var-markdown: \f60f;
+$fa-var-sourcetree: \f7d3;
+$fa-var-google-plus: \f2b3;
+$fa-var-diaspora: \f791;
+$fa-var-foursquare: \f180;
+$fa-var-stack-overflow: \f16c;
+$fa-var-github-alt: \f113;
+$fa-var-phoenix-squadron: \f511;
+$fa-var-pagelines: \f18c;
+$fa-var-algolia: \f36c;
+$fa-var-red-river: \f3e3;
+$fa-var-creative-commons-sa: \f4ef;
+$fa-var-safari: \f267;
+$fa-var-google: \f1a0;
+$fa-var-square-font-awesome-stroke: \f35c;
+$fa-var-font-awesome-alt: \f35c;
+$fa-var-atlassian: \f77b;
+$fa-var-linkedin-in: \f0e1;
+$fa-var-digital-ocean: \f391;
+$fa-var-nimblr: \f5a8;
+$fa-var-chromecast: \f838;
+$fa-var-evernote: \f839;
+$fa-var-hacker-news: \f1d4;
+$fa-var-creative-commons-sampling: \f4f0;
+$fa-var-adversal: \f36a;
+$fa-var-creative-commons: \f25e;
+$fa-var-watchman-monitoring: \e087;
+$fa-var-fonticons: \f280;
+$fa-var-weixin: \f1d7;
+$fa-var-shirtsinbulk: \f214;
+$fa-var-codepen: \f1cb;
+$fa-var-git-alt: \f841;
+$fa-var-lyft: \f3c3;
+$fa-var-rev: \f5b2;
+$fa-var-windows: \f17a;
+$fa-var-wizards-of-the-coast: \f730;
+$fa-var-square-viadeo: \f2aa;
+$fa-var-viadeo-square: \f2aa;
+$fa-var-meetup: \f2e0;
+$fa-var-centos: \f789;
+$fa-var-adn: \f170;
+$fa-var-cloudsmith: \f384;
+$fa-var-opensuse: \e62b;
+$fa-var-pied-piper-alt: \f1a8;
+$fa-var-square-dribbble: \f397;
+$fa-var-dribbble-square: \f397;
+$fa-var-codiepie: \f284;
+$fa-var-node: \f419;
+$fa-var-mix: \f3cb;
+$fa-var-steam: \f1b6;
+$fa-var-cc-apple-pay: \f416;
+$fa-var-scribd: \f28a;
+$fa-var-debian: \e60b;
+$fa-var-openid: \f19b;
+$fa-var-instalod: \e081;
+$fa-var-files-pinwheel: \e69f;
+$fa-var-expeditedssl: \f23e;
+$fa-var-sellcast: \f2da;
+$fa-var-square-twitter: \f081;
+$fa-var-twitter-square: \f081;
+$fa-var-r-project: \f4f7;
+$fa-var-delicious: \f1a5;
+$fa-var-freebsd: \f3a4;
+$fa-var-vuejs: \f41f;
+$fa-var-accusoft: \f369;
+$fa-var-ioxhost: \f208;
+$fa-var-fonticons-fi: \f3a2;
+$fa-var-app-store: \f36f;
+$fa-var-cc-mastercard: \f1f1;
+$fa-var-itunes-note: \f3b5;
+$fa-var-golang: \e40f;
+$fa-var-kickstarter: \f3bb;
+$fa-var-square-kickstarter: \f3bb;
+$fa-var-grav: \f2d6;
+$fa-var-weibo: \f18a;
+$fa-var-uncharted: \e084;
 $fa-var-firstdraft: \f3a1;
-$fa-var-flickr: \f16e;
-$fa-var-flipboard: \f44d;
-$fa-var-fly: \f417;
+$fa-var-square-youtube: \f431;
+$fa-var-youtube-square: \f431;
+$fa-var-wikipedia-w: \f266;
+$fa-var-wpressr: \f3e4;
+$fa-var-rendact: \f3e4;
+$fa-var-angellist: \f209;
+$fa-var-galactic-republic: \f50c;
+$fa-var-nfc-directional: \e530;
+$fa-var-skype: \f17e;
+$fa-var-joget: \f3b7;
+$fa-var-fedora: \f798;
+$fa-var-stripe-s: \f42a;
+$fa-var-meta: \e49b;
+$fa-var-laravel: \f3bd;
+$fa-var-hotjar: \f3b1;
+$fa-var-bluetooth-b: \f294;
+$fa-var-square-letterboxd: \e62e;
+$fa-var-sticker-mule: \f3f7;
+$fa-var-creative-commons-zero: \f4f3;
+$fa-var-hips: \f452;
+$fa-var-css: \e6a2;
+$fa-var-behance: \f1b4;
+$fa-var-reddit: \f1a1;
+$fa-var-discord: \f392;
+$fa-var-chrome: \f268;
+$fa-var-app-store-ios: \f370;
+$fa-var-cc-discover: \f1f2;
+$fa-var-wpbeginner: \f297;
+$fa-var-confluence: \f78d;
+$fa-var-shoelace: \e60c;
+$fa-var-mdb: \f8ca;
+$fa-var-dochub: \f394;
+$fa-var-accessible-icon: \f368;
+$fa-var-ebay: \f4f4;
+$fa-var-amazon: \f270;
+$fa-var-unsplash: \e07c;
+$fa-var-yarn: \f7e3;
+$fa-var-square-steam: \f1b7;
+$fa-var-steam-square: \f1b7;
+$fa-var-500px: \f26e;
+$fa-var-square-vimeo: \f194;
+$fa-var-vimeo-square: \f194;
+$fa-var-asymmetrik: \f372;
 $fa-var-font-awesome: \f2b4;
 $fa-var-font-awesome-flag: \f2b4;
 $fa-var-font-awesome-logo-full: \f2b4;
-$fa-var-fonticons: \f280;
-$fa-var-fonticons-fi: \f3a2;
-$fa-var-fort-awesome: \f286;
-$fa-var-fort-awesome-alt: \f3a3;
-$fa-var-forumbee: \f211;
-$fa-var-foursquare: \f180;
-$fa-var-free-code-camp: \f2c5;
-$fa-var-freebsd: \f3a4;
-$fa-var-fulcrum: \f50b;
-$fa-var-galactic-republic: \f50c;
-$fa-var-galactic-senate: \f50d;
-$fa-var-get-pocket: \f265;
-$fa-var-gg: \f260;
-$fa-var-gg-circle: \f261;
-$fa-var-git: \f1d3;
-$fa-var-git-alt: \f841;
-$fa-var-git-square: \f1d2;
-$fa-var-github: \f09b;
-$fa-var-github-alt: \f113;
-$fa-var-github-square: \f092;
-$fa-var-gitkraken: \f3a6;
-$fa-var-gitlab: \f296;
-$fa-var-gitter: \f426;
-$fa-var-glide: \f2a5;
-$fa-var-glide-g: \f2a6;
-$fa-var-gofore: \f3a7;
-$fa-var-golang: \e40f;
-$fa-var-goodreads: \f3a8;
-$fa-var-goodreads-g: \f3a9;
-$fa-var-google: \f1a0;
-$fa-var-google-drive: \f3aa;
-$fa-var-google-pay: \e079;
-$fa-var-google-play: \f3ab;
-$fa-var-google-plus: \f2b3;
-$fa-var-google-plus-g: \f0d5;
-$fa-var-google-plus-square: \f0d4;
-$fa-var-google-wallet: \f1ee;
 $fa-var-gratipay: \f184;
-$fa-var-grav: \f2d6;
-$fa-var-gripfire: \f3ac;
-$fa-var-grunt: \f3ad;
-$fa-var-guilded: \e07e;
-$fa-var-gulp: \f3ae;
-$fa-var-hacker-news: \f1d4;
-$fa-var-hacker-news-square: \f3af;
-$fa-var-hackerrank: \f5f7;
-$fa-var-hashnode: \e499;
-$fa-var-hips: \f452;
-$fa-var-hire-a-helper: \f3b0;
+$fa-var-apple: \f179;
 $fa-var-hive: \e07f;
-$fa-var-hooli: \f427;
-$fa-var-hornbill: \f592;
-$fa-var-hotjar: \f3b1;
-$fa-var-houzz: \f27c;
-$fa-var-html5: \f13b;
-$fa-var-hubspot: \f3b2;
-$fa-var-ideal: \e013;
-$fa-var-imdb: \f2d8;
-$fa-var-instagram: \f16d;
-$fa-var-instagram-square: \e055;
-$fa-var-instalod: \e081;
-$fa-var-intercom: \f7af;
-$fa-var-internet-explorer: \f26b;
-$fa-var-invision: \f7b0;
-$fa-var-ioxhost: \f208;
-$fa-var-itch-io: \f83a;
-$fa-var-itunes: \f3b4;
-$fa-var-itunes-note: \f3b5;
-$fa-var-java: \f4e4;
-$fa-var-jedi-order: \f50e;
-$fa-var-jenkins: \f3b6;
-$fa-var-jira: \f7b1;
-$fa-var-joget: \f3b7;
-$fa-var-joomla: \f1aa;
-$fa-var-js: \f3b8;
-$fa-var-js-square: \f3b9;
-$fa-var-jsfiddle: \f1cc;
-$fa-var-kaggle: \f5fa;
+$fa-var-gitkraken: \f3a6;
 $fa-var-keybase: \f4f5;
-$fa-var-keycdn: \f3ba;
-$fa-var-kickstarter: \f3bb;
-$fa-var-kickstarter-k: \f3bc;
-$fa-var-korvue: \f42f;
-$fa-var-laravel: \f3bd;
-$fa-var-lastfm: \f202;
-$fa-var-lastfm-square: \f203;
-$fa-var-leanpub: \f212;
-$fa-var-less: \f41d;
-$fa-var-line: \f3c0;
-$fa-var-linkedin: \f08c;
-$fa-var-linkedin-in: \f0e1;
-$fa-var-linode: \f2b8;
-$fa-var-linux: \f17c;
-$fa-var-lyft: \f3c3;
-$fa-var-magento: \f3c4;
-$fa-var-mailchimp: \f59e;
-$fa-var-mandalorian: \f50f;
-$fa-var-markdown: \f60f;
-$fa-var-mastodon: \f4f6;
-$fa-var-maxcdn: \f136;
-$fa-var-mdb: \f8ca;
-$fa-var-medapps: \f3c6;
-$fa-var-medium: \f23a;
-$fa-var-medium-m: \f23a;
-$fa-var-medrt: \f3c8;
-$fa-var-meetup: \f2e0;
-$fa-var-megaport: \f5a3;
-$fa-var-mendeley: \f7b3;
-$fa-var-meta: \e49b;
-$fa-var-microblog: \e01a;
-$fa-var-microsoft: \f3ca;
-$fa-var-mix: \f3cb;
-$fa-var-mixcloud: \f289;
-$fa-var-mixer: \e056;
-$fa-var-mizuni: \f3cc;
-$fa-var-modx: \f285;
-$fa-var-monero: \f3d0;
-$fa-var-napster: \f3d2;
-$fa-var-neos: \f612;
-$fa-var-nfc-directional: \e530;
-$fa-var-nfc-symbol: \e531;
-$fa-var-nimblr: \f5a8;
-$fa-var-node: \f419;
-$fa-var-node-js: \f3d3;
-$fa-var-npm: \f3d4;
-$fa-var-ns8: \f3d5;
-$fa-var-nutritionix: \f3d6;
-$fa-var-octopus-deploy: \e082;
-$fa-var-odnoklassniki: \f263;
-$fa-var-odnoklassniki-square: \f264;
-$fa-var-old-republic: \f510;
-$fa-var-opencart: \f23d;
-$fa-var-openid: \f19b;
-$fa-var-opera: \f26a;
-$fa-var-optin-monster: \f23c;
-$fa-var-orcid: \f8d2;
-$fa-var-osi: \f41a;
+$fa-var-apple-pay: \f415;
 $fa-var-padlet: \e4a0;
-$fa-var-page4: \f3d7;
-$fa-var-pagelines: \f18c;
-$fa-var-palfed: \f3d8;
-$fa-var-patreon: \f3d9;
-$fa-var-paypal: \f1ed;
-$fa-var-perbyte: \e083;
-$fa-var-periscope: \f3da;
-$fa-var-phabricator: \f3db;
-$fa-var-phoenix-framework: \f3dc;
-$fa-var-phoenix-squadron: \f511;
-$fa-var-php: \f457;
-$fa-var-pied-piper: \f2ae;
-$fa-var-pied-piper-alt: \f1a8;
-$fa-var-pied-piper-hat: \f4e5;
-$fa-var-pied-piper-pp: \f1a7;
-$fa-var-pied-piper-square: \e01e;
-$fa-var-pinterest: \f0d2;
-$fa-var-pinterest-p: \f231;
-$fa-var-pinterest-square: \f0d3;
-$fa-var-pix: \e43a;
-$fa-var-playstation: \f3df;
-$fa-var-product-hunt: \f288;
-$fa-var-pushed: \f3e1;
-$fa-var-python: \f3e2;
-$fa-var-qq: \f1d6;
-$fa-var-quinscape: \f459;
-$fa-var-quora: \f2c4;
-$fa-var-r-project: \f4f7;
-$fa-var-raspberry-pi: \f7bb;
-$fa-var-ravelry: \f2d9;
-$fa-var-react: \f41b;
-$fa-var-reacteurope: \f75d;
-$fa-var-readme: \f4d5;
-$fa-var-rebel: \f1d0;
-$fa-var-red-river: \f3e3;
-$fa-var-reddit: \f1a1;
-$fa-var-reddit-alien: \f281;
-$fa-var-reddit-square: \f1a2;
-$fa-var-redhat: \f7bc;
-$fa-var-renren: \f18b;
-$fa-var-replyd: \f3e6;
-$fa-var-researchgate: \f4f8;
-$fa-var-resolving: \f3e7;
-$fa-var-rev: \f5b2;
-$fa-var-rocketchat: \f3e8;
-$fa-var-rockrms: \f3e9;
-$fa-var-rust: \e07a;
-$fa-var-safari: \f267;
-$fa-var-salesforce: \f83b;
-$fa-var-sass: \f41e;
-$fa-var-schlix: \f3ea;
-$fa-var-screenpal: \e570;
-$fa-var-scribd: \f28a;
-$fa-var-searchengin: \f3eb;
-$fa-var-sellcast: \f2da;
-$fa-var-sellsy: \f213;
-$fa-var-servicestack: \f3ec;
-$fa-var-shirtsinbulk: \f214;
-$fa-var-shopify: \e057;
-$fa-var-shopware: \f5b5;
-$fa-var-simplybuilt: \f215;
-$fa-var-sistrix: \f3ee;
-$fa-var-sith: \f512;
-$fa-var-sitrox: \e44a;
-$fa-var-sketch: \f7c6;
-$fa-var-skyatlas: \f216;
-$fa-var-skype: \f17e;
-$fa-var-slack: \f198;
-$fa-var-slack-hash: \f198;
-$fa-var-slideshare: \f1e7;
-$fa-var-snapchat: \f2ab;
-$fa-var-snapchat-ghost: \f2ab;
-$fa-var-snapchat-square: \f2ad;
-$fa-var-soundcloud: \f1be;
-$fa-var-sourcetree: \f7d3;
-$fa-var-speakap: \f3f3;
-$fa-var-speaker-deck: \f83c;
-$fa-var-spotify: \f1bc;
-$fa-var-square-font-awesome: \f425;
-$fa-var-square-font-awesome-stroke: \f35c;
-$fa-var-font-awesome-alt: \f35c;
-$fa-var-squarespace: \f5be;
-$fa-var-stack-exchange: \f18d;
-$fa-var-stack-overflow: \f16c;
-$fa-var-stackpath: \f842;
-$fa-var-staylinked: \f3f5;
-$fa-var-steam: \f1b6;
-$fa-var-steam-square: \f1b7;
-$fa-var-steam-symbol: \f3f6;
-$fa-var-sticker-mule: \f3f7;
-$fa-var-strava: \f428;
-$fa-var-stripe: \f429;
-$fa-var-stripe-s: \f42a;
-$fa-var-studiovinari: \f3f8;
+$fa-var-amazon-pay: \f42c;
+$fa-var-square-github: \f092;
+$fa-var-github-square: \f092;
 $fa-var-stumbleupon: \f1a4;
-$fa-var-stumbleupon-circle: \f1a3;
-$fa-var-superpowers: \f2dd;
-$fa-var-supple: \f3f9;
-$fa-var-suse: \f7d6;
+$fa-var-fedex: \f797;
+$fa-var-phoenix-framework: \f3dc;
+$fa-var-shopify: \e057;
+$fa-var-neos: \f612;
+$fa-var-square-threads: \e619;
+$fa-var-hackerrank: \f5f7;
+$fa-var-researchgate: \f4f8;
 $fa-var-swift: \f8e1;
-$fa-var-symfony: \f83d;
-$fa-var-teamspeak: \f4f9;
-$fa-var-telegram: \f2c6;
-$fa-var-telegram-plane: \f2c6;
-$fa-var-tencent-weibo: \f1d5;
-$fa-var-the-red-yeti: \f69d;
-$fa-var-themeco: \f5c6;
+$fa-var-angular: \f420;
+$fa-var-speakap: \f3f3;
+$fa-var-angrycreative: \f36e;
+$fa-var-y-combinator: \f23b;
+$fa-var-empire: \f1d1;
+$fa-var-envira: \f299;
+$fa-var-google-scholar: \e63b;
+$fa-var-square-gitlab: \e5ae;
+$fa-var-gitlab-square: \e5ae;
+$fa-var-studiovinari: \f3f8;
+$fa-var-pied-piper: \f2ae;
+$fa-var-wordpress: \f19a;
+$fa-var-product-hunt: \f288;
+$fa-var-firefox: \f269;
+$fa-var-linode: \f2b8;
+$fa-var-goodreads: \f3a8;
+$fa-var-square-odnoklassniki: \f264;
+$fa-var-odnoklassniki-square: \f264;
+$fa-var-jsfiddle: \f1cc;
+$fa-var-sith: \f512;
 $fa-var-themeisle: \f2b2;
-$fa-var-think-peaks: \f731;
-$fa-var-tiktok: \e07b;
-$fa-var-trade-federation: \f513;
-$fa-var-trello: \f181;
-$fa-var-tumblr: \f173;
-$fa-var-tumblr-square: \f174;
-$fa-var-twitch: \f1e8;
-$fa-var-twitter: \f099;
-$fa-var-twitter-square: \f081;
-$fa-var-typo3: \f42b;
-$fa-var-uber: \f402;
-$fa-var-ubuntu: \f7df;
-$fa-var-uikit: \f403;
+$fa-var-page4: \f3d7;
+$fa-var-hashnode: \e499;
+$fa-var-react: \f41b;
+$fa-var-cc-paypal: \f1f4;
+$fa-var-squarespace: \f5be;
+$fa-var-cc-stripe: \f1f5;
+$fa-var-creative-commons-share: \f4f2;
+$fa-var-bitcoin: \f379;
+$fa-var-keycdn: \f3ba;
+$fa-var-opera: \f26a;
+$fa-var-itch-io: \f83a;
 $fa-var-umbraco: \f8e8;
-$fa-var-uncharted: \e084;
-$fa-var-uniregistry: \f404;
-$fa-var-unity: \e049;
-$fa-var-unsplash: \e07c;
-$fa-var-untappd: \f405;
-$fa-var-ups: \f7e0;
-$fa-var-usb: \f287;
-$fa-var-usps: \f7e1;
-$fa-var-ussunnah: \f407;
-$fa-var-vaadin: \f408;
-$fa-var-viacoin: \f237;
-$fa-var-viadeo: \f2a9;
-$fa-var-viadeo-square: \f2aa;
-$fa-var-viber: \f409;
-$fa-var-vimeo: \f40a;
-$fa-var-vimeo-square: \f194;
-$fa-var-vimeo-v: \f27d;
+$fa-var-galactic-senate: \f50d;
+$fa-var-ubuntu: \f7df;
+$fa-var-draft2digital: \f396;
+$fa-var-stripe: \f429;
+$fa-var-houzz: \f27c;
+$fa-var-gg: \f260;
+$fa-var-dhl: \f790;
+$fa-var-square-pinterest: \f0d3;
+$fa-var-pinterest-square: \f0d3;
+$fa-var-xing: \f168;
+$fa-var-blackberry: \f37b;
+$fa-var-creative-commons-pd: \f4ec;
+$fa-var-playstation: \f3df;
+$fa-var-quinscape: \f459;
+$fa-var-less: \f41d;
+$fa-var-blogger-b: \f37d;
+$fa-var-opencart: \f23d;
 $fa-var-vine: \f1ca;
-$fa-var-vk: \f189;
-$fa-var-vnv: \f40b;
-$fa-var-vuejs: \f41f;
-$fa-var-watchman-monitoring: \e087;
-$fa-var-waze: \f83f;
-$fa-var-weebly: \f5cc;
-$fa-var-weibo: \f18a;
-$fa-var-weixin: \f1d7;
+$fa-var-signal-messenger: \e663;
+$fa-var-paypal: \f1ed;
+$fa-var-gitlab: \f296;
+$fa-var-typo3: \f42b;
+$fa-var-reddit-alien: \f281;
+$fa-var-yahoo: \f19e;
+$fa-var-dailymotion: \e052;
+$fa-var-affiliatetheme: \f36b;
+$fa-var-pied-piper-pp: \f1a7;
+$fa-var-bootstrap: \f836;
+$fa-var-odnoklassniki: \f263;
+$fa-var-nfc-symbol: \e531;
+$fa-var-mintbit: \e62f;
+$fa-var-ethereum: \f42e;
+$fa-var-speaker-deck: \f83c;
+$fa-var-creative-commons-nc-eu: \f4e9;
+$fa-var-patreon: \f3d9;
+$fa-var-avianex: \f374;
+$fa-var-ello: \f5f1;
+$fa-var-gofore: \f3a7;
+$fa-var-bimobject: \f378;
+$fa-var-brave-reverse: \e63d;
+$fa-var-facebook-f: \f39e;
+$fa-var-square-google-plus: \f0d4;
+$fa-var-google-plus-square: \f0d4;
+$fa-var-web-awesome: \e682;
+$fa-var-mandalorian: \f50f;
+$fa-var-first-order-alt: \f50a;
+$fa-var-osi: \f41a;
+$fa-var-google-wallet: \f1ee;
+$fa-var-d-and-d-beyond: \f6ca;
+$fa-var-periscope: \f3da;
+$fa-var-fulcrum: \f50b;
+$fa-var-cloudscale: \f383;
+$fa-var-forumbee: \f211;
+$fa-var-mizuni: \f3cc;
+$fa-var-schlix: \f3ea;
+$fa-var-square-xing: \f169;
+$fa-var-xing-square: \f169;
+$fa-var-bandcamp: \f2d5;
+$fa-var-wpforms: \f298;
+$fa-var-cloudversify: \f385;
+$fa-var-usps: \f7e1;
+$fa-var-megaport: \f5a3;
+$fa-var-magento: \f3c4;
+$fa-var-spotify: \f1bc;
+$fa-var-optin-monster: \f23c;
+$fa-var-fly: \f417;
+$fa-var-square-bluesky: \e6a3;
+$fa-var-aviato: \f421;
+$fa-var-itunes: \f3b4;
+$fa-var-cuttlefish: \f38c;
+$fa-var-blogger: \f37c;
+$fa-var-flickr: \f16e;
+$fa-var-viber: \f409;
+$fa-var-soundcloud: \f1be;
+$fa-var-digg: \f1a6;
+$fa-var-tencent-weibo: \f1d5;
+$fa-var-letterboxd: \e62d;
+$fa-var-symfony: \f83d;
+$fa-var-maxcdn: \f136;
+$fa-var-etsy: \f2d7;
+$fa-var-facebook-messenger: \f39f;
+$fa-var-audible: \f373;
+$fa-var-think-peaks: \f731;
+$fa-var-bilibili: \e3d9;
+$fa-var-erlang: \f39d;
+$fa-var-x-twitter: \e61b;
+$fa-var-cotton-bureau: \f89e;
+$fa-var-dashcube: \f210;
+$fa-var-42-group: \e080;
+$fa-var-innosoft: \e080;
+$fa-var-stack-exchange: \f18d;
+$fa-var-elementor: \f430;
+$fa-var-square-pied-piper: \e01e;
+$fa-var-pied-piper-square: \e01e;
+$fa-var-creative-commons-nd: \f4eb;
+$fa-var-palfed: \f3d8;
+$fa-var-superpowers: \f2dd;
+$fa-var-resolving: \f3e7;
+$fa-var-xbox: \f412;
+$fa-var-square-web-awesome-stroke: \e684;
+$fa-var-searchengin: \f3eb;
+$fa-var-tiktok: \e07b;
+$fa-var-square-facebook: \f082;
+$fa-var-facebook-square: \f082;
+$fa-var-renren: \f18b;
+$fa-var-linux: \f17c;
+$fa-var-glide: \f2a5;
+$fa-var-linkedin: \f08c;
+$fa-var-hubspot: \f3b2;
+$fa-var-deploydog: \f38e;
+$fa-var-twitch: \f1e8;
+$fa-var-flutter: \e694;
+$fa-var-ravelry: \f2d9;
+$fa-var-mixer: \e056;
+$fa-var-square-lastfm: \f203;
+$fa-var-lastfm-square: \f203;
+$fa-var-vimeo: \f40a;
+$fa-var-mendeley: \f7b3;
+$fa-var-uniregistry: \f404;
+$fa-var-figma: \f799;
+$fa-var-creative-commons-remix: \f4ee;
+$fa-var-cc-amazon-pay: \f42d;
+$fa-var-dropbox: \f16b;
+$fa-var-instagram: \f16d;
+$fa-var-cmplid: \e360;
+$fa-var-upwork: \e641;
+$fa-var-facebook: \f09a;
+$fa-var-gripfire: \f3ac;
+$fa-var-jedi-order: \f50e;
+$fa-var-uikit: \f403;
+$fa-var-fort-awesome-alt: \f3a3;
+$fa-var-phabricator: \f3db;
+$fa-var-ussunnah: \f407;
+$fa-var-earlybirds: \f39a;
+$fa-var-trade-federation: \f513;
+$fa-var-autoprefixer: \f41c;
 $fa-var-whatsapp: \f232;
-$fa-var-whatsapp-square: \f40c;
-$fa-var-whmcs: \f40d;
-$fa-var-wikipedia-w: \f266;
-$fa-var-windows: \f17a;
+$fa-var-square-upwork: \e67c;
+$fa-var-slideshare: \f1e7;
+$fa-var-google-play: \f3ab;
+$fa-var-viadeo: \f2a9;
+$fa-var-line: \f3c0;
+$fa-var-google-drive: \f3aa;
+$fa-var-servicestack: \f3ec;
+$fa-var-simplybuilt: \f215;
+$fa-var-bitbucket: \f171;
+$fa-var-imdb: \f2d8;
+$fa-var-deezer: \e077;
+$fa-var-raspberry-pi: \f7bb;
+$fa-var-jira: \f7b1;
+$fa-var-docker: \f395;
+$fa-var-screenpal: \e570;
+$fa-var-bluetooth: \f293;
+$fa-var-gitter: \f426;
+$fa-var-d-and-d: \f38d;
+$fa-var-microblog: \e01a;
+$fa-var-cc-diners-club: \f24c;
+$fa-var-gg-circle: \f261;
+$fa-var-pied-piper-hat: \f4e5;
+$fa-var-kickstarter-k: \f3bc;
+$fa-var-yandex: \f413;
+$fa-var-readme: \f4d5;
+$fa-var-html5: \f13b;
+$fa-var-sellsy: \f213;
+$fa-var-square-web-awesome: \e683;
+$fa-var-sass: \f41e;
 $fa-var-wirsindhandwerk: \e2d0;
 $fa-var-wsh: \e2d0;
+$fa-var-buromobelexperte: \f37f;
+$fa-var-salesforce: \f83b;
+$fa-var-octopus-deploy: \e082;
+$fa-var-medapps: \f3c6;
+$fa-var-ns8: \f3d5;
+$fa-var-pinterest-p: \f231;
+$fa-var-apper: \f371;
+$fa-var-fort-awesome: \f286;
+$fa-var-waze: \f83f;
+$fa-var-bluesky: \e671;
+$fa-var-cc-jcb: \f24b;
+$fa-var-snapchat: \f2ab;
+$fa-var-snapchat-ghost: \f2ab;
+$fa-var-fantasy-flight-games: \f6dc;
+$fa-var-rust: \e07a;
 $fa-var-wix: \f5cf;
-$fa-var-wizards-of-the-coast: \f730;
-$fa-var-wodu: \e088;
-$fa-var-wolf-pack-battalion: \f514;
-$fa-var-wordpress: \f19a;
-$fa-var-wordpress-simple: \f411;
-$fa-var-wpbeginner: \f297;
-$fa-var-wpexplorer: \f2de;
-$fa-var-wpforms: \f298;
-$fa-var-wpressr: \f3e4;
-$fa-var-xbox: \f412;
-$fa-var-xing: \f168;
-$fa-var-xing-square: \f169;
-$fa-var-y-combinator: \f23b;
-$fa-var-yahoo: \f19e;
-$fa-var-yammer: \f840;
-$fa-var-yandex: \f413;
+$fa-var-square-behance: \f1b5;
+$fa-var-behance-square: \f1b5;
+$fa-var-supple: \f3f9;
+$fa-var-webflow: \e65c;
+$fa-var-rebel: \f1d0;
+$fa-var-css3: \f13c;
+$fa-var-staylinked: \f3f5;
+$fa-var-kaggle: \f5fa;
+$fa-var-space-awesome: \e5ac;
+$fa-var-deviantart: \f1bd;
+$fa-var-cpanel: \f388;
+$fa-var-goodreads-g: \f3a9;
+$fa-var-square-git: \f1d2;
+$fa-var-git-square: \f1d2;
+$fa-var-square-tumblr: \f174;
+$fa-var-tumblr-square: \f174;
+$fa-var-trello: \f181;
+$fa-var-creative-commons-nc-jp: \f4ea;
+$fa-var-get-pocket: \f265;
+$fa-var-perbyte: \e083;
+$fa-var-grunt: \f3ad;
+$fa-var-weebly: \f5cc;
+$fa-var-connectdevelop: \f20e;
+$fa-var-leanpub: \f212;
+$fa-var-black-tie: \f27e;
+$fa-var-themeco: \f5c6;
+$fa-var-python: \f3e2;
+$fa-var-android: \f17b;
+$fa-var-bots: \e340;
+$fa-var-free-code-camp: \f2c5;
+$fa-var-hornbill: \f592;
+$fa-var-js: \f3b8;
+$fa-var-ideal: \e013;
+$fa-var-git: \f1d3;
+$fa-var-dev: \f6cc;
+$fa-var-sketch: \f7c6;
 $fa-var-yandex-international: \f414;
-$fa-var-yarn: \f7e3;
-$fa-var-yelp: \f1e9;
-$fa-var-yoast: \f2b1;
+$fa-var-cc-amex: \f1f3;
+$fa-var-uber: \f402;
+$fa-var-github: \f09b;
+$fa-var-php: \f457;
+$fa-var-alipay: \f642;
 $fa-var-youtube: \f167;
-$fa-var-youtube-square: \f431;
+$fa-var-skyatlas: \f216;
+$fa-var-firefox-browser: \e007;
+$fa-var-replyd: \f3e6;
+$fa-var-suse: \f7d6;
+$fa-var-jenkins: \f3b6;
+$fa-var-twitter: \f099;
+$fa-var-rockrms: \f3e9;
+$fa-var-pinterest: \f0d2;
+$fa-var-buffer: \f837;
+$fa-var-npm: \f3d4;
+$fa-var-yammer: \f840;
+$fa-var-btc: \f15a;
+$fa-var-dribbble: \f17d;
+$fa-var-stumbleupon-circle: \f1a3;
+$fa-var-internet-explorer: \f26b;
+$fa-var-stubber: \e5c7;
+$fa-var-telegram: \f2c6;
+$fa-var-telegram-plane: \f2c6;
+$fa-var-old-republic: \f510;
+$fa-var-odysee: \e5c6;
+$fa-var-square-whatsapp: \f40c;
+$fa-var-whatsapp-square: \f40c;
+$fa-var-node-js: \f3d3;
+$fa-var-edge-legacy: \e078;
+$fa-var-slack: \f198;
+$fa-var-slack-hash: \f198;
+$fa-var-medrt: \f3c8;
+$fa-var-usb: \f287;
+$fa-var-tumblr: \f173;
+$fa-var-vaadin: \f408;
+$fa-var-quora: \f2c4;
+$fa-var-square-x-twitter: \e61a;
+$fa-var-reacteurope: \f75d;
+$fa-var-medium: \f23a;
+$fa-var-medium-m: \f23a;
+$fa-var-amilia: \f36d;
+$fa-var-mixcloud: \f289;
+$fa-var-flipboard: \f44d;
+$fa-var-viacoin: \f237;
+$fa-var-critical-role: \f6c9;
+$fa-var-sitrox: \e44a;
+$fa-var-discourse: \f393;
+$fa-var-joomla: \f1aa;
+$fa-var-mastodon: \f4f6;
+$fa-var-airbnb: \f834;
+$fa-var-wolf-pack-battalion: \f514;
+$fa-var-buy-n-large: \f8a6;
+$fa-var-gulp: \f3ae;
+$fa-var-creative-commons-sampling-plus: \f4f1;
+$fa-var-strava: \f428;
+$fa-var-ember: \f423;
+$fa-var-canadian-maple-leaf: \f785;
+$fa-var-teamspeak: \f4f9;
+$fa-var-pushed: \f3e1;
+$fa-var-wordpress-simple: \f411;
+$fa-var-nutritionix: \f3d6;
+$fa-var-wodu: \e088;
+$fa-var-google-pay: \e079;
+$fa-var-intercom: \f7af;
 $fa-var-zhihu: \f63f;
+$fa-var-korvue: \f42f;
+$fa-var-pix: \e43a;
+$fa-var-steam-symbol: \f3f6;
 
 $fa-icons: (
   "0": $fa-var-0,
@@ -4713,7 +4774,8 @@ $fa-icons: (
   "arrow-down-from-line": $fa-var-arrow-down-from-line,
   "arrow-from-top": $fa-var-arrow-from-top,
   "arrow-down-left": $fa-var-arrow-down-left,
-  "arrow-down-left-and-arrow-up-right-to-center": $fa-var-arrow-down-left-and-arrow-up-right-to-center,
+  "arrow-down-left-and-arrow-up-right-to-center":
+    $fa-var-arrow-down-left-and-arrow-up-right-to-center,
   "arrow-down-long": $fa-var-arrow-down-long,
   "long-arrow-down": $fa-var-long-arrow-down,
   "arrow-down-right": $fa-var-arrow-down-right,
@@ -4808,7 +4870,8 @@ $fa-icons: (
   "arrow-up-long": $fa-var-arrow-up-long,
   "long-arrow-up": $fa-var-long-arrow-up,
   "arrow-up-right": $fa-var-arrow-up-right,
-  "arrow-up-right-and-arrow-down-left-from-center": $fa-var-arrow-up-right-and-arrow-down-left-from-center,
+  "arrow-up-right-and-arrow-down-left-from-center":
+    $fa-var-arrow-up-right-and-arrow-down-left-from-center,
   "arrow-up-right-dots": $fa-var-arrow-up-right-dots,
   "arrow-up-right-from-square": $fa-var-arrow-up-right-from-square,
   "external-link": $fa-var-external-link,
@@ -6549,9 +6612,11 @@ $fa-icons: (
   "sign-language": $fa-var-sign-language,
   "signing": $fa-var-signing,
   "hands-asl-interpreting": $fa-var-hands-asl-interpreting,
-  "american-sign-language-interpreting": $fa-var-american-sign-language-interpreting,
+  "american-sign-language-interpreting":
+    $fa-var-american-sign-language-interpreting,
   "asl-interpreting": $fa-var-asl-interpreting,
-  "hands-american-sign-language-interpreting": $fa-var-hands-american-sign-language-interpreting,
+  "hands-american-sign-language-interpreting":
+    $fa-var-hands-american-sign-language-interpreting,
   "hands-bound": $fa-var-hands-bound,
   "hands-bubbles": $fa-var-hands-bubbles,
   "hands-wash": $fa-var-hands-wash,
@@ -6703,7 +6768,8 @@ $fa-icons: (
   "house-fire": $fa-var-house-fire,
   "house-flag": $fa-var-house-flag,
   "house-flood-water": $fa-var-house-flood-water,
-  "house-flood-water-circle-arrow-right": $fa-var-house-flood-water-circle-arrow-right,
+  "house-flood-water-circle-arrow-right":
+    $fa-var-house-flood-water-circle-arrow-right,
   "house-heart": $fa-var-house-heart,
   "home-heart": $fa-var-home-heart,
   "house-laptop": $fa-var-house-laptop,
@@ -7429,7 +7495,8 @@ $fa-icons: (
   "walking": $fa-var-walking,
   "person-walking-arrow-loop-left": $fa-var-person-walking-arrow-loop-left,
   "person-walking-arrow-right": $fa-var-person-walking-arrow-right,
-  "person-walking-dashed-line-arrow-right": $fa-var-person-walking-dashed-line-arrow-right,
+  "person-walking-dashed-line-arrow-right":
+    $fa-var-person-walking-dashed-line-arrow-right,
   "person-walking-luggage": $fa-var-person-walking-luggage,
   "person-walking-with-cane": $fa-var-person-walking-with-cane,
   "blind": $fa-var-blind,
@@ -8106,7 +8173,8 @@ $fa-icons: (
   "starfighter": $fa-var-starfighter,
   "starfighter-twin-ion-engine": $fa-var-starfighter-twin-ion-engine,
   "starfighter-alt": $fa-var-starfighter-alt,
-  "starfighter-twin-ion-engine-advanced": $fa-var-starfighter-twin-ion-engine-advanced,
+  "starfighter-twin-ion-engine-advanced":
+    $fa-var-starfighter-twin-ion-engine-advanced,
   "starfighter-alt-advanced": $fa-var-starfighter-alt-advanced,
   "stars": $fa-var-stars,
   "starship": $fa-var-starship,
@@ -8467,7 +8535,8 @@ $fa-icons: (
   "up-long": $fa-var-up-long,
   "long-arrow-alt-up": $fa-var-long-arrow-alt-up,
   "up-right": $fa-var-up-right,
-  "up-right-and-down-left-from-center": $fa-var-up-right-and-down-left-from-center,
+  "up-right-and-down-left-from-center":
+    $fa-var-up-right-and-down-left-from-center,
   "expand-alt": $fa-var-expand-alt,
   "up-right-from-square": $fa-var-up-right-from-square,
   "external-link-alt": $fa-var-external-link-alt,
@@ -8724,476 +8793,534 @@ $fa-icons: (
 );
 
 $fa-brand-icons: (
-  "42-group": $fa-var-42-group,
-  "innosoft": $fa-var-innosoft,
-  "500px": $fa-var-500px,
-  "accessible-icon": $fa-var-accessible-icon,
-  "accusoft": $fa-var-accusoft,
-  "adn": $fa-var-adn,
-  "adversal": $fa-var-adversal,
-  "affiliatetheme": $fa-var-affiliatetheme,
-  "airbnb": $fa-var-airbnb,
-  "algolia": $fa-var-algolia,
-  "alipay": $fa-var-alipay,
-  "amazon": $fa-var-amazon,
-  "amazon-pay": $fa-var-amazon-pay,
-  "amilia": $fa-var-amilia,
-  "android": $fa-var-android,
-  "angellist": $fa-var-angellist,
-  "angrycreative": $fa-var-angrycreative,
-  "angular": $fa-var-angular,
-  "app-store": $fa-var-app-store,
-  "app-store-ios": $fa-var-app-store-ios,
-  "apper": $fa-var-apper,
-  "apple": $fa-var-apple,
-  "apple-pay": $fa-var-apple-pay,
-  "artstation": $fa-var-artstation,
-  "asymmetrik": $fa-var-asymmetrik,
-  "atlassian": $fa-var-atlassian,
-  "audible": $fa-var-audible,
-  "autoprefixer": $fa-var-autoprefixer,
-  "avianex": $fa-var-avianex,
-  "aviato": $fa-var-aviato,
-  "aws": $fa-var-aws,
-  "bandcamp": $fa-var-bandcamp,
-  "battle-net": $fa-var-battle-net,
-  "behance": $fa-var-behance,
-  "behance-square": $fa-var-behance-square,
-  "bilibili": $fa-var-bilibili,
-  "bimobject": $fa-var-bimobject,
-  "bitbucket": $fa-var-bitbucket,
-  "bitcoin": $fa-var-bitcoin,
-  "bity": $fa-var-bity,
-  "black-tie": $fa-var-black-tie,
-  "blackberry": $fa-var-blackberry,
-  "blogger": $fa-var-blogger,
-  "blogger-b": $fa-var-blogger-b,
-  "bluetooth": $fa-var-bluetooth,
-  "bluetooth-b": $fa-var-bluetooth-b,
-  "bootstrap": $fa-var-bootstrap,
-  "bots": $fa-var-bots,
-  "btc": $fa-var-btc,
-  "buffer": $fa-var-buffer,
-  "buromobelexperte": $fa-var-buromobelexperte,
-  "buy-n-large": $fa-var-buy-n-large,
-  "buysellads": $fa-var-buysellads,
-  "canadian-maple-leaf": $fa-var-canadian-maple-leaf,
-  "cc-amazon-pay": $fa-var-cc-amazon-pay,
-  "cc-amex": $fa-var-cc-amex,
-  "cc-apple-pay": $fa-var-cc-apple-pay,
-  "cc-diners-club": $fa-var-cc-diners-club,
-  "cc-discover": $fa-var-cc-discover,
-  "cc-jcb": $fa-var-cc-jcb,
-  "cc-mastercard": $fa-var-cc-mastercard,
-  "cc-paypal": $fa-var-cc-paypal,
-  "cc-stripe": $fa-var-cc-stripe,
+  "monero": $fa-var-monero,
+  "hooli": $fa-var-hooli,
+  "yelp": $fa-var-yelp,
   "cc-visa": $fa-var-cc-visa,
-  "centercode": $fa-var-centercode,
-  "centos": $fa-var-centos,
-  "chrome": $fa-var-chrome,
-  "chromecast": $fa-var-chromecast,
-  "cloudflare": $fa-var-cloudflare,
-  "cloudscale": $fa-var-cloudscale,
-  "cloudsmith": $fa-var-cloudsmith,
-  "cloudversify": $fa-var-cloudversify,
-  "cmplid": $fa-var-cmplid,
-  "codepen": $fa-var-codepen,
-  "codiepie": $fa-var-codiepie,
-  "confluence": $fa-var-confluence,
-  "connectdevelop": $fa-var-connectdevelop,
-  "contao": $fa-var-contao,
-  "cotton-bureau": $fa-var-cotton-bureau,
-  "cpanel": $fa-var-cpanel,
-  "creative-commons": $fa-var-creative-commons,
-  "creative-commons-by": $fa-var-creative-commons-by,
+  "lastfm": $fa-var-lastfm,
+  "shopware": $fa-var-shopware,
   "creative-commons-nc": $fa-var-creative-commons-nc,
-  "creative-commons-nc-eu": $fa-var-creative-commons-nc-eu,
-  "creative-commons-nc-jp": $fa-var-creative-commons-nc-jp,
-  "creative-commons-nd": $fa-var-creative-commons-nd,
-  "creative-commons-pd": $fa-var-creative-commons-pd,
-  "creative-commons-pd-alt": $fa-var-creative-commons-pd-alt,
-  "creative-commons-remix": $fa-var-creative-commons-remix,
-  "creative-commons-sa": $fa-var-creative-commons-sa,
-  "creative-commons-sampling": $fa-var-creative-commons-sampling,
-  "creative-commons-sampling-plus": $fa-var-creative-commons-sampling-plus,
-  "creative-commons-share": $fa-var-creative-commons-share,
-  "creative-commons-zero": $fa-var-creative-commons-zero,
-  "critical-role": $fa-var-critical-role,
-  "css3": $fa-var-css3,
-  "css3-alt": $fa-var-css3-alt,
-  "cuttlefish": $fa-var-cuttlefish,
-  "d-and-d": $fa-var-d-and-d,
-  "d-and-d-beyond": $fa-var-d-and-d-beyond,
-  "dailymotion": $fa-var-dailymotion,
-  "dashcube": $fa-var-dashcube,
-  "deezer": $fa-var-deezer,
-  "delicious": $fa-var-delicious,
-  "deploydog": $fa-var-deploydog,
-  "deskpro": $fa-var-deskpro,
-  "dev": $fa-var-dev,
-  "deviantart": $fa-var-deviantart,
-  "dhl": $fa-var-dhl,
-  "diaspora": $fa-var-diaspora,
-  "digg": $fa-var-digg,
-  "digital-ocean": $fa-var-digital-ocean,
-  "discord": $fa-var-discord,
-  "discourse": $fa-var-discourse,
-  "dochub": $fa-var-dochub,
-  "docker": $fa-var-docker,
-  "draft2digital": $fa-var-draft2digital,
-  "dribbble": $fa-var-dribbble,
-  "dribbble-square": $fa-var-dribbble-square,
-  "dropbox": $fa-var-dropbox,
-  "drupal": $fa-var-drupal,
+  "aws": $fa-var-aws,
+  "redhat": $fa-var-redhat,
+  "yoast": $fa-var-yoast,
+  "cloudflare": $fa-var-cloudflare,
+  "ups": $fa-var-ups,
+  "pixiv": $fa-var-pixiv,
+  "wpexplorer": $fa-var-wpexplorer,
   "dyalog": $fa-var-dyalog,
-  "earlybirds": $fa-var-earlybirds,
-  "ebay": $fa-var-ebay,
-  "edge": $fa-var-edge,
-  "edge-legacy": $fa-var-edge-legacy,
-  "elementor": $fa-var-elementor,
-  "ello": $fa-var-ello,
-  "ember": $fa-var-ember,
-  "empire": $fa-var-empire,
-  "envira": $fa-var-envira,
-  "erlang": $fa-var-erlang,
-  "ethereum": $fa-var-ethereum,
-  "etsy": $fa-var-etsy,
-  "evernote": $fa-var-evernote,
-  "expeditedssl": $fa-var-expeditedssl,
-  "facebook": $fa-var-facebook,
-  "facebook-f": $fa-var-facebook-f,
-  "facebook-messenger": $fa-var-facebook-messenger,
-  "facebook-square": $fa-var-facebook-square,
-  "fantasy-flight-games": $fa-var-fantasy-flight-games,
-  "fedex": $fa-var-fedex,
-  "fedora": $fa-var-fedora,
-  "figma": $fa-var-figma,
-  "firefox": $fa-var-firefox,
-  "firefox-browser": $fa-var-firefox-browser,
+  "bity": $fa-var-bity,
+  "stackpath": $fa-var-stackpath,
+  "buysellads": $fa-var-buysellads,
   "first-order": $fa-var-first-order,
-  "first-order-alt": $fa-var-first-order-alt,
+  "modx": $fa-var-modx,
+  "guilded": $fa-var-guilded,
+  "vnv": $fa-var-vnv,
+  "square-js": $fa-var-square-js,
+  "js-square": $fa-var-js-square,
+  "microsoft": $fa-var-microsoft,
+  "qq": $fa-var-qq,
+  "orcid": $fa-var-orcid,
+  "java": $fa-var-java,
+  "invision": $fa-var-invision,
+  "creative-commons-pd-alt": $fa-var-creative-commons-pd-alt,
+  "centercode": $fa-var-centercode,
+  "glide-g": $fa-var-glide-g,
+  "drupal": $fa-var-drupal,
+  "jxl": $fa-var-jxl,
+  "dart-lang": $fa-var-dart-lang,
+  "hire-a-helper": $fa-var-hire-a-helper,
+  "creative-commons-by": $fa-var-creative-commons-by,
+  "unity": $fa-var-unity,
+  "whmcs": $fa-var-whmcs,
+  "rocketchat": $fa-var-rocketchat,
+  "vk": $fa-var-vk,
+  "untappd": $fa-var-untappd,
+  "mailchimp": $fa-var-mailchimp,
+  "css3-alt": $fa-var-css3-alt,
+  "square-reddit": $fa-var-square-reddit,
+  "reddit-square": $fa-var-reddit-square,
+  "vimeo-v": $fa-var-vimeo-v,
+  "contao": $fa-var-contao,
+  "square-font-awesome": $fa-var-square-font-awesome,
+  "deskpro": $fa-var-deskpro,
+  "brave": $fa-var-brave,
+  "sistrix": $fa-var-sistrix,
+  "square-instagram": $fa-var-square-instagram,
+  "instagram-square": $fa-var-instagram-square,
+  "battle-net": $fa-var-battle-net,
+  "the-red-yeti": $fa-var-the-red-yeti,
+  "square-hacker-news": $fa-var-square-hacker-news,
+  "hacker-news-square": $fa-var-hacker-news-square,
+  "edge": $fa-var-edge,
+  "threads": $fa-var-threads,
+  "napster": $fa-var-napster,
+  "square-snapchat": $fa-var-square-snapchat,
+  "snapchat-square": $fa-var-snapchat-square,
+  "google-plus-g": $fa-var-google-plus-g,
+  "artstation": $fa-var-artstation,
+  "markdown": $fa-var-markdown,
+  "sourcetree": $fa-var-sourcetree,
+  "google-plus": $fa-var-google-plus,
+  "diaspora": $fa-var-diaspora,
+  "foursquare": $fa-var-foursquare,
+  "stack-overflow": $fa-var-stack-overflow,
+  "github-alt": $fa-var-github-alt,
+  "phoenix-squadron": $fa-var-phoenix-squadron,
+  "pagelines": $fa-var-pagelines,
+  "algolia": $fa-var-algolia,
+  "red-river": $fa-var-red-river,
+  "creative-commons-sa": $fa-var-creative-commons-sa,
+  "safari": $fa-var-safari,
+  "google": $fa-var-google,
+  "square-font-awesome-stroke": $fa-var-square-font-awesome-stroke,
+  "font-awesome-alt": $fa-var-font-awesome-alt,
+  "atlassian": $fa-var-atlassian,
+  "linkedin-in": $fa-var-linkedin-in,
+  "digital-ocean": $fa-var-digital-ocean,
+  "nimblr": $fa-var-nimblr,
+  "chromecast": $fa-var-chromecast,
+  "evernote": $fa-var-evernote,
+  "hacker-news": $fa-var-hacker-news,
+  "creative-commons-sampling": $fa-var-creative-commons-sampling,
+  "adversal": $fa-var-adversal,
+  "creative-commons": $fa-var-creative-commons,
+  "watchman-monitoring": $fa-var-watchman-monitoring,
+  "fonticons": $fa-var-fonticons,
+  "weixin": $fa-var-weixin,
+  "shirtsinbulk": $fa-var-shirtsinbulk,
+  "codepen": $fa-var-codepen,
+  "git-alt": $fa-var-git-alt,
+  "lyft": $fa-var-lyft,
+  "rev": $fa-var-rev,
+  "windows": $fa-var-windows,
+  "wizards-of-the-coast": $fa-var-wizards-of-the-coast,
+  "square-viadeo": $fa-var-square-viadeo,
+  "viadeo-square": $fa-var-viadeo-square,
+  "meetup": $fa-var-meetup,
+  "centos": $fa-var-centos,
+  "adn": $fa-var-adn,
+  "cloudsmith": $fa-var-cloudsmith,
+  "opensuse": $fa-var-opensuse,
+  "pied-piper-alt": $fa-var-pied-piper-alt,
+  "square-dribbble": $fa-var-square-dribbble,
+  "dribbble-square": $fa-var-dribbble-square,
+  "codiepie": $fa-var-codiepie,
+  "node": $fa-var-node,
+  "mix": $fa-var-mix,
+  "steam": $fa-var-steam,
+  "cc-apple-pay": $fa-var-cc-apple-pay,
+  "scribd": $fa-var-scribd,
+  "debian": $fa-var-debian,
+  "openid": $fa-var-openid,
+  "instalod": $fa-var-instalod,
+  "files-pinwheel": $fa-var-files-pinwheel,
+  "expeditedssl": $fa-var-expeditedssl,
+  "sellcast": $fa-var-sellcast,
+  "square-twitter": $fa-var-square-twitter,
+  "twitter-square": $fa-var-twitter-square,
+  "r-project": $fa-var-r-project,
+  "delicious": $fa-var-delicious,
+  "freebsd": $fa-var-freebsd,
+  "vuejs": $fa-var-vuejs,
+  "accusoft": $fa-var-accusoft,
+  "ioxhost": $fa-var-ioxhost,
+  "fonticons-fi": $fa-var-fonticons-fi,
+  "app-store": $fa-var-app-store,
+  "cc-mastercard": $fa-var-cc-mastercard,
+  "itunes-note": $fa-var-itunes-note,
+  "golang": $fa-var-golang,
+  "kickstarter": $fa-var-kickstarter,
+  "square-kickstarter": $fa-var-square-kickstarter,
+  "grav": $fa-var-grav,
+  "weibo": $fa-var-weibo,
+  "uncharted": $fa-var-uncharted,
   "firstdraft": $fa-var-firstdraft,
-  "flickr": $fa-var-flickr,
-  "flipboard": $fa-var-flipboard,
-  "fly": $fa-var-fly,
+  "square-youtube": $fa-var-square-youtube,
+  "youtube-square": $fa-var-youtube-square,
+  "wikipedia-w": $fa-var-wikipedia-w,
+  "wpressr": $fa-var-wpressr,
+  "rendact": $fa-var-rendact,
+  "angellist": $fa-var-angellist,
+  "galactic-republic": $fa-var-galactic-republic,
+  "nfc-directional": $fa-var-nfc-directional,
+  "skype": $fa-var-skype,
+  "joget": $fa-var-joget,
+  "fedora": $fa-var-fedora,
+  "stripe-s": $fa-var-stripe-s,
+  "meta": $fa-var-meta,
+  "laravel": $fa-var-laravel,
+  "hotjar": $fa-var-hotjar,
+  "bluetooth-b": $fa-var-bluetooth-b,
+  "square-letterboxd": $fa-var-square-letterboxd,
+  "sticker-mule": $fa-var-sticker-mule,
+  "creative-commons-zero": $fa-var-creative-commons-zero,
+  "hips": $fa-var-hips,
+  "css": $fa-var-css,
+  "behance": $fa-var-behance,
+  "reddit": $fa-var-reddit,
+  "discord": $fa-var-discord,
+  "chrome": $fa-var-chrome,
+  "app-store-ios": $fa-var-app-store-ios,
+  "cc-discover": $fa-var-cc-discover,
+  "wpbeginner": $fa-var-wpbeginner,
+  "confluence": $fa-var-confluence,
+  "shoelace": $fa-var-shoelace,
+  "mdb": $fa-var-mdb,
+  "dochub": $fa-var-dochub,
+  "accessible-icon": $fa-var-accessible-icon,
+  "ebay": $fa-var-ebay,
+  "amazon": $fa-var-amazon,
+  "unsplash": $fa-var-unsplash,
+  "yarn": $fa-var-yarn,
+  "square-steam": $fa-var-square-steam,
+  "steam-square": $fa-var-steam-square,
+  "500px": $fa-var-500px,
+  "square-vimeo": $fa-var-square-vimeo,
+  "vimeo-square": $fa-var-vimeo-square,
+  "asymmetrik": $fa-var-asymmetrik,
   "font-awesome": $fa-var-font-awesome,
   "font-awesome-flag": $fa-var-font-awesome-flag,
   "font-awesome-logo-full": $fa-var-font-awesome-logo-full,
-  "fonticons": $fa-var-fonticons,
-  "fonticons-fi": $fa-var-fonticons-fi,
-  "fort-awesome": $fa-var-fort-awesome,
-  "fort-awesome-alt": $fa-var-fort-awesome-alt,
-  "forumbee": $fa-var-forumbee,
-  "foursquare": $fa-var-foursquare,
-  "free-code-camp": $fa-var-free-code-camp,
-  "freebsd": $fa-var-freebsd,
-  "fulcrum": $fa-var-fulcrum,
-  "galactic-republic": $fa-var-galactic-republic,
-  "galactic-senate": $fa-var-galactic-senate,
-  "get-pocket": $fa-var-get-pocket,
-  "gg": $fa-var-gg,
-  "gg-circle": $fa-var-gg-circle,
-  "git": $fa-var-git,
-  "git-alt": $fa-var-git-alt,
-  "git-square": $fa-var-git-square,
-  "github": $fa-var-github,
-  "github-alt": $fa-var-github-alt,
-  "github-square": $fa-var-github-square,
-  "gitkraken": $fa-var-gitkraken,
-  "gitlab": $fa-var-gitlab,
-  "gitter": $fa-var-gitter,
-  "glide": $fa-var-glide,
-  "glide-g": $fa-var-glide-g,
-  "gofore": $fa-var-gofore,
-  "golang": $fa-var-golang,
-  "goodreads": $fa-var-goodreads,
-  "goodreads-g": $fa-var-goodreads-g,
-  "google": $fa-var-google,
-  "google-drive": $fa-var-google-drive,
-  "google-pay": $fa-var-google-pay,
-  "google-play": $fa-var-google-play,
-  "google-plus": $fa-var-google-plus,
-  "google-plus-g": $fa-var-google-plus-g,
-  "google-plus-square": $fa-var-google-plus-square,
-  "google-wallet": $fa-var-google-wallet,
   "gratipay": $fa-var-gratipay,
-  "grav": $fa-var-grav,
-  "gripfire": $fa-var-gripfire,
-  "grunt": $fa-var-grunt,
-  "guilded": $fa-var-guilded,
-  "gulp": $fa-var-gulp,
-  "hacker-news": $fa-var-hacker-news,
-  "hacker-news-square": $fa-var-hacker-news-square,
-  "hackerrank": $fa-var-hackerrank,
-  "hashnode": $fa-var-hashnode,
-  "hips": $fa-var-hips,
-  "hire-a-helper": $fa-var-hire-a-helper,
+  "apple": $fa-var-apple,
   "hive": $fa-var-hive,
-  "hooli": $fa-var-hooli,
-  "hornbill": $fa-var-hornbill,
-  "hotjar": $fa-var-hotjar,
-  "houzz": $fa-var-houzz,
-  "html5": $fa-var-html5,
-  "hubspot": $fa-var-hubspot,
-  "ideal": $fa-var-ideal,
-  "imdb": $fa-var-imdb,
-  "instagram": $fa-var-instagram,
-  "instagram-square": $fa-var-instagram-square,
-  "instalod": $fa-var-instalod,
-  "intercom": $fa-var-intercom,
-  "internet-explorer": $fa-var-internet-explorer,
-  "invision": $fa-var-invision,
-  "ioxhost": $fa-var-ioxhost,
-  "itch-io": $fa-var-itch-io,
-  "itunes": $fa-var-itunes,
-  "itunes-note": $fa-var-itunes-note,
-  "java": $fa-var-java,
-  "jedi-order": $fa-var-jedi-order,
-  "jenkins": $fa-var-jenkins,
-  "jira": $fa-var-jira,
-  "joget": $fa-var-joget,
-  "joomla": $fa-var-joomla,
-  "js": $fa-var-js,
-  "js-square": $fa-var-js-square,
-  "jsfiddle": $fa-var-jsfiddle,
-  "kaggle": $fa-var-kaggle,
+  "gitkraken": $fa-var-gitkraken,
   "keybase": $fa-var-keybase,
-  "keycdn": $fa-var-keycdn,
-  "kickstarter": $fa-var-kickstarter,
-  "kickstarter-k": $fa-var-kickstarter-k,
-  "korvue": $fa-var-korvue,
-  "laravel": $fa-var-laravel,
-  "lastfm": $fa-var-lastfm,
-  "lastfm-square": $fa-var-lastfm-square,
-  "leanpub": $fa-var-leanpub,
-  "less": $fa-var-less,
-  "line": $fa-var-line,
-  "linkedin": $fa-var-linkedin,
-  "linkedin-in": $fa-var-linkedin-in,
-  "linode": $fa-var-linode,
-  "linux": $fa-var-linux,
-  "lyft": $fa-var-lyft,
-  "magento": $fa-var-magento,
-  "mailchimp": $fa-var-mailchimp,
-  "mandalorian": $fa-var-mandalorian,
-  "markdown": $fa-var-markdown,
-  "mastodon": $fa-var-mastodon,
-  "maxcdn": $fa-var-maxcdn,
-  "mdb": $fa-var-mdb,
-  "medapps": $fa-var-medapps,
-  "medium": $fa-var-medium,
-  "medium-m": $fa-var-medium-m,
-  "medrt": $fa-var-medrt,
-  "meetup": $fa-var-meetup,
-  "megaport": $fa-var-megaport,
-  "mendeley": $fa-var-mendeley,
-  "meta": $fa-var-meta,
-  "microblog": $fa-var-microblog,
-  "microsoft": $fa-var-microsoft,
-  "mix": $fa-var-mix,
-  "mixcloud": $fa-var-mixcloud,
-  "mixer": $fa-var-mixer,
-  "mizuni": $fa-var-mizuni,
-  "modx": $fa-var-modx,
-  "monero": $fa-var-monero,
-  "napster": $fa-var-napster,
-  "neos": $fa-var-neos,
-  "nfc-directional": $fa-var-nfc-directional,
-  "nfc-symbol": $fa-var-nfc-symbol,
-  "nimblr": $fa-var-nimblr,
-  "node": $fa-var-node,
-  "node-js": $fa-var-node-js,
-  "npm": $fa-var-npm,
-  "ns8": $fa-var-ns8,
-  "nutritionix": $fa-var-nutritionix,
-  "octopus-deploy": $fa-var-octopus-deploy,
-  "odnoklassniki": $fa-var-odnoklassniki,
-  "odnoklassniki-square": $fa-var-odnoklassniki-square,
-  "old-republic": $fa-var-old-republic,
-  "opencart": $fa-var-opencart,
-  "openid": $fa-var-openid,
-  "opera": $fa-var-opera,
-  "optin-monster": $fa-var-optin-monster,
-  "orcid": $fa-var-orcid,
-  "osi": $fa-var-osi,
+  "apple-pay": $fa-var-apple-pay,
   "padlet": $fa-var-padlet,
-  "page4": $fa-var-page4,
-  "pagelines": $fa-var-pagelines,
-  "palfed": $fa-var-palfed,
-  "patreon": $fa-var-patreon,
-  "paypal": $fa-var-paypal,
-  "perbyte": $fa-var-perbyte,
-  "periscope": $fa-var-periscope,
-  "phabricator": $fa-var-phabricator,
-  "phoenix-framework": $fa-var-phoenix-framework,
-  "phoenix-squadron": $fa-var-phoenix-squadron,
-  "php": $fa-var-php,
-  "pied-piper": $fa-var-pied-piper,
-  "pied-piper-alt": $fa-var-pied-piper-alt,
-  "pied-piper-hat": $fa-var-pied-piper-hat,
-  "pied-piper-pp": $fa-var-pied-piper-pp,
-  "pied-piper-square": $fa-var-pied-piper-square,
-  "pinterest": $fa-var-pinterest,
-  "pinterest-p": $fa-var-pinterest-p,
-  "pinterest-square": $fa-var-pinterest-square,
-  "pix": $fa-var-pix,
-  "playstation": $fa-var-playstation,
-  "product-hunt": $fa-var-product-hunt,
-  "pushed": $fa-var-pushed,
-  "python": $fa-var-python,
-  "qq": $fa-var-qq,
-  "quinscape": $fa-var-quinscape,
-  "quora": $fa-var-quora,
-  "r-project": $fa-var-r-project,
-  "raspberry-pi": $fa-var-raspberry-pi,
-  "ravelry": $fa-var-ravelry,
-  "react": $fa-var-react,
-  "reacteurope": $fa-var-reacteurope,
-  "readme": $fa-var-readme,
-  "rebel": $fa-var-rebel,
-  "red-river": $fa-var-red-river,
-  "reddit": $fa-var-reddit,
-  "reddit-alien": $fa-var-reddit-alien,
-  "reddit-square": $fa-var-reddit-square,
-  "redhat": $fa-var-redhat,
-  "renren": $fa-var-renren,
-  "replyd": $fa-var-replyd,
-  "researchgate": $fa-var-researchgate,
-  "resolving": $fa-var-resolving,
-  "rev": $fa-var-rev,
-  "rocketchat": $fa-var-rocketchat,
-  "rockrms": $fa-var-rockrms,
-  "rust": $fa-var-rust,
-  "safari": $fa-var-safari,
-  "salesforce": $fa-var-salesforce,
-  "sass": $fa-var-sass,
-  "schlix": $fa-var-schlix,
-  "screenpal": $fa-var-screenpal,
-  "scribd": $fa-var-scribd,
-  "searchengin": $fa-var-searchengin,
-  "sellcast": $fa-var-sellcast,
-  "sellsy": $fa-var-sellsy,
-  "servicestack": $fa-var-servicestack,
-  "shirtsinbulk": $fa-var-shirtsinbulk,
-  "shopify": $fa-var-shopify,
-  "shopware": $fa-var-shopware,
-  "simplybuilt": $fa-var-simplybuilt,
-  "sistrix": $fa-var-sistrix,
-  "sith": $fa-var-sith,
-  "sitrox": $fa-var-sitrox,
-  "sketch": $fa-var-sketch,
-  "skyatlas": $fa-var-skyatlas,
-  "skype": $fa-var-skype,
-  "slack": $fa-var-slack,
-  "slack-hash": $fa-var-slack-hash,
-  "slideshare": $fa-var-slideshare,
-  "snapchat": $fa-var-snapchat,
-  "snapchat-ghost": $fa-var-snapchat-ghost,
-  "snapchat-square": $fa-var-snapchat-square,
-  "soundcloud": $fa-var-soundcloud,
-  "sourcetree": $fa-var-sourcetree,
-  "speakap": $fa-var-speakap,
-  "speaker-deck": $fa-var-speaker-deck,
-  "spotify": $fa-var-spotify,
-  "square-font-awesome": $fa-var-square-font-awesome,
-  "square-font-awesome-stroke": $fa-var-square-font-awesome-stroke,
-  "font-awesome-alt": $fa-var-font-awesome-alt,
-  "squarespace": $fa-var-squarespace,
-  "stack-exchange": $fa-var-stack-exchange,
-  "stack-overflow": $fa-var-stack-overflow,
-  "stackpath": $fa-var-stackpath,
-  "staylinked": $fa-var-staylinked,
-  "steam": $fa-var-steam,
-  "steam-square": $fa-var-steam-square,
-  "steam-symbol": $fa-var-steam-symbol,
-  "sticker-mule": $fa-var-sticker-mule,
-  "strava": $fa-var-strava,
-  "stripe": $fa-var-stripe,
-  "stripe-s": $fa-var-stripe-s,
-  "studiovinari": $fa-var-studiovinari,
+  "amazon-pay": $fa-var-amazon-pay,
+  "square-github": $fa-var-square-github,
+  "github-square": $fa-var-github-square,
   "stumbleupon": $fa-var-stumbleupon,
-  "stumbleupon-circle": $fa-var-stumbleupon-circle,
-  "superpowers": $fa-var-superpowers,
-  "supple": $fa-var-supple,
-  "suse": $fa-var-suse,
+  "fedex": $fa-var-fedex,
+  "phoenix-framework": $fa-var-phoenix-framework,
+  "shopify": $fa-var-shopify,
+  "neos": $fa-var-neos,
+  "square-threads": $fa-var-square-threads,
+  "hackerrank": $fa-var-hackerrank,
+  "researchgate": $fa-var-researchgate,
   "swift": $fa-var-swift,
-  "symfony": $fa-var-symfony,
-  "teamspeak": $fa-var-teamspeak,
-  "telegram": $fa-var-telegram,
-  "telegram-plane": $fa-var-telegram-plane,
-  "tencent-weibo": $fa-var-tencent-weibo,
-  "the-red-yeti": $fa-var-the-red-yeti,
-  "themeco": $fa-var-themeco,
+  "angular": $fa-var-angular,
+  "speakap": $fa-var-speakap,
+  "angrycreative": $fa-var-angrycreative,
+  "y-combinator": $fa-var-y-combinator,
+  "empire": $fa-var-empire,
+  "envira": $fa-var-envira,
+  "google-scholar": $fa-var-google-scholar,
+  "square-gitlab": $fa-var-square-gitlab,
+  "gitlab-square": $fa-var-gitlab-square,
+  "studiovinari": $fa-var-studiovinari,
+  "pied-piper": $fa-var-pied-piper,
+  "wordpress": $fa-var-wordpress,
+  "product-hunt": $fa-var-product-hunt,
+  "firefox": $fa-var-firefox,
+  "linode": $fa-var-linode,
+  "goodreads": $fa-var-goodreads,
+  "square-odnoklassniki": $fa-var-square-odnoklassniki,
+  "odnoklassniki-square": $fa-var-odnoklassniki-square,
+  "jsfiddle": $fa-var-jsfiddle,
+  "sith": $fa-var-sith,
   "themeisle": $fa-var-themeisle,
-  "think-peaks": $fa-var-think-peaks,
-  "tiktok": $fa-var-tiktok,
-  "trade-federation": $fa-var-trade-federation,
-  "trello": $fa-var-trello,
-  "tumblr": $fa-var-tumblr,
-  "tumblr-square": $fa-var-tumblr-square,
-  "twitch": $fa-var-twitch,
-  "twitter": $fa-var-twitter,
-  "twitter-square": $fa-var-twitter-square,
-  "typo3": $fa-var-typo3,
-  "uber": $fa-var-uber,
-  "ubuntu": $fa-var-ubuntu,
-  "uikit": $fa-var-uikit,
+  "page4": $fa-var-page4,
+  "hashnode": $fa-var-hashnode,
+  "react": $fa-var-react,
+  "cc-paypal": $fa-var-cc-paypal,
+  "squarespace": $fa-var-squarespace,
+  "cc-stripe": $fa-var-cc-stripe,
+  "creative-commons-share": $fa-var-creative-commons-share,
+  "bitcoin": $fa-var-bitcoin,
+  "keycdn": $fa-var-keycdn,
+  "opera": $fa-var-opera,
+  "itch-io": $fa-var-itch-io,
   "umbraco": $fa-var-umbraco,
-  "uncharted": $fa-var-uncharted,
-  "uniregistry": $fa-var-uniregistry,
-  "unity": $fa-var-unity,
-  "unsplash": $fa-var-unsplash,
-  "untappd": $fa-var-untappd,
-  "ups": $fa-var-ups,
-  "usb": $fa-var-usb,
-  "usps": $fa-var-usps,
-  "ussunnah": $fa-var-ussunnah,
-  "vaadin": $fa-var-vaadin,
-  "viacoin": $fa-var-viacoin,
-  "viadeo": $fa-var-viadeo,
-  "viadeo-square": $fa-var-viadeo-square,
-  "viber": $fa-var-viber,
-  "vimeo": $fa-var-vimeo,
-  "vimeo-square": $fa-var-vimeo-square,
-  "vimeo-v": $fa-var-vimeo-v,
+  "galactic-senate": $fa-var-galactic-senate,
+  "ubuntu": $fa-var-ubuntu,
+  "draft2digital": $fa-var-draft2digital,
+  "stripe": $fa-var-stripe,
+  "houzz": $fa-var-houzz,
+  "gg": $fa-var-gg,
+  "dhl": $fa-var-dhl,
+  "square-pinterest": $fa-var-square-pinterest,
+  "pinterest-square": $fa-var-pinterest-square,
+  "xing": $fa-var-xing,
+  "blackberry": $fa-var-blackberry,
+  "creative-commons-pd": $fa-var-creative-commons-pd,
+  "playstation": $fa-var-playstation,
+  "quinscape": $fa-var-quinscape,
+  "less": $fa-var-less,
+  "blogger-b": $fa-var-blogger-b,
+  "opencart": $fa-var-opencart,
   "vine": $fa-var-vine,
-  "vk": $fa-var-vk,
-  "vnv": $fa-var-vnv,
-  "vuejs": $fa-var-vuejs,
-  "watchman-monitoring": $fa-var-watchman-monitoring,
-  "waze": $fa-var-waze,
-  "weebly": $fa-var-weebly,
-  "weibo": $fa-var-weibo,
-  "weixin": $fa-var-weixin,
+  "signal-messenger": $fa-var-signal-messenger,
+  "paypal": $fa-var-paypal,
+  "gitlab": $fa-var-gitlab,
+  "typo3": $fa-var-typo3,
+  "reddit-alien": $fa-var-reddit-alien,
+  "yahoo": $fa-var-yahoo,
+  "dailymotion": $fa-var-dailymotion,
+  "affiliatetheme": $fa-var-affiliatetheme,
+  "pied-piper-pp": $fa-var-pied-piper-pp,
+  "bootstrap": $fa-var-bootstrap,
+  "odnoklassniki": $fa-var-odnoklassniki,
+  "nfc-symbol": $fa-var-nfc-symbol,
+  "mintbit": $fa-var-mintbit,
+  "ethereum": $fa-var-ethereum,
+  "speaker-deck": $fa-var-speaker-deck,
+  "creative-commons-nc-eu": $fa-var-creative-commons-nc-eu,
+  "patreon": $fa-var-patreon,
+  "avianex": $fa-var-avianex,
+  "ello": $fa-var-ello,
+  "gofore": $fa-var-gofore,
+  "bimobject": $fa-var-bimobject,
+  "brave-reverse": $fa-var-brave-reverse,
+  "facebook-f": $fa-var-facebook-f,
+  "square-google-plus": $fa-var-square-google-plus,
+  "google-plus-square": $fa-var-google-plus-square,
+  "web-awesome": $fa-var-web-awesome,
+  "mandalorian": $fa-var-mandalorian,
+  "first-order-alt": $fa-var-first-order-alt,
+  "osi": $fa-var-osi,
+  "google-wallet": $fa-var-google-wallet,
+  "d-and-d-beyond": $fa-var-d-and-d-beyond,
+  "periscope": $fa-var-periscope,
+  "fulcrum": $fa-var-fulcrum,
+  "cloudscale": $fa-var-cloudscale,
+  "forumbee": $fa-var-forumbee,
+  "mizuni": $fa-var-mizuni,
+  "schlix": $fa-var-schlix,
+  "square-xing": $fa-var-square-xing,
+  "xing-square": $fa-var-xing-square,
+  "bandcamp": $fa-var-bandcamp,
+  "wpforms": $fa-var-wpforms,
+  "cloudversify": $fa-var-cloudversify,
+  "usps": $fa-var-usps,
+  "megaport": $fa-var-megaport,
+  "magento": $fa-var-magento,
+  "spotify": $fa-var-spotify,
+  "optin-monster": $fa-var-optin-monster,
+  "fly": $fa-var-fly,
+  "square-bluesky": $fa-var-square-bluesky,
+  "aviato": $fa-var-aviato,
+  "itunes": $fa-var-itunes,
+  "cuttlefish": $fa-var-cuttlefish,
+  "blogger": $fa-var-blogger,
+  "flickr": $fa-var-flickr,
+  "viber": $fa-var-viber,
+  "soundcloud": $fa-var-soundcloud,
+  "digg": $fa-var-digg,
+  "tencent-weibo": $fa-var-tencent-weibo,
+  "letterboxd": $fa-var-letterboxd,
+  "symfony": $fa-var-symfony,
+  "maxcdn": $fa-var-maxcdn,
+  "etsy": $fa-var-etsy,
+  "facebook-messenger": $fa-var-facebook-messenger,
+  "audible": $fa-var-audible,
+  "think-peaks": $fa-var-think-peaks,
+  "bilibili": $fa-var-bilibili,
+  "erlang": $fa-var-erlang,
+  "x-twitter": $fa-var-x-twitter,
+  "cotton-bureau": $fa-var-cotton-bureau,
+  "dashcube": $fa-var-dashcube,
+  "42-group": $fa-var-42-group,
+  "innosoft": $fa-var-innosoft,
+  "stack-exchange": $fa-var-stack-exchange,
+  "elementor": $fa-var-elementor,
+  "square-pied-piper": $fa-var-square-pied-piper,
+  "pied-piper-square": $fa-var-pied-piper-square,
+  "creative-commons-nd": $fa-var-creative-commons-nd,
+  "palfed": $fa-var-palfed,
+  "superpowers": $fa-var-superpowers,
+  "resolving": $fa-var-resolving,
+  "xbox": $fa-var-xbox,
+  "square-web-awesome-stroke": $fa-var-square-web-awesome-stroke,
+  "searchengin": $fa-var-searchengin,
+  "tiktok": $fa-var-tiktok,
+  "square-facebook": $fa-var-square-facebook,
+  "facebook-square": $fa-var-facebook-square,
+  "renren": $fa-var-renren,
+  "linux": $fa-var-linux,
+  "glide": $fa-var-glide,
+  "linkedin": $fa-var-linkedin,
+  "hubspot": $fa-var-hubspot,
+  "deploydog": $fa-var-deploydog,
+  "twitch": $fa-var-twitch,
+  "flutter": $fa-var-flutter,
+  "ravelry": $fa-var-ravelry,
+  "mixer": $fa-var-mixer,
+  "square-lastfm": $fa-var-square-lastfm,
+  "lastfm-square": $fa-var-lastfm-square,
+  "vimeo": $fa-var-vimeo,
+  "mendeley": $fa-var-mendeley,
+  "uniregistry": $fa-var-uniregistry,
+  "figma": $fa-var-figma,
+  "creative-commons-remix": $fa-var-creative-commons-remix,
+  "cc-amazon-pay": $fa-var-cc-amazon-pay,
+  "dropbox": $fa-var-dropbox,
+  "instagram": $fa-var-instagram,
+  "cmplid": $fa-var-cmplid,
+  "upwork": $fa-var-upwork,
+  "facebook": $fa-var-facebook,
+  "gripfire": $fa-var-gripfire,
+  "jedi-order": $fa-var-jedi-order,
+  "uikit": $fa-var-uikit,
+  "fort-awesome-alt": $fa-var-fort-awesome-alt,
+  "phabricator": $fa-var-phabricator,
+  "ussunnah": $fa-var-ussunnah,
+  "earlybirds": $fa-var-earlybirds,
+  "trade-federation": $fa-var-trade-federation,
+  "autoprefixer": $fa-var-autoprefixer,
   "whatsapp": $fa-var-whatsapp,
-  "whatsapp-square": $fa-var-whatsapp-square,
-  "whmcs": $fa-var-whmcs,
-  "wikipedia-w": $fa-var-wikipedia-w,
-  "windows": $fa-var-windows,
+  "square-upwork": $fa-var-square-upwork,
+  "slideshare": $fa-var-slideshare,
+  "google-play": $fa-var-google-play,
+  "viadeo": $fa-var-viadeo,
+  "line": $fa-var-line,
+  "google-drive": $fa-var-google-drive,
+  "servicestack": $fa-var-servicestack,
+  "simplybuilt": $fa-var-simplybuilt,
+  "bitbucket": $fa-var-bitbucket,
+  "imdb": $fa-var-imdb,
+  "deezer": $fa-var-deezer,
+  "raspberry-pi": $fa-var-raspberry-pi,
+  "jira": $fa-var-jira,
+  "docker": $fa-var-docker,
+  "screenpal": $fa-var-screenpal,
+  "bluetooth": $fa-var-bluetooth,
+  "gitter": $fa-var-gitter,
+  "d-and-d": $fa-var-d-and-d,
+  "microblog": $fa-var-microblog,
+  "cc-diners-club": $fa-var-cc-diners-club,
+  "gg-circle": $fa-var-gg-circle,
+  "pied-piper-hat": $fa-var-pied-piper-hat,
+  "kickstarter-k": $fa-var-kickstarter-k,
+  "yandex": $fa-var-yandex,
+  "readme": $fa-var-readme,
+  "html5": $fa-var-html5,
+  "sellsy": $fa-var-sellsy,
+  "square-web-awesome": $fa-var-square-web-awesome,
+  "sass": $fa-var-sass,
   "wirsindhandwerk": $fa-var-wirsindhandwerk,
   "wsh": $fa-var-wsh,
+  "buromobelexperte": $fa-var-buromobelexperte,
+  "salesforce": $fa-var-salesforce,
+  "octopus-deploy": $fa-var-octopus-deploy,
+  "medapps": $fa-var-medapps,
+  "ns8": $fa-var-ns8,
+  "pinterest-p": $fa-var-pinterest-p,
+  "apper": $fa-var-apper,
+  "fort-awesome": $fa-var-fort-awesome,
+  "waze": $fa-var-waze,
+  "bluesky": $fa-var-bluesky,
+  "cc-jcb": $fa-var-cc-jcb,
+  "snapchat": $fa-var-snapchat,
+  "snapchat-ghost": $fa-var-snapchat-ghost,
+  "fantasy-flight-games": $fa-var-fantasy-flight-games,
+  "rust": $fa-var-rust,
   "wix": $fa-var-wix,
-  "wizards-of-the-coast": $fa-var-wizards-of-the-coast,
-  "wodu": $fa-var-wodu,
-  "wolf-pack-battalion": $fa-var-wolf-pack-battalion,
-  "wordpress": $fa-var-wordpress,
-  "wordpress-simple": $fa-var-wordpress-simple,
-  "wpbeginner": $fa-var-wpbeginner,
-  "wpexplorer": $fa-var-wpexplorer,
-  "wpforms": $fa-var-wpforms,
-  "wpressr": $fa-var-wpressr,
-  "xbox": $fa-var-xbox,
-  "xing": $fa-var-xing,
-  "xing-square": $fa-var-xing-square,
-  "y-combinator": $fa-var-y-combinator,
-  "yahoo": $fa-var-yahoo,
-  "yammer": $fa-var-yammer,
-  "yandex": $fa-var-yandex,
+  "square-behance": $fa-var-square-behance,
+  "behance-square": $fa-var-behance-square,
+  "supple": $fa-var-supple,
+  "webflow": $fa-var-webflow,
+  "rebel": $fa-var-rebel,
+  "css3": $fa-var-css3,
+  "staylinked": $fa-var-staylinked,
+  "kaggle": $fa-var-kaggle,
+  "space-awesome": $fa-var-space-awesome,
+  "deviantart": $fa-var-deviantart,
+  "cpanel": $fa-var-cpanel,
+  "goodreads-g": $fa-var-goodreads-g,
+  "square-git": $fa-var-square-git,
+  "git-square": $fa-var-git-square,
+  "square-tumblr": $fa-var-square-tumblr,
+  "tumblr-square": $fa-var-tumblr-square,
+  "trello": $fa-var-trello,
+  "creative-commons-nc-jp": $fa-var-creative-commons-nc-jp,
+  "get-pocket": $fa-var-get-pocket,
+  "perbyte": $fa-var-perbyte,
+  "grunt": $fa-var-grunt,
+  "weebly": $fa-var-weebly,
+  "connectdevelop": $fa-var-connectdevelop,
+  "leanpub": $fa-var-leanpub,
+  "black-tie": $fa-var-black-tie,
+  "themeco": $fa-var-themeco,
+  "python": $fa-var-python,
+  "android": $fa-var-android,
+  "bots": $fa-var-bots,
+  "free-code-camp": $fa-var-free-code-camp,
+  "hornbill": $fa-var-hornbill,
+  "js": $fa-var-js,
+  "ideal": $fa-var-ideal,
+  "git": $fa-var-git,
+  "dev": $fa-var-dev,
+  "sketch": $fa-var-sketch,
   "yandex-international": $fa-var-yandex-international,
-  "yarn": $fa-var-yarn,
-  "yelp": $fa-var-yelp,
-  "yoast": $fa-var-yoast,
+  "cc-amex": $fa-var-cc-amex,
+  "uber": $fa-var-uber,
+  "github": $fa-var-github,
+  "php": $fa-var-php,
+  "alipay": $fa-var-alipay,
   "youtube": $fa-var-youtube,
-  "youtube-square": $fa-var-youtube-square,
+  "skyatlas": $fa-var-skyatlas,
+  "firefox-browser": $fa-var-firefox-browser,
+  "replyd": $fa-var-replyd,
+  "suse": $fa-var-suse,
+  "jenkins": $fa-var-jenkins,
+  "twitter": $fa-var-twitter,
+  "rockrms": $fa-var-rockrms,
+  "pinterest": $fa-var-pinterest,
+  "buffer": $fa-var-buffer,
+  "npm": $fa-var-npm,
+  "yammer": $fa-var-yammer,
+  "btc": $fa-var-btc,
+  "dribbble": $fa-var-dribbble,
+  "stumbleupon-circle": $fa-var-stumbleupon-circle,
+  "internet-explorer": $fa-var-internet-explorer,
+  "stubber": $fa-var-stubber,
+  "telegram": $fa-var-telegram,
+  "telegram-plane": $fa-var-telegram-plane,
+  "old-republic": $fa-var-old-republic,
+  "odysee": $fa-var-odysee,
+  "square-whatsapp": $fa-var-square-whatsapp,
+  "whatsapp-square": $fa-var-whatsapp-square,
+  "node-js": $fa-var-node-js,
+  "edge-legacy": $fa-var-edge-legacy,
+  "slack": $fa-var-slack,
+  "slack-hash": $fa-var-slack-hash,
+  "medrt": $fa-var-medrt,
+  "usb": $fa-var-usb,
+  "tumblr": $fa-var-tumblr,
+  "vaadin": $fa-var-vaadin,
+  "quora": $fa-var-quora,
+  "square-x-twitter": $fa-var-square-x-twitter,
+  "reacteurope": $fa-var-reacteurope,
+  "medium": $fa-var-medium,
+  "medium-m": $fa-var-medium-m,
+  "amilia": $fa-var-amilia,
+  "mixcloud": $fa-var-mixcloud,
+  "flipboard": $fa-var-flipboard,
+  "viacoin": $fa-var-viacoin,
+  "critical-role": $fa-var-critical-role,
+  "sitrox": $fa-var-sitrox,
+  "discourse": $fa-var-discourse,
+  "joomla": $fa-var-joomla,
+  "mastodon": $fa-var-mastodon,
+  "airbnb": $fa-var-airbnb,
+  "wolf-pack-battalion": $fa-var-wolf-pack-battalion,
+  "buy-n-large": $fa-var-buy-n-large,
+  "gulp": $fa-var-gulp,
+  "creative-commons-sampling-plus": $fa-var-creative-commons-sampling-plus,
+  "strava": $fa-var-strava,
+  "ember": $fa-var-ember,
+  "canadian-maple-leaf": $fa-var-canadian-maple-leaf,
+  "teamspeak": $fa-var-teamspeak,
+  "pushed": $fa-var-pushed,
+  "wordpress-simple": $fa-var-wordpress-simple,
+  "nutritionix": $fa-var-nutritionix,
+  "wodu": $fa-var-wodu,
+  "google-pay": $fa-var-google-pay,
+  "intercom": $fa-var-intercom,
   "zhihu": $fa-var-zhihu,
+  "korvue": $fa-var-korvue,
+  "pix": $fa-var-pix,
+  "steam-symbol": $fa-var-steam-symbol,
 );
