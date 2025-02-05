@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "516cc01af0b2c65ef70ef1e9ec6402a4",
+    "content-hash": "daa52eebe2f0ac1ecc261d7632f03d08",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.339.4",
+            "version": "3.339.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "ea62ad03645ef7a1d3f1cda2de49f0869de3c582"
+                "reference": "cc0b21de3b1eaabb7d0a1ed4f3f067bad4be5f31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ea62ad03645ef7a1d3f1cda2de49f0869de3c582",
-                "reference": "ea62ad03645ef7a1d3f1cda2de49f0869de3c582",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/cc0b21de3b1eaabb7d0a1ed4f3f067bad4be5f31",
+                "reference": "cc0b21de3b1eaabb7d0a1ed4f3f067bad4be5f31",
                 "shasum": ""
             },
             "require": {
@@ -154,9 +154,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.4"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.6"
             },
-            "time": "2025-01-31T19:04:39+00:00"
+            "time": "2025-02-04T19:03:40+00:00"
         },
         {
             "name": "composer/installers",
@@ -2463,6 +2463,24 @@
             "time": "2022-01-25T16:31:27+00:00"
         },
         {
+            "name": "wpackagist-plugin/action-scheduler",
+            "version": "3.9.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/action-scheduler/",
+                "reference": "tags/3.9.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/action-scheduler.3.9.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/action-scheduler/"
+        },
+        {
             "name": "wpackagist-plugin/autoptimize",
             "version": "3.1.13",
             "source": {
@@ -2500,15 +2518,15 @@
         },
         {
             "name": "wpackagist-plugin/forminator",
-            "version": "1.38.3",
+            "version": "1.39.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/forminator/",
-                "reference": "tags/1.38.3"
+                "reference": "tags/1.39.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/forminator.1.38.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/forminator.1.39.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2536,15 +2554,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "24.2",
+            "version": "24.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/24.2"
+                "reference": "tags/24.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.24.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.24.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2612,12 +2630,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "c10bce58e215dabda33ba5dd3f3a153e85684222"
+                "reference": "4015f7fbd4aedd2ebe19143e26e9f64fafae8d88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/c10bce58e215dabda33ba5dd3f3a153e85684222",
-                "reference": "c10bce58e215dabda33ba5dd3f3a153e85684222",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/4015f7fbd4aedd2ebe19143e26e9f64fafae8d88",
+                "reference": "4015f7fbd4aedd2ebe19143e26e9f64fafae8d88",
                 "shasum": ""
             },
             "conflict": {
@@ -3096,7 +3114,7 @@
                 "phpmyfaq/phpmyfaq": "<3.2.5|==3.2.5|>=3.2.10,<=4.0.1",
                 "phpoffice/common": "<0.2.9",
                 "phpoffice/phpexcel": "<1.8.1",
-                "phpoffice/phpspreadsheet": "<1.29.8|>=2,<2.1.7|>=2.2,<2.3.6|>=3,<3.8",
+                "phpoffice/phpspreadsheet": "<1.29.9|>=2,<2.1.8|>=2.2,<2.3.7|>=3,<3.9",
                 "phpseclib/phpseclib": "<2.0.47|>=3,<3.0.36",
                 "phpservermon/phpservermon": "<3.6",
                 "phpsysinfo/phpsysinfo": "<3.4.3",
@@ -3476,7 +3494,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-31T21:04:56+00:00"
+            "time": "2025-02-03T16:05:30+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",

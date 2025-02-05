@@ -64,12 +64,13 @@
     "humanmade/s3-uploads": "3.0.7",
     "wpackagist-plugin/redis-cache": "2.0.25",
     "predis/predis": "1.1.1",
-    "wpackagist-plugin/wordpress-seo": "24.2",
-    "wpackagist-plugin/autoptimize": "3.1.13",
-    "wpackagist-plugin/cloudflare": "4.12.8",
-    "wpackagist-plugin/forminator": "1.38.3",
-    "wpackagist-plugin/wp-mail-smtp": "4.3.0",
-    "wpackagist-plugin/wp-migrate-db": "2.6.11",
+    "wpackagist-plugin/wordpress-seo": "^24.2",
+    "wpackagist-plugin/autoptimize": "^3.1",
+    "wpackagist-plugin/cloudflare": "^4.12",
+    "wpackagist-plugin/forminator": "^1.38",
+    "wpackagist-plugin/wp-mail-smtp": "^4.3",
+    "wpackagist-plugin/wp-migrate-db": "^2.6",
+    "wpackagist-plugin/action-scheduler": "^3.9",
     "wpengine/advanced-custom-fields-pro": "^6.0",
     "roots/acorn-prettify": "^1.0"
   },
@@ -96,7 +97,9 @@
         "wpackagist-plugin/cloudflare",
         "wpackagist-plugin/wordpress-seo",
         "wpackagist-plugin/wp-mail-smtp",
-        "wpackagist-plugin/wpforms-lite"
+        "wpackagist-plugin/wpforms-lite",
+        "wpackagist-plugin/action-scheduler",
+        "wpackagist-plugin/forminator"
       ],
       "web/app/themes/{$name}/": [
         "type:wordpress-theme"
