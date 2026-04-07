@@ -36,6 +36,9 @@ WORKDIR /var/www/html
 # Copy Bedrock files
 COPY ./wordpress /var/www/html
 
+ARG COMPOSER_AUTH
+ENV COMPOSER_AUTH=$COMPOSER_AUTH
+
 # Install Composer dependencies for Bedrock
 RUN composer install --no-dev --optimize-autoloader
 
