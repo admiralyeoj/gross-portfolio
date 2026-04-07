@@ -40,17 +40,9 @@ ARG COMPOSER_AUTH
 ENV COMPOSER_AUTH=$COMPOSER_AUTH
 
 RUN php -r "echo 'COMPOSER_AUTH present: '; var_export(getenv('COMPOSER_AUTH') !== false && getenv('COMPOSER_AUTH') !== ''); echo PHP_EOL;"
+RUN php -r "\$raw = getenv('COMPOSER_AUTH'); echo 'JSON valid: '; var_export(json_decode(\$raw, true) !== null); echo PHP_EOL; \$data = json_decode(\$raw, true); echo 'Has host: '; var_export(isset(\$data['http-basic']['connect.advancedcustomfields.com'])); echo PHP_EOL;"
+RUN composer install --no-dev --optimize-autoloader -vvv
 
-RUN php -r "
-  \$raw = getenv('COMPOSER_AUTH');
-  echo 'JSON valid: ';
-  var_export((bool) json_decode(\$raw, true));
-  echo PHP_EOL;
-  \$data = json_decode(\$raw, true);
-  echo 'Has host: ';
-  var_export(isset(\$data['http-basic']['connect.advancedcustomfields.com']));
-  echo PHP_EOL;
-"
 
 RUN composer install --no-dev --optimize-autoloader -vvv
 
