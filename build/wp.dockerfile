@@ -42,7 +42,6 @@ RUN chmod +x /usr/local/bin/install-pg4wp /usr/local/bin/start-services
 
 ARG PG4WP_VERSION=3.3.1
 ENV PG4WP_VERSION=$PG4WP_VERSION
-RUN install-pg4wp /var/www/html/web/app
 
 ARG COMPOSER_AUTH
 ENV COMPOSER_AUTH=$COMPOSER_AUTH
