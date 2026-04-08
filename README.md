@@ -126,6 +126,10 @@ DB_DRIVER=mysql
 # DATABASE_URL='mysql://database_user:database_password@database_host:database_port/database_name'
 # DATABASE_URL='postgres://database_user:database_password@database_host:database_port/database_name'
 
+# Optional Redis/Render Key Value connection
+# REDIS_URL='redis://default:password@host:6379/0'
+# REDIS_PREFIX='gross_portfolio:'
+
 # Optional variables
 DB_HOST='mariadb:3306'
 DB_PREFIX='wp_'
@@ -185,6 +189,7 @@ NONCE_SALT='XXXXXXXXXXXXXXXXXXXXXX'
 - Modern development workflow with Bedrock and Sage.
 - Customizable and easy to maintain theme.
 - Supports MySQL/MariaDB out of the box and PostgreSQL through PG4WP.
+- Optional Redis-compatible object caching via `REDIS_URL`.
 
 ---
 
