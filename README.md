@@ -9,7 +9,7 @@ Welcome to my portfolio website! This repository contains the codebase for [gros
 - **URL**: [https://www.grossportfolio.com](https://www.grossportfolio.com)
 - **Structure**: Built using [Bedrock by Roots](https://roots.io/bedrock/)
 - **Theme**: Powered by [Sage by Roots](https://roots.io/sage/)
-- **Database**: MariaDB
+- **Database**: MySQL/MariaDB by default, with optional PostgreSQL support via PG4WP
 
 ---
 
@@ -119,10 +119,12 @@ DB_NAME=wordpress
 DB_USER=admin
 DB_PASSWORD=admin
 DB_ROOT_PASSWORD=root
+DB_DRIVER=mysql
 
 # Optionally, you can use a data source name (DSN)
 # When using a DSN, you can remove the DB_NAME, DB_USER, DB_PASSWORD, and DB_HOST variables
 # DATABASE_URL='mysql://database_user:database_password@database_host:database_port/database_name'
+# DATABASE_URL='postgres://database_user:database_password@database_host:database_port/database_name'
 
 # Optional variables
 DB_HOST='mariadb:3306'
@@ -182,7 +184,7 @@ NONCE_SALT='XXXXXXXXXXXXXXXXXXXXXX'
 
 - Modern development workflow with Bedrock and Sage.
 - Customizable and easy to maintain theme.
-- Robust database management with MariaDB.
+- Supports MySQL/MariaDB out of the box and PostgreSQL through PG4WP.
 
 ---
 

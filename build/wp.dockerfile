@@ -12,7 +12,7 @@ RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases
   && chmod +x /usr/local/bin/install-php-extensions
 
 # Install PHP extensions
-RUN install-php-extensions exif gd memcached mysqli pcntl pdo_mysql zip
+RUN install-php-extensions exif gd memcached mysqli pcntl pdo_mysql pdo_pgsql pgsql zip
 
 # Install and enable Imagick
 RUN pecl install imagick \
@@ -35,12 +35,17 @@ WORKDIR /var/www/html
 
 # Copy Bedrock files
 COPY ./wordpress /var/www/html
+COPY ./build/bin/install-pg4wp.sh /usr/local/bin/install-pg4wp
+COPY ./build/bin/start-services.sh /usr/local/bin/start-services
+
+RUN chmod +x /usr/local/bin/install-pg4wp /usr/local/bin/start-services
+
+ARG PG4WP_VERSION=3.3.1
+ENV PG4WP_VERSION=$PG4WP_VERSION
+RUN install-pg4wp /var/www/html/web/app
 
 ARG COMPOSER_AUTH
 ENV COMPOSER_AUTH=$COMPOSER_AUTH
-
-RUN composer install --no-dev --optimize-autoloader -vvv
-
 
 # Install Composer dependencies for Bedrock
 RUN composer install --no-dev --optimize-autoloader
@@ -68,4 +73,4 @@ COPY ./build/supervisor/supervisord.conf /etc/supervisord.conf
 EXPOSE 80 9000
 
 # Start supervisor to manage nginx and php-fpm
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+CMD ["/usr/local/bin/start-services"]
