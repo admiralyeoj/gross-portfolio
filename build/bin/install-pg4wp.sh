@@ -15,18 +15,10 @@ tmpdir="$(mktemp -d)"
 archive="${tmpdir}/pg4wp.zip"
 url="https://github.com/PostgreSQL-For-Wordpress/postgresql-for-wordpress/archive/refs/tags/${release_tag}.zip"
 
-echo "PG4WP version: ${release_tag}"
-echo "Downloading: ${url}"
-
 curl -fsSL "${url}" -o "${archive}"
 unzip -q "${archive}" -d "${tmpdir}"
 
-echo "Extracted directories:"
-find "${tmpdir}" -maxdepth 3 -type d | sort
-
 src="$(find "${tmpdir}" -type f -name core.php -path '*/pg4wp/core.php' | head -n 1)"
-
-echo "Detected core.php path: ${src:-<none>}"
 
 if [ -n "${src}" ]; then
   src="$(dirname "${src}")"
@@ -40,6 +32,13 @@ fi
 rm -rf "${destination}"
 mkdir -p "${target_dir}"
 cp -R "${src}" "${destination}"
+mkdir -p "${destination}/logs"
+
+if id -u www-data >/dev/null 2>&1; then
+  chown -R www-data:www-data "${destination}"
+fi
+
 chmod -R 755 "${destination}"
+chmod 775 "${destination}/logs"
 
 rm -rf "${tmpdir}"
