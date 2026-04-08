@@ -15,12 +15,24 @@ tmpdir="$(mktemp -d)"
 archive="${tmpdir}/pg4wp.zip"
 url="https://github.com/PostgreSQL-For-Wordpress/postgresql-for-wordpress/archive/refs/tags/${release_tag}.zip"
 
+echo "PG4WP version: ${release_tag}"
+echo "Downloading: ${url}"
+
 curl -fsSL "${url}" -o "${archive}"
 unzip -q "${archive}" -d "${tmpdir}"
 
-src="${tmpdir}/postgresql-for-wordpress-${release_tag}/pg4wp"
+echo "Extracted directories:"
+find "${tmpdir}" -maxdepth 3 -type d | sort
 
-if [ ! -d "${src}" ]; then
+src="$(find "${tmpdir}" -type f -name core.php -path '*/pg4wp/core.php' | head -n 1)"
+
+echo "Detected core.php path: ${src:-<none>}"
+
+if [ -n "${src}" ]; then
+  src="$(dirname "${src}")"
+fi
+
+if [ -z "${src}" ] || [ ! -d "${src}" ]; then
   echo "PG4WP source not found in downloaded archive." >&2
   exit 1
 fi
