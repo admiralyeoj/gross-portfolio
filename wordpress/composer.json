@@ -97,7 +97,8 @@
         "wpackagist-plugin/wp-mail-smtp",
         "wpackagist-plugin/wpforms-lite",
         "wpackagist-plugin/action-scheduler",
-        "wpackagist-plugin/forminator"
+        "wpackagist-plugin/forminator",
+        "wpackagist-plugin/wp-migrate-db"
       ],
       "web/app/themes/{$name}/": [
         "type:wordpress-theme"
