@@ -66,7 +66,9 @@ includeDirectory($root_dir."/config/plugins/wordpress");
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
  * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes
  */
-if ( (isset($_SERVER['HTTP_X_FORWARDED_PORT'] ) && ( '443' == $_SERVER['HTTP_X_FORWARDED_PORT'] ))
+$forwarded_protocols = array_map('trim', explode(',', strtolower($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '')));
+if (in_array('https', $forwarded_protocols, true)
+    || (isset($_SERVER['HTTP_X_FORWARDED_PORT'] ) && ( '443' == $_SERVER['HTTP_X_FORWARDED_PORT'] ))
     || (isset($_SERVER['HTTP_CF_VISITOR']) && $_SERVER['HTTP_CF_VISITOR'] == '{"scheme":"https"}')) {
     $_SERVER['HTTPS'] = 'on';
 }
@@ -80,7 +82,7 @@ $_http_host_name = array_key_exists('HTTP_HOST', $_SERVER) ? $_SERVER['HTTP_HOST
 $_server_http_url = $_http_host_schema."://".$_http_host_name;
 
 Config::define('WP_HOME', env('WP_HOME') ?: $_server_http_url);
-Config::define('WP_SITEURL', env('WP_SITEURL') ?: $_server_http_url);
+Config::define('WP_SITEURL', env('WP_SITEURL') ?: rtrim(Config::get('WP_HOME'), '/') . '/wp');
 
 /**
  * Custom Content Directory
